@@ -1,0 +1,1551 @@
+*******************************************************************
+******************************************************************* 
+04. Desenho de Histogramas e Gráficos de Barras
+*******************************************************************
+*******************************************************************
+
+
+04.00 Ponto de Partida
+
+04.01 Arranque do Jupyter Notebook
+      Criação da Pasta do Capítulo
+
+04.02 Desenho de Histograma ("Histogramas"):
+      Desenho de Gráfico de Barras ("Bar Charts")
+      - Introdução
+
+04.03 Desenho de Histograma ("Histogramas"):
+      - Formatação
+
+04.04 Desenho de Histograma ("Histogramas"):
+      - Valores Estatísticos
+
+04.05 Desenho de Histograma ("Histogramas"):
+      - Configurações Avançadas
+
+04.06 Desenho de Gráfico de Barras ("Bar Charts"):
+      - Múltiplas Séries: Barras Empilhadas
+
+04.07 Desenho de Gráfico de Barras ("Bar Charts"):
+      - Múltiplas Séries: Barras Horizontais 
+
+04.08 Desenho de Gráfico de Caixa ("Box Plots")
+      Desenho de Gráfico de Caixa "Whisker" ("Whisker Plots")
+
+04.09 
+
+03.10 Resumo do capítulo
+
+03.11 Bibliografia/Sitografia-Webgrafia
+
+03.12 Trabalho(s)/Tarefa(s)
+
+
+
+
+
+
+
+04.00 Ponto de Partida
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+   Para que servem os
+             Gráficos de Barras Verticais,
+             Gráficos de Barras Horizontais,
+             Histogramas?
+  
+   - Essencialmente servem para:
+     - Gráficos de Barras Verticais:     
+     - Gráficos de Barras Horizontais:
+       - Valor de uma grandeza (vendas, lucros, ...)
+         por item no eixo dos xx (lojas, produtos, ...).
+       - No gráfico de barras verticais, o exio dos xx está 
+         na horizontal;
+       - No gráfico de barras horizontais, o exio dos xx está 
+         na vertical.
+       
+     - Histogramas:
+       - Frequência absoluta de uma grandeza
+         (Número de ocorrências de um valor numa amostra);
+       - Frequência relativa de uma grandeza
+         (Número de ocorrências/Numero de valores da amostra);
+
+   - Permite a inclusão de várias séries, 
+     apresentadas com cores diferentes de acordo
+     com o argumento "palette" dos respetivos
+     construtores ou uma lista de cores fornecida
+     como argumento. 
+     - Inclusão de legenda.
+
+
+Definir o cubo OLAP de grandezas e utilizar o gráfico.
+
+
+****************************************************************
+
+04.01 Arranque do Jupyter Notebook
+      Criação da Pasta do Capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+ a.1) Jupyter Notebook Instalado - Executar
+
+   - Sem utilizar o Anaconda (mais rápido):
+
+    Na lupa do SO digitar:
+       - Jupyter
+    Clicar na aplicação 
+    Abre a consola com indicação dos "logs" do servidor.
+ 
+
+   - Formas de arrancar com o Jupyter:
+  
+     1. Com o Anaconda Navigator instalado, 
+        esperar que o "builder" conclua criação da plataforma.
+        - Na lista de ferramentas disponiveis, escolher
+         "Jupyter Notebook".  
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+     2. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Jupyter Notebook
+
+        Clicar no icone da aplicação
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+     3. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Anaconda powershell prompt
+
+        Clicar no icone da aplicação 
+
+        Digitar       
+      
+           Jupyter Notebook
+
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+ a.2) Criar pasta para o capítulo
+
+   Na página de entrada do Jupyter Notebook,
+   na árvore de diretorias, TDR
+   - New Folder
+   - Projeto UFCD10809_Cap04_HistogramasEGrafBarras
+
+  Para entrar nessa pasta:
+   - Duplo clique.
+
+
+
+**************************************************************
+
+
+04.02 Desenho de Histograma ("Histogramas"):
+      Desenho de Gráfico de Barras ("Bar Charts")
+      - Introdução
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+04.02.01 Desenho de Histograma ("Histogramas")
+04.02.02 Desenho de Gráfico de Barras ("Bar Charts")
+
+
+
+04.02.01 Desenho de Histograma ("Histogramas")
+---------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0402_01DesenhoHistograma_01Intro.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Histogramas </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Histogramas </h1>
+
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px" src="https://compucademy.net/wp-content/uploads/2022/08/Solar-System-with-Python-Turtle-Graphics-and-Object-Oriented-Programming-1440x960.jpg" width="32%"/>
+<img style="float:left;margin:2px"  style="float:left" src="https://compucademy.net/wp-content/uploads/2022/08/Solar-System-with-Python-Turtle-Graphics-and-Object-Oriented-Programming-1440x960.jpg" width="32%"/>
+<img style="float:left;margin:2px"  src="https://compucademy.net/wp-content/uploads/2022/08/Solar-System-with-Python-Turtle-Graphics-and-Object-Oriented-Programming-1440x960.jpg" width="32%"/>
+</div>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 02:
+################################
+
+<h2> "Histogramas" - Introdução </h2>
+
+<h2 style="background-color:orange;color:brown;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> "Histogramas" - Introdução </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+#Histogram
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+  
+# 02. Valore(s) do(s) gráfico(s)
+height = [189, 185, 195, 149, 189, 147, 154, 
+          174, 169, 195, 159, 192, 155, 191, 
+          153, 157, 140, 144, 172, 157, 181, 
+          182, 166, 167]
+
+# 03. Definição e configuração do gráfico  
+plt.hist(height)
+
+# 04. Apresentação do gráfico
+plt.show()
+
+SHIFT + ENTER
+
+
+
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html
+
+
+
+################################
+# Cell 04:
+################################
+
+#Histogram
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+  
+# 02. Valore(s) do(s) gráfico(s)
+height = [189, 185, 195, 149, 189, 147, 154, 
+          174, 169, 195, 159, 192, 155, 191, 
+          153, 157, 140, 144, 172, 157, 181, 
+          182, 166, 167]
+
+# 03. Definição e configuração do gráfico  
+plt.hist(height, cumulative = 'True')
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+
+################################
+# Cell 05:
+################################
+
+#Histogram
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+  
+# 02. Valore(s) do(s) gráfico(s)
+height = [189, 185, 195, 149, 189, 147, 154, 
+          174, 169, 195, 159, 192, 155, 191, 
+          153, 157, 140, 144, 172, 157, 181, 
+          182, 166, 167]
+
+# 03. Definição e configuração do gráfico  
+plt.hist(height, orientation='horizontal',rwidth=.8, color='orange',
+        density='True')
+
+plt.title("Distribuição de Alturas da Turma")
+plt.xlabel("Número de Ocorrências")
+plt.ylabel("Alturas (cm)")
+
+
+
+# 04. Apresentação do gráfico
+plt.show()
+
+*******************************************************
+
+
+
+
+04.02.02 Desenho de Gráfico de Barras ("Bar Charts")
+---------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0402_02DesenhoGraficoDeBarras_01Intro.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1>  Gráfico de Barras </h1>
+
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico de Barras </h1>
+
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px" src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Best-Programming-Languages-to-Start-Learning-Today.jpg" width="32%"/>
+<img style="float:left;margin:2px" src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Best-Programming-Languages-to-Start-Learning-Today.jpg" width="32%"/>
+<img style="float:left;margin:2px" src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Best-Programming-Languages-to-Start-Learning-Today.jpg" width="32%"/>
+</div>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 02:
+################################
+
+<h2> "Bar Charts" - Introdução </h2>
+
+<h2 style="background-color:orange;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> "Bar Charts" - Introdução </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+
+# 02. Valore(s) do(s) gráfico(s)
+langs = ['C', 'C++', 'Java', 'Python', 'PHP']
+students = [23,17,35,29,12]
+
+# 03. Definição e configuração do gráfico
+plt.bar(langs,students, color='orange')
+
+plt.title("Competências")
+plt.xlabel("Linguagens de Programação")
+plt.ylabel("Número de Estudantes")
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+*******************************************************
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.bar.html
+**************************************************************
+
+
+
+
+
+
+
+
+04.03 Desenho de Histograma ("Histogramas"):
+      - Formatação
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0403_01DesenhoHistograma_02Formatação.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Histogramas </h1>
+
+
+<h1 style="background-color:black;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Histogramas</h1>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px" src="https://voiceofsandiego.org/wp-content/uploads/2024/02/Edison-Elementary_0008.jpg" width="32%"/>
+<img style="float:left;margin:2px" src="https://voiceofsandiego.org/wp-content/uploads/2024/02/Edison-Elementary_0008.jpg" width="32%"/>
+<img style="float:left;margin:2px" src="https://voiceofsandiego.org/wp-content/uploads/2024/02/Edison-Elementary_0008.jpg" width="32%"/>
+</div>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 03:
+################################
+
+<h2> "Histogramas" - Configurações - Cor </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> "Histogramas" - Configurações - Cor </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# Histograma de Frequência Absoluta
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+  
+# 02. Valore(s) do(s) gráfico(s)
+values = [87, 53, 66, 61, 67, 68, 62,
+          110, 104, 61, 111, 123, 117,
+          119, 116, 104, 92, 111, 90,
+          103, 81, 80, 101, 51, 79, 107,
+          110, 129, 145, 139, 110]
+  
+# 03. Definição e configuração do gráfico
+#     Cinco classes - Gráfico da frequência absoluta
+plt.hist(values , bins =  5, edgecolor = "navy" , color=  "cyan")
+
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+################################
+# Cell 05:
+################################
+
+# Histograma de Frequência Absoluta Acumulada
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+  
+# 02. Valore(s) do(s) gráfico(s)
+values = [87, 53, 66, 61, 67, 68, 62,
+          110, 104, 61, 111, 123, 117,
+          119, 116, 104, 92, 111, 90,
+          103, 81, 80, 101, 51, 79, 107,
+          110, 129, 145, 139, 110]
+  
+# 03. Definição e configuração do gráfico
+#     Cinco classes - Gráfico da frequência absoluta
+plt.hist(values , bins =  5, edgecolor = "navy" , color=  "cyan", cumulative=True)
+
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+
+################################
+# Cell 06:
+################################
+
+# Histograma de Frequência Relativa
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+  
+# 02. Valore(s) do(s) gráfico(s)
+values = [87, 53, 66, 61, 67, 68, 62,
+          110, 104, 61, 111, 123, 117,
+          119, 116, 104, 92, 111, 90,
+          103, 81, 80, 101, 51, 79, 107,
+          110, 129, 145, 139, 110]
+  
+# 03. Definição e configuração do gráfico
+#     Cinco classes - Gráfico da frequência absoluta
+plt.hist(values , bins =  5, edgecolor = "navy" , color=  "cyan",weights=np.ones_like(values) / len(values))
+
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+
+################################
+# Cell 07:
+################################
+
+# Histograma de Frequência Relativa (%)
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+  
+# 02. Valore(s) do(s) gráfico(s)
+values = [87, 53, 66, 61, 67, 68, 62,
+          110, 104, 61, 111, 123, 117,
+          119, 116, 104, 92, 111, 90,
+          103, 81, 80, 101, 51, 79, 107,
+          110, 129, 145, 139, 110]
+  
+# 03. Definição e configuração do gráfico
+#     Cinco classes - Gráfico da frequência absoluta
+plt.hist(values , bins =  5, edgecolor = "navy" , color=  "cyan",weights=np.ones_like(values)*100 / len(values))
+
+plt.ylabel("%")
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+################################
+# Cell 08:
+################################
+
+# Histograma de Frequência Relativa Acumulada (%)
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+  
+# 02. Valore(s) do(s) gráfico(s)
+values = [87, 53, 66, 61, 67, 68, 62,
+          110, 104, 61, 111, 123, 117,
+          119, 116, 104, 92, 111, 90,
+          103, 81, 80, 101, 51, 79, 107,
+          110, 129, 145, 139, 110]
+  
+# 03. Definição e configuração do gráfico
+#     Cinco classes - Gráfico da frequência absoluta
+plt.hist(values , bins =  5, edgecolor = "navy" , color=  "cyan",weights=np.ones_like(values)*100 / len(values), cumulative=True)
+
+plt.ylabel("%")
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+
+################################
+# Cell 09:
+################################
+
+<h2> "Histogramas" - Configurações - Eixos </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> "Histogramas" - Configurações - Eixos </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 10:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+ 
+# 02. Valore(s) do(s) gráfico(s)
+# Data in numpy array
+exp_data = np.array([189, 185, 195, 149, 189, 147, 154, 
+          174, 169, 195, 159, 192, 155, 191,134,144,137,139,
+          153, 157, 140, 144, 172, 157, 181, 
+          182, 166, 167,140,130,150,190,171,189,142,153,159,161,169,165,133,188])
+
+ 
+# 03. Definição e configuração do gráfico
+# Plot the distribution of numpy data
+plt.hist(exp_data, bins = 6 , align='left', color='orange', edgecolor='brown',linewidth=1)
+ 
+
+# 04. Definição dos Rótulos
+plt.title("Exemplo de Histograma - Frequência Absoluta")
+# Add axis labels
+plt.xlabel("Alturas em cm")
+plt.ylabel("Número de Estudantes")
+
+
+# 05. Definição dos valores dos eixos
+#     Eixos dos XX: de 0 até 19 variando de 2 em 2.
+#     Eixos dos YY: de 0 até 19 variando de 1 em 1.
+plt.xticks(range(120,200,10))
+plt.yticks(range(0,16,1))
+
+
+# 06. Apresentação do gráfico
+plt.show()
+
+***************************************************************
+
+
+
+
+
+04.04 Desenho de Histograma ("Histogramas"):
+      - Valores Estatísticos
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0404_01DesenhoHistograma_03Estatistica.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Histogramas </h1>
+
+
+<h1 style="background-color:black;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Histogramas</h1>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px" src="https://voiceofsandiego.org/wp-content/uploads/2024/02/Edison-Elementary_0008.jpg" width="32%"/>
+<img style="float:left;margin:2px" src="https://voiceofsandiego.org/wp-content/uploads/2024/02/Edison-Elementary_0008.jpg" width="32%"/>
+<img style="float:left;margin:2px" src="https://voiceofsandiego.org/wp-content/uploads/2024/02/Edison-Elementary_0008.jpg" width="32%"/>
+</div>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 03:
+################################
+
+<h2> "Histogramas" - Estatistica </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  "Histogramas" - Estatistica </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#                  statistics
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+import statistics
+ 
+
+# 02. Valore(s) do(s) gráfico(s)
+# Data in numpy array
+d = np.array([189, 185, 195, 149, 189, 147, 154, 
+          174, 169, 195, 159, 192, 155, 191,134,144,137,139,
+          153, 157, 140, 144, 172, 157, 181, 
+          182, 166, 167,140,130,150,190,171,189,142,153,159,161,169,165,133,188])
+
+
+# 03. Definição e configuração do gráfico
+plt.hist(d, bins=50 , color='c' , edgecolor = 'k')
+
+# 04. Valore(s) Estatísticos
+medianline = [x/2 for x in d]
+print(medianline)
+m  = statistics.mean(d)
+sd =  statistics.stdev([189, 185, 195, 149, 189, 147, 154, 
+          174, 169, 195, 159, 192, 155, 191,134,144,137,139,
+          153, 157, 140, 144, 172, 157, 181, 
+          182, 166, 167,140,130,150,190,171,189,142,153,159,161,169,165,133,188])
+
+# 05. Adição dos valors estatísticos ao "plot"
+plt.axvline(m, color= 'k' , linestyle="dashed") # Media - linha a preto
+plt.axvline(m+sd, color= 'y' , linestyle="dashed") # Media + SD
+plt.axvline(m-sd, color= 'y' , linestyle="dashed") # Media - SD 
+
+
+# 06. Apresentação do gráfico
+plt.show()
+
+################################
+# Cell 05:
+################################
+
+<h2> "Histogramas" - Estatistica II </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  "Histogramas" - Estatistica II </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 06:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#                  statistics
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+import statistics
+ 
+
+# 02. Valore(s) do(s) gráfico(s)
+# Data in numpy array
+d = np.array([189, 185, 195, 149, 189, 147, 154, 
+          174, 169, 195, 159, 192, 155, 191,134,144,137,139,
+          153, 157, 140, 144, 172, 157, 181, 
+          182, 166, 167,140,130,150,190,171,189,142,153,159,161,169,165,133,188])
+
+
+# 03. Definição e configuração do gráfico
+plt.hist(d, bins=50 , color='c' , edgecolor = 'k')
+
+# 04. Valore(s) Estatísticos
+medianline = [x/2 for x in d]
+print(medianline)
+m  = statistics.mean(d)
+md =  statistics.median(d)
+sd =  statistics.stdev([189, 185, 195, 149, 189, 147, 154, 
+          174, 169, 195, 159, 192, 155, 191,134,144,137,139,
+          153, 157, 140, 144, 172, 157, 181, 
+          182, 166, 167,140,130,150,190,171,189,142,153,159,161,169,165,133,188])
+
+# 05. Adição dos valors estatísticos ao "plot"
+plt.axvline(m, color= 'k' , linestyle="dashed") # Media - linha a preto
+plt.axvline(m+sd, color= 'y' , linestyle="dashed") # Media + SD
+plt.axvline(m-sd, color= 'y' , linestyle="dashed") # Media - SD 
+plt.axvline(md, color= 'b' , linestyle="dashed") # Mediana
+
+# 06. Apresentação do gráfico
+plt.show()
+
+
+**********************************************
+***************************************************************
+
+
+
+
+04.05 Desenho de Histograma ("Histogramas"):
+      - Configurações Avançadas I
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0405_01DesenhoHistograma_04ConfAv.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Histogramas </h1>
+
+<h1 style="background-color:black;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Histogramas</h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px" src="https://www.healthxchange.sg/sites/hexassets/Assets/diabetes/diabetes-how-manage-blood-sugar-levels-when-fall-sick.jpg" width="32%"/>
+<img style="float:left;margin:2px" src="https://www.nugenomics.in/wp-content/uploads/2023/03/Blood-Sugar-Levels-scaled-1-1600x900.jpg" width="32%"/>
+<img style="float:left;margin:2px" src="https://medeor.ae/wp-content/uploads/2022/11/High-Blood-Sugar.jpg" width="32%"/>
+</div>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 03:
+################################
+
+
+<h2> "Histogramas" - Configurações - Avançadas </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  "Histogramas" - Configurações - Avançadas </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+
+# 02. Valore(s) do(s) gráfico(s)
+blood_sample_men = [112,90,76,94,50,70,113,140,150,160,139,120,76,77,99,88,110,67,50,80]
+blood_sample_women = [132,80,66,64,90,80,143,150,130,140,119,60,76,97,69,128,150,167,150,180]
+
+
+# 03. Definição e configuração do gráfico
+plt.hist([blood_sample_men,blood_sample_women], bins =  [80,100,125,150] , rwidth=0.95,color = ['green','orange'],label= ['men','women'])
+
+
+# 04. Definição do Título e dos Rótulos do Eixos
+plt.title("Blood Sugar Chart")
+plt.xlabel("Sugar Level")
+plt.ylabel("Number of Patients")
+
+# 05. Adição de legenda
+plt.legend()
+
+# 06. Apresentação do gráfico
+plt.show()
+
+
+################################
+# Cell 05:
+################################
+
+<h2> "Histogramas" - "Patches" </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> "Histogramas" - "Patches" </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 06:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# 02. Valore(s) do(s) gráfico(s)
+blood_sample_men = [112,90,76,94,50,70,113,140,150,160,139,120,76,77,99,88,110,67,50,80]
+blood_sample_women = [132,80,66,64,90,80,143,150,130,140,119,60,76,97,69,128,150,167,150,180]
+
+
+# 03. Definição e configuração do gráfico
+n , bins , patches =plt.hist([blood_sample_men,blood_sample_women], 
+                             bins =  [80,100,125,150] , 
+                             rwidth=0.95,
+                             color = ['green','orange'],
+                             label= ['men','women'])
+
+
+# 04. Definição do Título e dos Rótulos do Eixos e Legenda
+plt.title("Boold Sugar Chart")
+plt.xlabel("Sugar Level")
+plt.ylabel("Number of Patients")
+#plt.legend()
+
+# 05. Definição e Configuração de "patches"
+plt.setp(patches[1][2], color='cyan')
+plt.setp(patches[1][1], color='red')
+df = pd.DataFrame(dict(data=n[0]))
+#df['data'].plot(kind='bar', color='red')
+df['data'].plot(kind='bar', color='cyan')
+df['data'].plot(kind='line', marker='*', color='darkblue', ms=10)
+
+
+# 06. Apresentação do gráfico
+plt.show()
+
+
+
+#print(patches[1][0].get_xy())
+
+################################
+# Cell 07:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# 02. Valore(s) do(s) gráfico(s)
+blood_sample_men = [112,90,76,94,50,70,113,140,150,160,139,120,76,77,99,88,110,67,50,80]
+blood_sample_women = [132,80,66,64,90,80,143,150,130,140,119,60,76,97,69,128,150,167,150,180]
+
+
+# 03. Definição e configuração do gráfico
+#plt.hist([blood_sample_men,blood_sample_women], bins =  [80,100,125,150] , #rwidth=0.95,color = ['green','orange'],label= ['men','women'])
+
+
+# 04. Definição do Título e dos Rótulos do Eixos
+#plt.title("Gráfico do nível de Açucar no Sangue")
+#plt.ylabel("Nivel de Açucar no Sangue")
+#plt.xlabel("Pacientes - Amostra")
+## 05. Adição de legenda
+#plt.legend()
+
+fig, ax = plt.subplots()
+df = pd.DataFrame({'Blood Sample':blood_sample_men})
+df['Blood Sample'].plot(kind='bar', color='#90EE90', 
+      title="Nível de Açucar no Sangue",xlabel="Amostras",
+      ylabel="Nível de Açucar")
+df['Blood Sample'].plot(kind='line', marker='*', color='green', ms=10)
+
+
+# 06. Apresentação do gráfico
+plt.show()
+
+
+################################
+# Cell 08:
+################################
+
+<h2> "Histogramas" - Linhas </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> "Histogramas" - Linhas </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 09:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy, pandas
+#     Módulos: pyplot
+# import matplotlib.pyplot as plt
+import pandas as pd
+
+# 02. Valore(s) do(s) gráfico(s)
+plt.rcParams["figure.figsize"] = [7.50, 3.50]
+plt.rcParams["figure.autolayout"] = True
+
+# 03. Definição de "dataframe" e adição de dados ao "plot".
+df = pd.DataFrame(dict(data=[2, 4, 1, 5, 9, 6, 0, 7]))
+fig, ax = plt.subplots()
+df['data'].plot(kind='bar', color='pink',
+      title="Gráfico",xlabel="Amostras",
+      ylabel="Valores")
+df['data'].plot(kind='line', marker='*', color='red', ms=10)
+
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+**********************************************
+***************************************************************
+
+
+
+
+
+04.06 Desenho de Gráfico de Barras ("Bar Charts"):
+      - Múltiplas Séries: Barras Empilhadas
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0406_01GraficosBarras_Empilhadas.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Barras ("Bar Charts") </h1>
+
+<h1 style="background-color:black;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Gráfico de Barras ("Bar Charts")</h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;" src="https://f088b146830a59b5.cdn.gocache.net/uploads/noticias/2020/08/24/b0db03ccba7dd7ca764ce3ea9127c4bfe9b1be99.jpeg" width="32%"/>
+
+<img style="float:left;margin:2px" src="https://mercadoeconsumo.com.br/wp-content/uploads/2022/07/roupa-2.jpg" width="32%"/>
+<img style="float:left;margin:2px;" src="https://uploads.metroimg.com/wp-content/uploads/2020/08/28160251/Loja-de-roupas-GettyImages-sb10064735ac-001-1.jpg" width="32%"/>
+</div>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 03:
+################################
+
+
+<h2> "Histogramas" - Barras Sobrepostas </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  "Histogramas" - Barras Sobrepostas </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+# importing package
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Valore(s) do(s) gráfico(s)
+# create data
+x = ['A', 'B', 'C', 'D']
+y1 = np.array([10, 20, 10, 30])
+y2 = np.array([20, 25, 15, 25])
+y3 = np.array([12, 15, 19, 6])
+y4 = np.array([10, 29, 13, 19])
+
+
+# 03. Definição e configuração do gráfico
+# plot bars in stack manner
+plt.bar(x, y1, color='r')
+plt.bar(x, y2, bottom=y1, color='b')
+plt.bar(x, y3, bottom=y1+y2, color='y')
+plt.bar(x, y4, bottom=y1+y2+y3, color='g')
+
+# 04. Título, Rótulos dos Eixos e Legenda
+plt.title("Vendas da Cadeia de Pronto-a-Vestir 'Pega e Leva'")
+plt.xlabel("Lojas")
+plt.ylabel("Número de Itens Vendidos")
+plt.legend(["Saias", "Calças", "Casacos", "Camisolas"])
+
+
+# 05. Apresentação do gráfico
+plt.show()
+
+**********************************************
+
+
+
+
+
+
+04.07 Desenho de Gráfico de Barras ("Bar Charts"):
+      - Múltiplas Séries: Barras Horizontais 
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0407_01GraficosBarras_Horizontais.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Barras ("Bar Charts") </h1>
+
+<h1 style="background-color:black;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Gráfico de Barras ("Bar Charts")</h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;" src="https://f088b146830a59b5.cdn.gocache.net/uploads/noticias/2020/08/24/b0db03ccba7dd7ca764ce3ea9127c4bfe9b1be99.jpeg" width="32%"/>
+
+<img style="float:left;margin:2px" src="https://mercadoeconsumo.com.br/wp-content/uploads/2022/07/roupa-2.jpg" width="32%"/>
+<img style="float:left;margin:2px;" src="https://uploads.metroimg.com/wp-content/uploads/2020/08/28160251/Loja-de-roupas-GettyImages-sb10064735ac-001-1.jpg" width="32%"/>
+</div>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 03:
+################################
+
+
+<h2> "Bar Charts" - Barras Horizontais </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  "Bar Charts" - Barras Horizontais </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+Lista de Estilos
+
+
+['Solarize_Light2', '_classic_test_patch', '_mpl-gallery', '_mpl-gallery-nogrid', 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight', 'ggplot', 'grayscale', 'seaborn-v0_8', 'seaborn-v0_8-bright', 'seaborn-v0_8-colorblind', 'seaborn-v0_8-dark', 'seaborn-v0_8-dark-palette', 'seaborn-v0_8-darkgrid', 'seaborn-v0_8-deep', 'seaborn-v0_8-muted', 'seaborn-v0_8-notebook', 'seaborn-v0_8-paper', 'seaborn-v0_8-pastel', 'seaborn-v0_8-poster', 'seaborn-v0_8-talk', 'seaborn-v0_8-ticks', 'seaborn-v0_8-white', 'seaborn-v0_8-whitegrid', 'tableau-colorblind10']
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+# importing package
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valore(s) do(s) gráfico(s)
+# create data
+x = ['A', 'B', 'C', 'D']
+y1 = np.array([10, 20, 10, 30])
+y2 = np.array([20, 25, 15, 25])
+y3 = np.array([12, 15, 19, 6])
+y4 = np.array([10, 29, 13, 19])
+
+# 03. Definição do Estilo do Gráfico
+plt.style.use('seaborn-v0_8-poster')
+
+# 04. Definição e configuração do gráfico
+# plot bars in stack manner
+plt.barh(x, y1, color='r')
+plt.barh(x, y2, left=y1, color='b')
+plt.barh(x, y3, left=y1+y2, color='y')
+plt.barh(x, y4, left=y1+y2+y3, color='g')
+
+# 04. Título, Rótulos dos Eixos e Legenda
+plt.title("Cadeia de Lojas de Pronto-a-Vestir 'Pega e Leva'")
+plt.ylabel("Lojas")
+plt.xlabel("Número de Itens Vendidos")
+plt.legend(["Saias", "Calças", "Casacos", "Camisolas"])
+
+
+# 05. Apresentação do gráfico
+plt.show()
+
+
+**********************************************
+
+
+
+
+
+
+04.08 Desenho de Gráfico de Caixa ("Box Plots"):
+      Desenho de Gráfico de Caixa "Whisker" ("Whisker Plots"):
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0408_01GraficosCaixas_01Intro.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Caixa </h1>
+
+<h1 style="background-color:black;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Gráfico de Barras ("Bar Charts")</h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;" src="https://f088b146830a59b5.cdn.gocache.net/uploads/noticias/2020/08/24/b0db03ccba7dd7ca764ce3ea9127c4bfe9b1be99.jpeg" width="32%"/>
+
+<img style="float:left;margin:2px" src="https://mercadoeconsumo.com.br/wp-content/uploads/2022/07/roupa-2.jpg" width="32%"/>
+<img style="float:left;margin:2px;" src="https://uploads.metroimg.com/wp-content/uploads/2020/08/28160251/Loja-de-roupas-GettyImages-sb10064735ac-001-1.jpg" width="32%"/>
+</div>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 03:
+################################
+
+
+<h2> "Box Plots" - Introdução </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  "Box Plots" - Introdução  </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+
+# 02. Valore(s) do(s) gráfico(s)
+x = [10,20,30,40,50,60,70,120]
+
+
+# 03. Definição e configuração do gráfico
+# Versão Antiga
+plt.boxplot(x , notch =False , vert = True , widths = 0.2 , labels = ['UK'] ,showmeans = True , boxprops = dict(color= "red") ,capprops = dict(color = "red") , sym= "g+",  whiskerprops = dict(color = "red") )
+
+# Nova Versão - Matplotlib 3.9
+plt.boxplot(x , notch =False , vert = True , widths = 0.2 , showmeans = True , boxprops = dict(color= "red") , tick_labels = ['UK'] , capprops = dict(color = "red") , sym= "g+",  whiskerprops = dict(color = "red") )
+
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+
+
+***************************************************
+Explicação:
+
+
+    Q1-1.5IQR   Q1   median  Q3   Q3+1.5IQR
+                  |-----:-----|
+  o      |--------|     :     |--------|    o  o
+                  |-----:-----|
+flier             <----------->            fliers
+                       IQR
+
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html
+
+
+matplotlib.pyplot.boxplot(x, notch=None, sym=None, vert=None, whis=None, positions=None, widths=None, patch_artist=None, bootstrap=None, usermedians=None, conf_intervals=None, meanline=None, showmeans=None, showcaps=None, showbox=None, showfliers=None, boxprops=None, tick_labels=None, flierprops=None, medianprops=None, meanprops=None, capprops=None, whiskerprops=None, manage_ticks=True, autorange=False, zorder=None, capwidths=None, label=None, *, data=None)[source]
+
+################################
+# Cell 05:
+################################
+
+<h2> "Whisker Plots" - Introdução </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  "Whisker Plots" - Introdução  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 06:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+
+
+# 02. Valore(s) do(s) gráfico(s)
+x = [10,20,30,40,50,60,70,120]
+x1 = [10,20,40,50,30,60,90]
+x2 = [10,20,40,50,70,90,130]
+y  = [x,x1,x2]
+
+# 03. Definição e configuração do gráfico
+# Versão antiga
+plt.boxplot(y , notch =False , vert = True , widths = 0.2 , labels = ['PYTHON',"C++","JAVA"]
+            ,showmeans = True , boxprops = dict(color= "red") ,
+             capprops = dict(color = "red") , 
+             sym= "g+",  
+             whiskerprops = dict(color = "red") )
+
+# Nova Versão - Matplotlib 3.9
+plt.boxplot(y , notch =False , vert = True , widths = 0.2 ,
+            showmeans = True , boxprops = dict(color= "red") ,  
+            tick_labels = ['PYTHON',"C++","JAVA"],capprops = dict(color = "red") , sym= "g+",  
+whiskerprops = dict(color = "red") )
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+**************************************************************
+
+
+    Q1-1.5IQR   Q1   median  Q3   Q3+1.5IQR
+                  |-----:-----|
+  o      |--------|     :     |--------|    o  o
+                  |-----:-----|
+flier             <----------->            fliers
+                       IQR
+
+**************************************************************
+
+
+
+04.09
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+
+
+***************************************************************
+
+ 
+04.10 Resumo do capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+04.02 Desenho de Histograma ("Histogramas"):
+      Desenho de Gráfico de Barras ("Bar Charts")
+      - Introdução
+
+04.03 Desenho de Histograma ("Histogramas"):
+      - Formatação
+
+04.04 Desenho de Histograma ("Histogramas"):
+      - Valores Estatísticos
+
+04.05 Desenho de Histograma ("Histogramas"):
+      - Configurações Avançadas
+
+04.06 Desenho de Gráfico de Barras ("Bar Charts"):
+      - Múltiplas Séries: Barras Empilhadas
+
+04.07 Desenho de Gráfico de Barras ("Bar Charts"):
+      - Múltiplas Séries: Barras Horizontais 
+
+04.08 Desenho de Gráfico de Caixa ("Box Plots")
+      Desenho de Gráfico de Caixa "Whisker" ("Whisker Plots")
+
+
+
+
+
+***************************************************************
+
+
+
+04.11 Bibliografia/Sitografia-Webgrafia
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+04.11.01 Bibliografia
+04.11.02 Sitografia-Webgrafia
+
+
+
+04.11.01 Bibliografia
+-----------------------------------------------------------
+
+Bibliografia:
+
+[B01]	ESTRUTURAS DE DADOS E ALGORITMOS EM C - 3ª EDIÇÃO REVISTA E AUMENTADA, 
+        António Adrego da Rocha, FCA.
+
+[B02]	ANÁLISE DA COMPLEXIDADE DE ALGORITMOS, António Adrego da Rocha, FCA.
+
+[B03]	ESTRUTURAS DE DADOS E ALGORITMOS EM JAVA, António Adegro da Rocha, FCA.
+
+[B04]	ANÁLISE INTELIGENTE DE DADOS - ALGORITMOS E IMPLEMENTAÇÃO EM JAVA,
+        Miguel Rocha | Paulo Cortez | José Maia Neves, FCA.
+
+[B05]	PROGRAMAÇÃO EM C++ - ALGORITMOS E ESTRUTURAS DE DADOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B06]	PROGRAMAÇÃO EM C++ - CONCEITOS BÁSICOS E ALGORITMOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B07]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+[B08]	EXERCÍCIOS DE JAVA - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, 
+        Adelaide Carvalho, FCA.
+
+[B09]	PRÁTICAS DE C# - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, Adelaide Carvalho, FCA.
+
+[B10]	INTRODUÇÃO À ALGORITMIA E PROGRAMAÇÃO COM PYTHON
+        Filipe Portela | Tiago C. Pereira, FCA.
+
+[B11]	PRÁTICAS DE PYTHON - ALGORITMIA E PROGRAMAÇÃO
+        Adelaide Carvalho, FCA.
+
+[B12]	CIÊNCIA DOS DADOS NAS ORGANIZAÇÕES - APLICAÇÕES EM PYTHON
+        José Braga de Vasconcelos | Alexandre Barão, FCA.
+
+[B13]	PROGRAMAÇÃO EM PYTHON - FUNDAMENTOS E RESOLUÇÃO DE PROBLEMAS,
+        Ernesto Costa, FCA.
+
+[B14]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB
+        José Braga de Vasconcelos, FCA.
+
+[B15]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+***********************************************************************
+
+
+04.11.02 Sitografia-Webgrafia
+-----------------------------------------------------------
+
+[W01]. https://www.python.org/
+[W02]. https://pt.wikipedia.org/wiki/Python
+[W03]. https://en.wikipedia.org/wiki/Python_(programming_language)
+[W04]. https://www.tutorialspoint.com/python/index.htm
+[W05]. https://www.w3schools.com/python/
+[W06]. https://www.codecademy.com/catalog/language/python
+[W07]. https://www.devmedia.com.br/guia/python/37024
+[W08]. https://realpython.com/
+[W09]. https://www.academiadecodigo.org
+[W10]. https://www.pluralsight.com/
+[W11]. https://www.datacamp.com/
+[W12]. https://www.learnpython.org/
+[W13]. https://pt.coursera.org/courses?query=python
+[W14]. https://www.coursera.org/courses?query=python
+[W15]. https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+[W16]. https://www.khanacademy.org/computing/computer-science/algorithms
+[W17]. https://www.programiz.com/dsa
+[W18]. https://www.programming4beginners.com/tutorial-beginners-algorithms
+[W19]. https://hackr.io/tutorials/learn-data-structures-algorithms
+[W20]. https://try.codecademy.com/learn-python-3
+[W21]. https://codeforall.com/cursos-intensivos/bootcamp-programacao-full-stack
+[W22]. https://docs.python.org/3/tutorial/index.html
+
+
+***************************************************************
+
+
+
+
+04.12 Trabalho(s)/Tarefa(s)
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+
+***************************************************************
+
+
+
+
+

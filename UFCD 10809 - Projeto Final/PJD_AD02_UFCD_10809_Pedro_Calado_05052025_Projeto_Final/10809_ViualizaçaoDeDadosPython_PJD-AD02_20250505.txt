@@ -1,0 +1,311 @@
+-------------------------------------------
+UFCD 10809 - Visualização de Dados em Python
+             - VDP
+
+25 horas
+*******************************************
+*******************************************
+Marco Costa Pereira
+
+mcpereira_eslc_alunos@yahoo.com
+*******************************************
+*******************************************
+IV Revolução Industrial
+
+   - Inteligência Artificial
+   - Computação Quântica
+   - Robótica
+   - Fusão Nuclear
+
+---------------------
+
+  Análise de Dados 
+
+    Excel
+    PowerBI - 
+    Python
+
+---------------------
+
+  Processo de Análise de Dados
+
+   Fontes:
+     Bases de Dados
+       - SQL Server, ORACLE Database, MySQL
+     Folhas de Cálculo
+            
+   - Uniformização dos dados
+   - Tratamento e Limpeza dos dados
+       - Visualização de Dados em Python
+             - VDP
+
+   - Modelação dos dados
+         
+   - Dashboard/Relatório
+                      Jupyter -> Visual  Studio Code
+        
+   - Comunicação de Resultados 
+
+    
+*******************************************
+
+Estrutura de Capítulos com Foco em Python
+
+00. Objetivos, Conteúdos, Avaliação. 
+01. Instalação da Platforma Anaconda
+    - Acesso ao Jupyter Notebook 
+    - Visual Studio Code
+02. Desenho de Gráficos de Linha ("Line Plots")
+03. Desenho de Gráficos Circulares ("Pie Charts")
+04. Desenho de Histogramas e Gráficos de Barras
+05. Desenho de Gráficos de Caule ("Stem Plot")
+06. Desenho de Gráficos de Área em Pilha ("Stack Plot")
+07. Desenho de Gráficos de Dispersão ("Scatter Plots")
+08. Desenho de Gráficos Temporais em Python
+09. Criação e configuração de Multiplos SubGráficos
+10. Criação e configuração de Outros Gráficos ("Heat Maps")
+11. Desenho de Gráficos com a Biblioteca "Seaborn" 
+12. Desenho de Gráficos com o Módulo "Plotly" ("Matplotlib") 
+    e a biblioteca "Cufflinks"
+13. Projeto de Avaliação da UFCD
+14. Preparação para os Testes
+15. Tópicos para a reflexão
+
+
+*******************************************************************
+*******************************************************************
+00. Objetivos, Conteúdos, Avaliação. 
+*******************************************************************
+*******************************************************************
+
+    00.01 Objetivo(s) 
+    00.02 Do Referencial 
+    00.03 Conteúdos Planeados
+    00.04 Avaliação
+    00.05 Materiais da UFCD
+    00.06 Informações Extra
+    00.07 Apresentação do Curso
+    00.08 Apresentação dos Formandos
+
+00.01 Objetivo(s)
+-------------------------------------------------------------
+
+- Caracterizar os conceitos associados à programação: 
+  dados, instrução, algoritmo e programa.
+- Reconhecer e desenvolver algoritmos.
+
+
+00.02 Do Referencial:
+----------------------------------------------------------
+
+Visualização de dados
+Criada em 2020-10-29
+
+DESIGNAÇÃO DA UFCD: Visualização de dados
+CÓDIGO DA UFCD: 10801
+CARGA HORÁRIA: 25 horas
+PONTOS DE CRÉDITO: 2.25
+
+Objetivo(s):
+- Utilizar visuais para apresentar informação.
+- Aplicar boas práticas na visualização de informação.
+- Apresentar indicadores de desempenho chave (KPI's) em dashboards.
+
+Conteúdo(s):
+- Introdução ao trabalho com visuais em Power BI
+- Itens de visualização a relatórios
+- Visualizações eficazes
+- Formatação e configuração de visualizações
+- Importação de um visual personalizado
+- Visual R ou Python
+- Indicadores-chave de desempenho
+- Desenho de um relatório no Power BI desktop
+
+
+
+
+00.03 Conteúdos Planeados
+----------------------------------------------------------
+
+Estrutura de Capítulos com Foco em Python
+
+00. Objetivos, Conteúdos, Avaliação. 
+01. Instalação da Platforma Anaconda
+    - Acesso ao Jupyter Notebook 
+02. Desenho de Gráficos de Linha ("Line Plots")
+03. Desenho de Gráficos Circulares ("Pie Charts")
+04. Desenho de Histogramas e Gráficos de Barras
+05. Desenho de Gráficos de Caule ("Stem Plot")
+06. Desenho de Gráficos de Área em Pilha ("Stack Plot")
+07. Desenho de Gráficos de Dispersão ("Scatter Plots")
+08. Desenho de Gráficos Temporais em Python
+09. Criação e configuração de Multiplos SubGráficos
+10. Criação e configuração de Outros Gráficos ("Heat Maps")
+11. Desenho de Gráficos com a Biblioteca "Seaborn" 
+12. Desenho de Gráficos com o Módulo "Plotly" ("Matplotlib") 
+    e a biblioteca "Cufflinks"
+13. Projeto de Avaliação da UFCD
+14. Preparação para os Testes
+15. Tópicos para a reflexão
+
+
+
+
+00.04 Avaliação
+----------------------------------------------------------
+
+Avaliação I:
+
+Laboratórios de Sessão: 35%
+Teste Teórico:          25% - 30/04/2025 (14h00-15h00)
+Projeto:                40% - 30/04/2025 (15h00-19h00)
+
+
+Atenção:
+Todos os trabalhos propostos devem ser entregues pelo TEAMS.
+Evitar utilizar o email para enviar trabalhos.
+Por cada dia de atraso na entrega uma penalização de 1V/dia.
+
+
+00.05 Materiais da UFCD
+----------------------------------------------------------
+
+Materiais da UFCD
+
+ -> Fichas  
+
+    
+
+ -> Software 
+ 
+
+
+00.06 Informações Extra
+--------------------------------------------------------
+Informações
+
+
+1) As sessões sincronas serão no canal da UFCD,
+para melhor separação de conteúdos
+
+
+2) Dúvidas
+Durante as sessões: 
+   
+   - Canal da UFCD
+   - Canal privado 
+
+Fora das sessões:
+
+   - Canal privado 
+
+3) Atenção:
+Todos os trabalhos propostos devem ser entregues pelo TEAMS.
+Evitar utilizar o email para enviar trabalhos.
+Por cada dia de atraso na entrega uma penalização de 1V/dia.
+
+
+00.07 Apresentação do Curso
+---------------------------------------------------------
+
+
+
+
+
+
+00.08 Apresentação dos Formandos
+----------------------------------------------------------
+
+Apresentação:
+
+            Nome
+            (Idade)
+            Experiência Profissional
+            Formação em Informática
+            Linguagens de Programação conhecem?
+            O que esperam do curso?
+            Qual é o vosso objetivo?
+
+
+*******************************************************************
+*******************************************************************
+ Estrutura de Capítulos com Foco em Python
+*******************************************************************
+*******************************************************************
+
+00. Objetivos, Conteúdos, Avaliação. 
+01. Instalação da Platforma Anaconda
+    - Acesso ao Jupyter Notebook 
+02. Desenho de Gráficos de Linha ("Line Plots")
+03. Desenho de Gráficos Circulares ("Pie Charts")
+04. Desenho de Histogramas e Gráficos de Barras
+05. Desenho de Gráficos de Caule ("Stem Plot")
+06. Desenho de Gráficos de Área em Pilha ("Stack Plot")
+07. Desenho de Gráficos de Dispersão ("Scatter Plots")
+08. Gráficos Temporais em Python
+09. Criação e configuração de Multiplos SubGráficos
+10. Desenho de Gráficos com a Biblioteca "Seaborn" 
+11. Desenho de Gráficos com o Módulo "Plotly" ("Matplotlib") 
+    e a biblioteca "Cufflinks"
+12. Projeto de Avaliação da UFCD
+13. Preparação para os Testes
+14. Tópicos para a reflexão
+
+
+*******************************************************************
+*******************************************************************
+01. Instalação da Platforma Anaconda
+    - Acesso ao Jupyter Notebook
+*******************************************************************
+*******************************************************************
+
+
+
+
+*******************************************************************
+******************************************************************* 
+02. Desenho de Gráficos de Linha ("Line Plots")
+*******************************************************************
+*******************************************************************
+
+
+*******************************************************************
+******************************************************************* 
+03. Desenho de Gráficos Circulares ("Pie Charts")
+*******************************************************************
+*******************************************************************
+
+
+*******************************************************************
+******************************************************************* 
+04. Desenho de Histogramas e Gráficos de Barras
+*******************************************************************
+*******************************************************************
+
+
+*******************************************************************
+*******************************************************************
+14. Preparação para os Testes
+*******************************************************************
+*******************************************************************
+
+
+   Teste Teórico:   06/05/2025 - 14h-15h (Com consulta)
+                      
+    - Escolha Múltipla
+    - Verdadeiro/falso
+
+      Ficheiro com as respostas (bloco de notas).
+      O ficheiro deve ser renomeado com seu nome.
+
+      Google Classroom
+
+      - Identificação de Gráficos
+      - Bibliotecas
+      - Funções de desenho
+        plt.scatter()
+
+ 
+
+
+

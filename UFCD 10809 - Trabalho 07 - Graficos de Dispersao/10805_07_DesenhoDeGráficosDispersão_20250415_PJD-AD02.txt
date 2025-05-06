@@ -1,0 +1,997 @@
+*******************************************************************
+******************************************************************* 
+07. Desenho de Gráficos de Dispersão ("Scatter Plots")
+*******************************************************************
+*******************************************************************
+
+07.01 Ponto de Partida
+
+07.01 Arranque do Jupyter Notebook
+      Criação da Pasta do Capítulo
+
+07.02 Desenho de Gráficos de Dispersão ("Scatter Plots"):
+      - Introdução
+
+07.03 Desenho de Gráficos de Dispersão ("Scatter Plots"):
+      - Valores Aleatórios
+
+07.04 Desenho de Gráficos de Dispersão ("Scatter Plots"):
+      - Mudança da Dimensão dos Pontos
+
+07.05 Desenho de Gráficos de Área ("Stack Plot"):
+      - Cores dos Pontos
+
+07.06 Resumo do capítulo
+
+07.07 Bibliografia/Sitografia-Webgrafia
+
+07.08 Trabalho(s)/Tarefa(s)
+
+
+
+
+
+
+07.00 Ponto de Partida
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+   Para que servem os
+             Gráficos de Dispersão?
+  
+   - Essencialmente servem para:
+     - Monitorização de controlo de qualidade 
+       de processos industriais.
+
+        Eixo dos xx' - altura de prego
+        Eixo dos yy' - area da cabeça do prego
+        Eixo dos zz' - Número de pregos
+
+     - Correlação de grandezas 
+       do eixo dos xx com o eixo dos yy.
+
+    
+Os gráficos de dispersão podem representar em zz:
+     - largura dos pontos.
+     - cor dos pontos.        
+
+
+Definir o cubo OLAP de grandezas e utilizar o gráfico.
+
+
+****************************************************************
+
+07.01 Arranque do Jupyter Notebook
+      Criação da Pasta do Capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ a.1) Jupyter Notebook Instalado - Executar
+
+   - Sem utilizar o Anaconda (mais rápido):
+
+    Na lupa do SO digitar:
+       - Jupyter
+    Clicar na aplicação 
+    Abre a consola com indicação dos "logs" do servidor.
+ 
+
+   - Formas de arrancar com o Jupyter:
+  
+     1. Com o Anaconda Navigator instalado, 
+        esperar que o "builder" conclua criação da plataforma.
+        - Na lista de ferramentas disponiveis, escolher
+         "Jupyter Notebook".  
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+     2. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Jupyter Notebook
+
+        Clicar no icone da aplicação
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+     3. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Anaconda powershell prompt
+
+        Clicar no icone da aplicação 
+
+        Digitar       
+      
+           Jupyter Notebook
+
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+ 
+
+
+ a.2) Criar pasta para o capítulo
+
+   Na página de entrada do Jupyter Notebook,
+   na árvore de diretorias, TDR
+   - New Folder
+   - Projeto UFCD10809_Cap07_GraficosDispersao
+
+  Para entrar nessa pasta:
+   - Duplo clique.
+
+
+**************************************************************
+
+
+
+07.02 Desenho de Gráficos de Dispersão ("Scatter Plots"):
+      - Introdução
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0702_DesenhoGráficoDispersao_Intro.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos de Dispersão - "Scatter Plots" </h1>
+
+
+<h1 style="background-color:black;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Gráficos de Dispersão - "Scatter Plots" </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://vivirenelpoblado.com/wp-content/uploads/2023/11/Gamers-Inder-09-scaled.jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.laopinion.co/sites/default/files/2020/12/15/imagen/videojuegos.jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.universitymagazine.ca/wp-content/uploads/2024/10/Countries-With-The-Most-Gamers.jpg" width="32%"/>
+
+</div>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Criação de "Scatter Plot" </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Criação de "Scatter Plot"  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+
+
+# 02. Valore(s) do(s) gráfico(s)
+# Sample data
+x = [1, 2, 3, 4, 5,6,7,8,9,10]
+y = [2, 3, 2, 5, 1,4,9,2,6,3]
+
+
+# 03. Definição e configuração do gráfico
+# Create a scatter plot
+plt.scatter(x, y)
+
+# 04. Título e Rótulos dos Eixos
+plt.title('Basic Scatter Plot')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+# 05. Apresentação do gráfico
+plt.show()
+
+
+********************************************************************
+
+
+
+
+07.03 Desenho de Gráficos de Dispersão ("Scatter Plots"):
+      - Valores Aleatórios
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0703_DesenhoGráficoDispersao_Aleatorios.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos de Dispersão - "Scatter Plots" </h1>
+
+
+<h1 style="background-color:black;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Gráficos de Dispersão - "Scatter Plots" </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://vivirenelpoblado.com/wp-content/uploads/2023/11/Gamers-Inder-09-scaled.jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.laopinion.co/sites/default/files/2020/12/15/imagen/videojuegos.jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.universitymagazine.ca/wp-content/uploads/2024/10/Countries-With-The-Most-Gamers.jpg" width="32%"/>
+
+</div>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+<h2> "Scatter Plot" - Valores Aleatórios </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> "Scatter Plot" - Valores Aleatórios  </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Valore(s) do(s) gráfico(s)
+# Generate some random data
+# 1.º Argumento - media da distribuição.
+# 2.º Argumento - Desvio padrão
+# 3.º Argumento - Número de valores
+x = np.random.normal(0, 1, 100)
+y = np.random.normal(0, 1, 100)
+
+
+# 03. Cores e Tamanhos
+#     Eixo dos zz1
+colors = np.random.rand(100)
+#     Outra serie de valores - Eixo dos zz2
+sizes = 100 * np.random.rand(100)
+
+
+# 04. Definição e configuração do gráfico
+# Create a scatter plot with custom colors and sizes
+plt.scatter(x, y, c=colors, s=sizes, alpha=0.5)
+
+# 05. Adição de barra de cor com escala
+plt.colorbar()
+
+# 06. Título e Rótulos dos Eixos
+plt.title('Advanced Scatter Plot')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+
+# 07. Apresentação do gráfico
+plt.show()
+
+
+*****************
+https://numpy.org/doc/2.1/reference/random/generated/numpy.random.normal.html
+*****************
+
+
+################################
+# Cell 05:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Valore(s) do(s) gráfico(s)
+# Generate some random data
+# 1.º Argumento - media da distribuição.
+# 2.º Argumento - Desvio padrão
+# 3.º Argumento - Número de valores
+x = np.random.normal(0, 0.1, 100)
+y = np.random.normal(0, 0.1, 100)
+
+
+# 03. Cores e Tamanhos
+#     Eixo dos zz1
+colors = np.random.rand(100)
+#     Outra serie de valores - Eixo dos zz2
+sizes = np.ones(100)*50
+
+
+# 04. Definição e configuração do gráfico
+# Create a scatter plot with custom colors and sizes
+plt.scatter(x, y, c=colors, s=sizes, alpha=0.5)
+
+# 05. Adição de barra de cor com escala
+plt.colorbar()
+
+# 06. Título e Rótulos dos Eixos
+plt.title('Advanced Scatter Plot')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+
+# 07. Apresentação do gráfico
+plt.show()
+
+
+***********************************************************************
+
+
+
+
+07.04 Desenho de Gráficos de Dispersão ("Scatter Plots"):
+      - Mudança da Dimensão dos Pontos
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0704_DesenhoGráficoDispersao_DimensaoPontos.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos de Dispersão - "Scatter Plots" </h1>
+
+
+<h1 style="background-color:black;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Gráficos de Dispersão - "Scatter Plots" </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://vivirenelpoblado.com/wp-content/uploads/2023/11/Gamers-Inder-09-scaled.jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.laopinion.co/sites/default/files/2020/12/15/imagen/videojuegos.jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.universitymagazine.ca/wp-content/uploads/2024/10/Countries-With-The-Most-Gamers.jpg" width="32%"/>
+
+</div>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+<h2> "Scatter Plot" - Dimensão dos Pontos I </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  "Scatter Plot" - Dimensão dos Pontos I  </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 02. Valore(s) do(s) gráfico(s)
+# Generate random data
+x = np.random.normal(0, 1, 100)
+y = np.random.normal(0, 1, 100)
+
+# 03. Definição e configuração do gráfico
+#Create scatter plot with custom dot size
+plt.scatter(x, y, s=50)
+# plt.scatter(x, y, s=50, color='r')
+
+# 04. Título e Rótulos dos Eixos
+plt.title('Scatter Plot with Custom Dot Size')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+# 05. Apresentação do gráfico
+plt.show() 
+
+
+################################
+# Cell 05:
+################################
+
+<h2> "Scatter Plot" - Dimensão dos Pontos II </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> "Scatter Plot" - Dimensão dos Pontos II  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+*************************
+https://numpy.org/doc/2.1/reference/random/generated/numpy.random.randint.html
+*************************
+
+
+################################
+# Cell 06:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 02. Valore(s) do(s) gráfico(s)
+# Generate random data and sizes
+x = np.random.normal(0, 1, 100)
+y = np.random.normal(0, 1, 100)
+
+
+# 03. Definição dos valores dos Tamanhos
+#     Lista de 100 valores aleatórios que 
+#     podem ir de 10 a 299 (inclusivé).
+#     Eixo dos zz
+sizes = np.random.randint(10, 300, size=100)
+
+
+# 04. Definição e configuração do gráfico
+#Create scatter plot with custom dot sizes
+# plt.scatter(x, y, s=sizes)
+plt.scatter(x, y, s=sizes, alpha=0.5, color='c')
+
+
+
+# 05. Título e Rótulos dos Eixos
+plt.title('Scatter Plot with Custom Dot Sizes')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+
+# 06. Apresentação do gráfico
+plt.show()
+
+---------------------
+
+https://numpy.org/doc/2.1/reference/random/generated/numpy.random.randint.html
+
+
+
+
+################################
+# Cell 07:
+################################
+
+<h2> "Scatter Plot" - Tamanho dos Pontos III </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> "Scatter Plot" - Tamanho dos Pontos III  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 08:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# 02. Valore(s) do(s) gráfico(s)
+# Generate random data
+x = np.random.normal(0, 1, 100)
+y = np.random.normal(0, 1, 100)
+
+# 03. Definição dos valores dos Tamanhos
+#     Tamanhos com condição de acordo com o X
+##############################################
+#Define a condition for the dot size
+condition = x > 0
+# Create an array of dot sizes based on the condition
+# Se (x>0) for True -> tamanho 120
+# Senão, o tamanho fica a 20
+#                Condição
+#                          Caso se Verdadeiro
+#                                Caso se Falso
+sizes = np.where(condition, 120, 20)
+
+# 04. Definição e configuração do gráfico
+#Create scatter plot with custom dot size based on the condition
+#       Criação do gráfico com três listas.
+plt.scatter(x, y, s=sizes, color='r',alpha=0.5)
+
+# 05. Título e Rótulos dos Eixos
+plt.title('Scatter Plot with Custom Dot Size based on Condition')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+# 06. Apresentação do gráfico
+plt.show()
+
+*********************************************************
+
+
+
+
+07.05 Desenho de Gráficos de Área ("Stack Plot"):
+      - Cores dos Pontos
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0705_DesenhoGráficoDispersao_Cores.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos de Dispersão - "Scatter Plots" </h1>
+
+
+<h1 style="background-color:black;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Gráficos de Dispersão - "Scatter Plots" </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://vivirenelpoblado.com/wp-content/uploads/2023/11/Gamers-Inder-09-scaled.jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.laopinion.co/sites/default/files/2020/12/15/imagen/videojuegos.jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.universitymagazine.ca/wp-content/uploads/2024/10/Countries-With-The-Most-Gamers.jpg" width="32%"/>
+
+</div>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+<h2> "Scatter Plot" - Cores dos Pontos I </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> "Scatter Plot" - Cores dos Pontos I   </h2>
+
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# 02. Valore(s) do(s) gráfico(s)
+# Generate random data
+x = np.random.normal(0, 1, 100)
+y = np.random.normal(0, 1, 100)
+
+# 03. Definição dos valores das cores
+#     Tamanhos com condição de acordo com o y
+##############################################
+# Define a condition for the marker color
+condition = y > 1
+# Create an array of marker colors based on the condition
+# Se (y>1) for True -> cor azul
+# Senão, a cor fica a vermelho
+#                Condição
+#                            Caso se Verdadeiro
+#                                    Caso se Falso
+colors = np.where(condition, 'blue', 'red')
+
+
+# 04. Definição e configuração do gráfico
+# Create scatter plot with custom marker colors 
+# based on the condition
+#       Criação do gráfico com três listas.
+plt.scatter(x, y, c=colors,alpha=0.5)
+
+
+# 05. Título e Rótulos dos Eixos
+plt.title('Scatter Plot with Custom Marker Colors based on Condition')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+# 06. Apresentação do gráfico
+plt.show() 
+
+
+################################
+# Cell 05:
+################################
+
+<h2> "Scatter plot" - Cores dos Pontos II </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> "Scatter Plot" - Cores dos Pontos II   </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 06:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# 02. Valore(s) do(s) gráfico(s)
+# Generate random data
+x = np.random.normal(0, 1, 100)
+y = np.random.normal(0, 1, 100)
+z = np.random.normal(1, 0.5, 100) 
+    # third variable to determine marker color
+
+# 03. Definição e configuração do gráfico
+# Create scatter plot with marker color determined by z values
+plt.scatter(x, y, c=z, cmap='hot',alpha=0.5)            
+#cmap - viridis , magma , cool ,hot
+# Conjunto de cores.
+
+# 04. Adiciona à direita uma barra de escala de cores.
+# Add colorbar
+plt.colorbar()
+
+
+# 05. Título e Rótulos dos Eixos
+plt.title('Scatter Plot with Custom Marker Colors based on Z values')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+# 06. Apresentação do gráfico
+plt.show()
+
+
+################################
+# Cell 07:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# 02. Valore(s) do(s) gráfico(s)
+# Generate random data
+x = np.random.normal(0, 1, 100)
+y = np.random.normal(0, 1, 100)
+z = np.random.normal(1, 0.5, 100) 
+    # third variable to determine marker color
+
+# 03. Definição e configuração do gráfico
+# Create scatter plot with marker color determined by z values
+plt.scatter(x, y, c=z, cmap='magma',alpha=0.5)           
+#cmap - viridis , magma , cool ,hot
+# Conjunto de cores.
+
+# 04. Adiciona à direita uma barra de escala de cores.
+# Add colorbar
+plt.colorbar()
+
+
+# 05. Título e Rótulos dos Eixos
+plt.title('Scatter Plot with Custom Marker Colors based on Z values')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+# 06. Apresentação do gráfico
+plt.show()
+
+################################
+# Cell 08:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# 02. Valore(s) do(s) gráfico(s)
+# Generate random data
+x = np.random.normal(0, 1, 100)
+y = np.random.normal(0, 1, 100)
+z = np.random.normal(1, 0.5, 100) 
+    # third variable to determine marker color
+
+# 03. Definição e configuração do gráfico
+# Create scatter plot with marker color determined by z values
+plt.scatter(x, y, c=z, cmap='cool',alpha=0.5)           
+#cmap - viridis , magma , cool ,hot
+# Conjunto de cores.
+
+# 04. Adiciona à direita uma barra de escala de cores.
+# Add colorbar
+plt.colorbar()
+
+
+# 05. Título e Rótulos dos Eixos
+plt.title('Scatter Plot with Custom Marker Colors based on Z values')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+# 06. Apresentação do gráfico
+plt.show()
+
+################################
+# Cell 09:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# 02. Valore(s) do(s) gráfico(s)
+# Generate random data
+x = np.random.normal(0, 1, 100)
+y = np.random.normal(0, 1, 100)
+z = np.random.normal(0, 0.5, 100) 
+    # third variable to determine marker color
+
+# 03. Definição e configuração do gráfico
+# Create scatter plot with marker color determined by z values
+plt.scatter(x, y, c=z, cmap='viridis',alpha=0.5)           
+#cmap - viridis , magma , cool ,hot
+# Conjunto de cores.
+
+# 04. Adiciona à direita uma barra de escala de cores.
+# Add colorbar
+plt.colorbar()
+
+
+# 05. Título e Rótulos dos Eixos
+plt.title('Scatter Plot with Custom Marker Colors based on Z values')
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+
+# 06. Apresentação do gráfico
+plt.show()
+
+********************************************************
+
+
+
+
+07.06 Resumo do capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+07.02 Desenho de Gráficos de Dispersão ("Scatter Plots"):
+      - Introdução
+
+07.03 Desenho de Gráficos de Dispersão ("Scatter Plots"):
+      - Valores Aleatórios
+
+07.04 Desenho de Gráficos de Dispersão ("Scatter Plots"):
+      - Mudança da Dimensão dos Pontos
+
+07.05 Desenho de Gráficos de Área ("Stack Plot"):
+      - Cores dos Pontos
+
+
+
+********************************************************************
+
+
+
+07.07 Bibliografia/Sitografia-Webgrafia
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+07.07.01 Bibliografia
+07.07.02 Sitografia-Webgrafia
+
+
+
+07.07.01 Bibliografia
+-----------------------------------------------------------
+
+Bibliografia:
+
+[B01]	ESTRUTURAS DE DADOS E ALGORITMOS EM C - 3ª EDIÇÃO REVISTA E AUMENTADA, 
+        António Adrego da Rocha, FCA.
+
+[B02]	ANÁLISE DA COMPLEXIDADE DE ALGORITMOS, António Adrego da Rocha, FCA.
+
+[B03]	ESTRUTURAS DE DADOS E ALGORITMOS EM JAVA, António Adegro da Rocha, FCA.
+
+[B04]	ANÁLISE INTELIGENTE DE DADOS - ALGORITMOS E IMPLEMENTAÇÃO EM JAVA,
+        Miguel Rocha | Paulo Cortez | José Maia Neves, FCA.
+
+[B05]	PROGRAMAÇÃO EM C++ - ALGORITMOS E ESTRUTURAS DE DADOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B06]	PROGRAMAÇÃO EM C++ - CONCEITOS BÁSICOS E ALGORITMOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B07]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+[B08]	EXERCÍCIOS DE JAVA - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, 
+        Adelaide Carvalho, FCA.
+
+[B09]	PRÁTICAS DE C# - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, Adelaide Carvalho, FCA.
+
+[B10]	INTRODUÇÃO À ALGORITMIA E PROGRAMAÇÃO COM PYTHON
+        Filipe Portela | Tiago C. Pereira, FCA.
+
+[B11]	PRÁTICAS DE PYTHON - ALGORITMIA E PROGRAMAÇÃO
+        Adelaide Carvalho, FCA.
+
+[B12]	CIÊNCIA DOS DADOS NAS ORGANIZAÇÕES - APLICAÇÕES EM PYTHON
+        José Braga de Vasconcelos | Alexandre Barão, FCA.
+
+[B13]	PROGRAMAÇÃO EM PYTHON - FUNDAMENTOS E RESOLUÇÃO DE PROBLEMAS,
+        Ernesto Costa, FCA.
+
+[B14]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB
+        José Braga de Vasconcelos, FCA.
+
+[B15]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+***********************************************************************
+
+
+07.07.02 Sitografia-Webgrafia
+-----------------------------------------------------------
+
+[W01]. https://www.python.org/
+[W02]. https://pt.wikipedia.org/wiki/Python
+[W03]. https://en.wikipedia.org/wiki/Python_(programming_language)
+[W04]. https://www.tutorialspoint.com/python/index.htm
+[W05]. https://www.w3schools.com/python/
+[W06]. https://www.codecademy.com/catalog/language/python
+[W07]. https://www.devmedia.com.br/guia/python/37024
+[W08]. https://realpython.com/
+[W09]. https://www.academiadecodigo.org
+[W10]. https://www.pluralsight.com/
+[W11]. https://www.datacamp.com/
+[W12]. https://www.learnpython.org/
+[W13]. https://pt.coursera.org/courses?query=python
+[W14]. https://www.coursera.org/courses?query=python
+[W15]. https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+[W16]. https://www.khanacademy.org/computing/computer-science/algorithms
+[W17]. https://www.programiz.com/dsa
+[W18]. https://www.programming4beginners.com/tutorial-beginners-algorithms
+[W19]. https://hackr.io/tutorials/learn-data-structures-algorithms
+[W20]. https://try.codecademy.com/learn-python-3
+[W21]. https://codeforall.com/cursos-intensivos/bootcamp-programacao-full-stack
+[W22]. https://docs.python.org/3/tutorial/index.html
+
+
+***************************************************************
+
+
+
+
+07.08 Trabalho(s)/Tarefa(s)
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+
+***************************************************************
+
+
+
+
+

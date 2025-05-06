@@ -1,0 +1,934 @@
+*******************************************************************
+******************************************************************* 
+11. Desenho de Gráficos com a Biblioteca "Seaborn" 
+*******************************************************************
+*******************************************************************
+
+
+
+11.01 Ponto de Partida
+
+11.02 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Instalação
+
+11.03 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Formatação: tonalidade, estilo e dimensões
+
+11.04 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Múltiplos Gráficos
+
+11.05 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Gráficos de Linha
+
+11.06 Desenho Gráficos com a Biblioteca "Seaborn":
+      - "Cat Plots"
+
+11.07 Desenho Gráficos com a Biblioteca "Seaborn":
+      - "Jointplot", "Pair Plot" e "Regression Plot"
+
+11.08 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Melhorias: Gráfico de Violino
+
+11.09 Desenho Gráficos com a Biblioteca "Seaborn":
+      - 
+
+11.10 Resumo do capítulo
+
+11.11 Bibliografia/Sitografia-Webgrafia
+
+11.12 Trabalho(s)/Tarefa(s)
+
+
+
+
+
+
+11.01 Ponto de Partida
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ a.1) Jupyter Notebook Instalado - Executar
+
+   - Sem utilizar o Anaconda (mais rápido):
+
+    Na lupa do SO digitar:
+       - Jupyter
+    Clicar na aplicação 
+    Abre a consola com indicação dos "logs" do servidor.
+ 
+
+   - Formas de arrancar com o Jupyter:
+  
+     1. Com o Anaconda Navigator instalado, 
+        esperar que o "builder" conclua criação da plataforma.
+        - Na lista de ferramentas disponiveis, escolher
+         "Jupyter Notebook".  
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+     2. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Jupyter Notebook
+
+        Clicar no icone da aplicação
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+     3. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Anaconda powershell prompt
+
+        Clicar no icone da aplicação 
+
+        Digitar       
+      
+           Jupyter Notebook
+
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+ 
+
+
+ a.2) Criar pasta para o capítulo
+
+   Na página de entrada do Jupyter Notebook,
+   na árvore de diretorias, TDR
+   - New Folder
+   - Projeto UFCD10809_Cap11_GraficosSeaborn
+
+  Para entrar nessa pasta:
+   - Duplo clique.
+
+
+
+**************************************************************
+
+
+11.02 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Instalação
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1102_DesenhoGraficosSeaborn_Intro.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Introdução ao "Seaborn" </h1>
+
+
+<h1 style="background-color:red;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Introdução ao "Seaborn"  </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Instalação do Módulo </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Instalação do Módulo   </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 04:
+################################
+
+# Instalação
+!pip install seaborn
+
+# Depois de qq instalação é
+# necessário reiniciar o Kernel
+
+Menu Kernel -> Restart Kernel
+
+
+***************************************************************
+
+
+
+11.03 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Formatação: tonalidade, estilo e dimensões
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1103_DesenhoGraficosSeaborn_Formatacao.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos Seaborn </h1>
+
+
+<h1 style="background-color:red;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Gráficos Seaborn  </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2>  Formatação: tonalidade, estilo e dimensões </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  Formatação: tonalidade, estilo e dimensões  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the example iris dataset
+iris = sns.load_dataset("iris")
+
+#Scatter plot with hue, style, and size
+sns.scatterplot(x="sepal_length", y="petal_length",
+                data=iris, hue="species", style="species",                 size="sepal_width", sizes=(20, 200))
+plt.show()
+iris
+
+
+***********************************************************
+
+
+
+
+11.04 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Múltiplos Gráficos
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1104_DesenhoGraficosSeaborn_Multiplos.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos Seaborn </h1>
+
+<h1 style="background-color:red;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Gráficos Seaborn  </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Múltiplos Gráficos </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">   Múltiplos Gráficos  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the example tips dataset
+tips = sns.load_dataset("tips")
+
+
+#Create a figure with 2 subplots side-by-side
+fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(10, 5))
+
+# Plot the first subplot - distribution plot of total bill
+sns.histplot(ax=axes[0], data=tips, x="total_bill", kde=True, color="red", alpha=0.5)
+
+# Set the title and x/y axis labels for the first subplot
+axes[0].set_title("Distribution of Total Bill")
+axes[0].set_xlabel("Total Bill")
+axes[0].set_ylabel("Count")
+
+# Plot the second subplot - scatter plot of total bill vs tip with hue based on time of day
+sns.scatterplot(ax=axes[1], data=tips, x="total_bill", y="tip", hue="time")
+
+# Set the title and x/y axis labels for the second subplot
+axes[1].set_title("Total Bill vs Tip")
+axes[1].set_xlabel("Total Bill")
+axes[1].set_ylabel("Tip")
+
+# Adjust the spacing between subplots
+plt.subplots_adjust(wspace=0.3)
+
+# Show the plot
+plt.show()
+tips
+
+***************************************************************
+
+
+
+
+11.05 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Gráficos de Linha
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1105_DesenhoGraficosSeaborn_Linha.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos Seaborn </h1>
+
+ 
+<h1 style="background-color:red;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Gráficos Seaborn  </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Gráficos de Linha </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">   Gráficos de Linha </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the example tips dataset
+tips = sns.load_dataset("tips")
+print(tips)
+
+
+# Create a line plot of total_bill over time
+sns.lineplot(data=tips, x="day", y="total_bill")
+
+# Set the title and axis labels
+plt.title("Total Bill by Day")
+plt.xlabel("Day of the Week")
+plt.ylabel("Total Bill")
+
+# Show the plot
+plt.show()
+tips
+
+***************************************************************
+
+
+
+
+11.06 Desenho Gráficos com a Biblioteca "Seaborn":
+      - "Cat Plots"
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1106_DesenhoGraficosSeaborn_CatPlots.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos Seaborn </h1>
+
+<h1 style="background-color:red;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Gráficos Seaborn  </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> "Cat Plots" </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  "Cat Plots"</h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Load the example tips dataset
+tips = sns.load_dataset("tips")
+print(tips)
+pd.option_context('mode.use_inf_as_na', True)
+#tips.dropna(axis='rows')
+
+
+#Create a categorical scatter plot of tip by day and gender
+#sns.catplot(data=tips, x="day", y="tip", hue="sex", kind="swarm")
+#Create a categorical scatter plot of tip by day and gender
+sns.catplot(data=tips, x="day", y="tip", hue="sex", kind="swarm", size=3)
+# Set the title and axis labels
+plt.title("Tip by Day and Gender")
+plt.xlabel("Day of the Week")
+plt.ylabel("Tip")
+
+# Show the plot
+plt.show()
+tips
+
+
+***************************************************************
+
+
+
+11.07 Desenho Gráficos com a Biblioteca "Seaborn":
+      - "Jointplot", "Pair Plot" e "Regression Plot"
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1107_DesenhoGraficosSeaborn_JoinPairRegression.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos Seaborn </h1>
+
+<h1 style="background-color:red;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Gráficos Seaborn  </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+
+<h2> Exemplo 01 - Jointplot </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  Exemplo 01 - Jointplot </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 04:
+################################
+
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Load the example tips dataset
+tips = sns.load_dataset("tips")
+print(tips)
+
+# Create a joint plot of total_bill and tip
+# Histogramas laterais
+sns.jointplot(data=tips, x="total_bill", y="tip")
+# Show the plot
+plt.show()
+
+
+################################
+# Cell 05:
+################################
+
+<h2> Exemplo 02 - Pair Plot </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  Exemplo 02 - Pair Plot </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 06:
+################################
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the example tips dataset
+tips = sns.load_dataset("tips")
+print(tips)
+
+# Create a pair plot of the numeric variables in the tips dataset
+sns.pairplot(data=tips.select_dtypes(include=['float64', 'int64']), hue='tip')
+
+# Show the plot
+plt.show()
+
+################################
+# Cell 07:
+################################
+
+<h2> Exemplo 03 - Regression Plot </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  Exemplo 03 - Regression Plot </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 08:
+################################
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load the example tips dataset
+tips = sns.load_dataset("tips")
+print(tips) 
+
+# Create a regression plot of total_bill and tip
+sns.regplot(data=tips, x="total_bill", y="tip") #hue = sex
+
+# Show the plot
+plt.show()
+
+
+
+********************************************************************
+
+
+
+
+11.08 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Melhorias: Gráfico de Violino
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1108_DesenhoGraficosSeaborn_Melhorias.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos Seaborn </h1>
+
+ 
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Gráficos Seaborn  </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Gráfico Violino </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  Gráfico Violino </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 04:
+################################
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Set the style, palette, and context
+sns.set_style("dark")
+sns.set_palette("cubehelix_r")
+sns.set_context("poster")
+
+# Load the example tips dataset
+tips = sns.load_dataset("tips")
+print(tips)
+
+# Create a violin plot of total_bill and tip
+sns.violinplot(data=tips, x="day", y="total_bill")
+
+# Set the title
+plt.title("Total Bill by Day")
+
+# Show the plot
+plt.show()
+tips
+
+################################
+# Cell 04:
+################################
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Set the style, palette, and context
+sns.set_style("dark")
+sns.set_palette("cubehelix_r")
+sns.set_context("poster")
+
+# Load the example tips dataset
+tips = sns.load_dataset("tips")
+print(tips)
+
+# Create a violin plot of total_bill and tip
+sns.violinplot(data=tips, x="day", y="tip")
+
+# Set the title
+plt.title("Total Bill by Day")
+
+# Show the plot
+plt.show()
+tips
+
+********************************************************************
+
+
+
+11.09 Desenho Gráficos com a Biblioteca "Seaborn":
+      - 
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+********************************************************************
+
+
+
+11.10 Resumo do capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+11.02 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Instalação
+
+11.03 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Formatação: tonalidade, estilo e dimensões
+
+11.04 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Múltiplos Gráficos
+
+11.05 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Gráficos de Linha
+
+11.06 Desenho Gráficos com a Biblioteca "Seaborn":
+      - "Cat Plots"
+
+11.07 Desenho Gráficos com a Biblioteca "Seaborn":
+      - "Jointplot", "Pair Plot" e "Regression Plot"
+
+11.08 Desenho Gráficos com a Biblioteca "Seaborn":
+      - Melhorias
+
+11.09 Desenho Gráficos com a Biblioteca "Seaborn":
+      - 
+
+
+
+
+
+
+
+********************************************************************
+
+
+
+11.11 Bibliografia/Sitografia-Webgrafia
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+11.11.01 Bibliografia
+11.11.02 Sitografia-Webgrafia
+
+
+
+11.11.01 Bibliografia
+-----------------------------------------------------------
+
+Bibliografia:
+
+[B01]	ESTRUTURAS DE DADOS E ALGORITMOS EM C - 3ª EDIÇÃO REVISTA E AUMENTADA, 
+        António Adrego da Rocha, FCA.
+
+[B02]	ANÁLISE DA COMPLEXIDADE DE ALGORITMOS, António Adrego da Rocha, FCA.
+
+[B03]	ESTRUTURAS DE DADOS E ALGORITMOS EM JAVA, António Adegro da Rocha, FCA.
+
+[B04]	ANÁLISE INTELIGENTE DE DADOS - ALGORITMOS E IMPLEMENTAÇÃO EM JAVA,
+        Miguel Rocha | Paulo Cortez | José Maia Neves, FCA.
+
+[B05]	PROGRAMAÇÃO EM C++ - ALGORITMOS E ESTRUTURAS DE DADOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B06]	PROGRAMAÇÃO EM C++ - CONCEITOS BÁSICOS E ALGORITMOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B07]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+[B08]	EXERCÍCIOS DE JAVA - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, 
+        Adelaide Carvalho, FCA.
+
+[B09]	PRÁTICAS DE C# - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, Adelaide Carvalho, FCA.
+
+[B10]	INTRODUÇÃO À ALGORITMIA E PROGRAMAÇÃO COM PYTHON
+        Filipe Portela | Tiago C. Pereira, FCA.
+
+[B11]	PRÁTICAS DE PYTHON - ALGORITMIA E PROGRAMAÇÃO
+        Adelaide Carvalho, FCA.
+
+[B12]	CIÊNCIA DOS DADOS NAS ORGANIZAÇÕES - APLICAÇÕES EM PYTHON
+        José Braga de Vasconcelos | Alexandre Barão, FCA.
+
+[B13]	PROGRAMAÇÃO EM PYTHON - FUNDAMENTOS E RESOLUÇÃO DE PROBLEMAS,
+        Ernesto Costa, FCA.
+
+[B14]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB
+        José Braga de Vasconcelos, FCA.
+
+[B15]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+***********************************************************************
+
+
+11.11.02 Sitografia-Webgrafia
+-----------------------------------------------------------
+
+[W01]. https://www.python.org/
+[W02]. https://pt.wikipedia.org/wiki/Python
+[W03]. https://en.wikipedia.org/wiki/Python_(programming_language)
+[W04]. https://www.tutorialspoint.com/python/index.htm
+[W05]. https://www.w3schools.com/python/
+[W06]. https://www.codecademy.com/catalog/language/python
+[W07]. https://www.devmedia.com.br/guia/python/37024
+[W08]. https://realpython.com/
+[W09]. https://www.academiadecodigo.org
+[W10]. https://www.pluralsight.com/
+[W11]. https://www.datacamp.com/
+[W12]. https://www.learnpython.org/
+[W13]. https://pt.coursera.org/courses?query=python
+[W14]. https://www.coursera.org/courses?query=python
+[W15]. https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+[W16]. https://www.khanacademy.org/computing/computer-science/algorithms
+[W17]. https://www.programiz.com/dsa
+[W18]. https://www.programming4beginners.com/tutorial-beginners-algorithms
+[W19]. https://hackr.io/tutorials/learn-data-structures-algorithms
+[W20]. https://try.codecademy.com/learn-python-3
+[W21]. https://codeforall.com/cursos-intensivos/bootcamp-programacao-full-stack
+[W22]. https://docs.python.org/3/tutorial/index.html
+
+
+***************************************************************
+
+
+
+
+11.12 Trabalho(s)/Tarefa(s)
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+***************************************************************
+
+
+
+
+

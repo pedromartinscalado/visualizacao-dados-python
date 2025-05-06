@@ -1,0 +1,651 @@
+*******************************************************************
+******************************************************************* 
+09. Criação e configuração de Multiplos SubGráficos
+*******************************************************************
+*******************************************************************
+
+
+09.01 Ponto de Partida
+
+09.02 Desenho de Múltiplos Gráficos:
+      - Definindo o Número de Linhas e Colunas
+
+09.03 Desenho de Múltiplos Gráficos:
+      - Desenho de vários gráficos numa figura
+
+09.04 Desenho de Múltiplos Gráficos:
+      - Desenho de vários gráficos em figuras separadas
+
+09.05 Desenho de Múltiplos Gráficos:
+      - Gravação de figuras num ficheiro
+
+09.06 Desenho de Múltiplos Gráficos:
+      - 
+
+09.07 Desenho de Múltiplos Gráficos:
+      - 
+
+09.08 Resumo do capítulo
+
+09.09 Bibliografia/Sitografia-Webgrafia
+
+09.10 Trabalho(s)/Tarefa(s)
+
+
+
+
+
+
+09.01 Ponto de Partida
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ a.1) Jupyter Notebook Instalado - Executar
+
+   - Sem utilizar o Anaconda (mais rápido):
+
+    Na lupa do SO digitar:
+       - Jupyter
+    Clicar na aplicação 
+    Abre a consola com indicação dos "logs" do servidor.
+ 
+
+   - Formas de arrancar com o Jupyter:
+  
+     1. Com o Anaconda Navigator instalado, 
+        esperar que o "builder" conclua criação da plataforma.
+        - Na lista de ferramentas disponiveis, escolher
+         "Jupyter Notebook".  
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+     2. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Jupyter Notebook
+
+        Clicar no icone da aplicação
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+     3. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Anaconda powershell prompt
+
+        Clicar no icone da aplicação 
+
+        Digitar       
+      
+           Jupyter Notebook
+
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+ a.2) Criar pasta para o capítulo
+
+   Na página de entrada do Jupyter Notebook,
+   na árvore de diretorias, TDR
+   - New Folder
+   - Projeto UFCD10809_Cap09_MultiplosGraficos
+
+  Para entrar nessa pasta:
+   - Duplo clique.
+
+
+
+**************************************************************
+
+
+09.02 Desenho de Múltiplos Gráficos:
+      - Definindo o Número de Linhas e Colunas
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0902_DesenhoVariosGraficos_LinCol.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Múltiplos Gráficos </h1>
+
+<h1 style="background-color:brown;color:orange;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Desenho de Múltiplos Gráficos</h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Definindo o Número de Linhas e Colunas </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Definindo o Número de Linhas e Colunas  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+
+# Create a figure with 2 rows and 3 columns of subplots
+fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(10, 6))
+# figsize: 10 - largura ,6 - altura
+# Dimensões da figura
+
+
+# Gráficos da primeira linha
+####################################
+#Plot on the first subplot
+# Primeira linha, primeira coluna
+axes[0, 0].plot([1, 2, 3], [4, 5, 6])
+
+# Plot on the second subplot
+# Primeira linha, segunda coluna
+axes[0, 1].scatter([1, 2, 3], [4, 5, 6])
+ 
+# Plot on the third subplot
+# Primeira linha , terceira coluna
+axes[0, 2].bar([1, 2, 3], [4, 5, 6])
+
+# Gráficos da segunda linha
+####################################
+# Plot on the fourth subplot
+# Segunda linha, primeira coluna
+axes[1, 0].hist([1, 2, 2, 3, 3, 3, 4, 4, 4, 4])
+
+# Segunda linha, segunda coluna
+# Plot on the fifth subplot
+axes[1, 1].pie([1, 2, 3], labels=["A", "B", "C"])
+
+# Plot on the sixth subplot
+# Segunda linha, terceira coluna
+axes[1, 2].imshow([[1, 2], [3, 4]])
+
+# Show the figure
+plt.show()
+
+
+***************************************************************
+
+
+
+09.03 Desenho de Múltiplos Gráficos:
+      - Desenho de vários gráficos numa figura
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0903_DesenhoVariosGraficos_Figura.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Múltiplos Gráficos </h1>
+
+<h1 style="background-color:brown;color:orange;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Desenho de Múltiplos Gráficos</h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+
+</div>
+
+################################
+# Cell 03:
+################################
+
+<h2> Vários Gráficos Numa Figura </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Vários Gráficos Numa Figura  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create some data
+x = np.linspace(0, 10, 100)
+
+y1 = np.sin(x)
+y2 = np.cos(x)
+y3 = np.tan(x)
+
+# Create a figure with three subplots in one row
+# axs - lista de gráficos.
+fig, axs = plt.subplots(1, 3, figsize=(10, 4))
+
+# Plot the data on each subplot
+axs[0].plot(x, y1)
+axs[0].set_title('Sine')
+axs[0].set_xlabel('Entrada')
+axs[0].set_ylabel('Amplitude')
+
+axs[1].plot(x, y2)
+axs[1].set_title('Cosine')
+axs[1].set_xlabel('Entrada')
+axs[1].set_ylabel('Amplitude')
+
+axs[2].plot(x, y3)
+axs[2].set_title('Tangent')
+axs[2].set_xlabel('Entrada')
+axs[2].set_ylabel('Amplitude')
+
+# Add a title to the figure
+fig.suptitle('Trigonometric Functions')
+# Espaçamento em gráficos
+fig.tight_layout(pad=2.0)
+# Show the figure
+plt.show()
+
+***********************************************************
+
+
+
+
+09.04 Desenho de Múltiplos Gráficos:
+      - Desenho de vários gráficos em figuras separadas
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0904_DesenhoVariosGraficos_Figuras.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Múltiplos Gráficos </h1>
+
+<h1 style="background-color:brown;color:orange;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Desenho de Múltiplos Gráficos</h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+
+</div>
+
+################################
+# Cell 03:
+################################
+
+
+<h2> Vários Gráficos em Várias Figuras </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Vários Gráficos em Várias Figuras </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create some data
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+y3 = np.tan(x)
+
+# Create a new figure for the first subplot
+fig1, axs1 = plt.subplots(figsize=(6, 4))
+axs1.plot(x, y1)
+axs1.set_title('Sine')
+axs1.set_xlabel('Entrada')
+axs1.set_ylabel('Amplitude')
+
+# Create a new figure for the second subplot
+fig2, axs2 = plt.subplots(figsize=(10, 6))
+axs2.plot(x, y2)
+axs2.set_title('Cosine')
+axs2.set_xlabel('Entrada')
+axs2.set_ylabel('Amplitude')
+
+# Create a new figure for the third subplot
+fig3, axs3 = plt.subplots(figsize=(12, 12))
+axs3.plot(x, y3)
+axs3.set_title('Tangent')
+axs3.set_xlabel('Entrada')
+axs3.set_ylabel('Amplitude')
+
+# Show each figure
+plt.show(fig1)
+plt.show(fig2)
+plt.show(fig3)
+
+***************************************************************
+
+
+
+09.05 Desenho de Múltiplos Gráficos:
+      - Gravação de figuras num ficheiro
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0905_DesenhoVariosGraficos_GravacaoFiguras.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Múltiplos Gráficos </h1>
+
+<h1 style="background-color:brown;color:orange;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Desenho de Múltiplos Gráficos</h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+
+</div>
+
+################################
+# Cell 03:
+################################
+
+
+<h2> Gravação dos gráficos em Figuras </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Gravação dos gráficos em Figuras </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create some data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+# Create a plot
+plt.plot(x, y)
+plt.title('Sine Wave')
+plt.xlabel('Entrada')
+plt.ylabel('Amplitude')
+
+# Save the plot to your computer
+plt.savefig('sine_fig.jpeg')
+
+plt.show()
+
+***************************************************************
+
+
+
+
+09.06 Desenho de Múltiplos Gráficos:
+      - 
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+***************************************************************
+
+
+09.07 Desenho de Múltiplos Gráficos:
+      - 
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+***************************************************************
+
+
+09.08 Resumo do capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+09.02 Desenho de Múltiplos Gráficos:
+      - Definindo o Número de Linhas e Colunas
+
+09.03 Desenho de Múltiplos Gráficos:
+      - Desenho de vários gráficos numa figura
+
+09.04 Desenho de Múltiplos Gráficos:
+      - Desenho de vários gráficos em figuras separadas
+
+09.05 Desenho de Múltiplos Gráficos:
+      - Gravação de figuras 
+
+09.06 Desenho de Múltiplos Gráficos:
+      - 
+
+09.07 Desenho de Múltiplos Gráficos:
+      - 
+
+
+********************************************************************
+
+
+
+09.09 Bibliografia/Sitografia-Webgrafia
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+09.09.01 Bibliografia
+09.09.02 Sitografia-Webgrafia
+
+
+
+09.09.01 Bibliografia
+-----------------------------------------------------------
+
+Bibliografia:
+
+[B01]	ESTRUTURAS DE DADOS E ALGORITMOS EM C - 3ª EDIÇÃO REVISTA E AUMENTADA, 
+        António Adrego da Rocha, FCA.
+
+[B02]	ANÁLISE DA COMPLEXIDADE DE ALGORITMOS, António Adrego da Rocha, FCA.
+
+[B03]	ESTRUTURAS DE DADOS E ALGORITMOS EM JAVA, António Adegro da Rocha, FCA.
+
+[B04]	ANÁLISE INTELIGENTE DE DADOS - ALGORITMOS E IMPLEMENTAÇÃO EM JAVA,
+        Miguel Rocha | Paulo Cortez | José Maia Neves, FCA.
+
+[B05]	PROGRAMAÇÃO EM C++ - ALGORITMOS E ESTRUTURAS DE DADOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B06]	PROGRAMAÇÃO EM C++ - CONCEITOS BÁSICOS E ALGORITMOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B07]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+[B08]	EXERCÍCIOS DE JAVA - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, 
+        Adelaide Carvalho, FCA.
+
+[B09]	PRÁTICAS DE C# - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, Adelaide Carvalho, FCA.
+
+[B10]	INTRODUÇÃO À ALGORITMIA E PROGRAMAÇÃO COM PYTHON
+        Filipe Portela | Tiago C. Pereira, FCA.
+
+[B11]	PRÁTICAS DE PYTHON - ALGORITMIA E PROGRAMAÇÃO
+        Adelaide Carvalho, FCA.
+
+[B12]	CIÊNCIA DOS DADOS NAS ORGANIZAÇÕES - APLICAÇÕES EM PYTHON
+        José Braga de Vasconcelos | Alexandre Barão, FCA.
+
+[B13]	PROGRAMAÇÃO EM PYTHON - FUNDAMENTOS E RESOLUÇÃO DE PROBLEMAS,
+        Ernesto Costa, FCA.
+
+[B14]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB
+        José Braga de Vasconcelos, FCA.
+
+[B15]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+***********************************************************************
+
+
+09.09.02 Sitografia-Webgrafia
+-----------------------------------------------------------
+
+[W01]. https://www.python.org/
+[W02]. https://pt.wikipedia.org/wiki/Python
+[W03]. https://en.wikipedia.org/wiki/Python_(programming_language)
+[W04]. https://www.tutorialspoint.com/python/index.htm
+[W05]. https://www.w3schools.com/python/
+[W06]. https://www.codecademy.com/catalog/language/python
+[W07]. https://www.devmedia.com.br/guia/python/37024
+[W08]. https://realpython.com/
+[W09]. https://www.academiadecodigo.org
+[W10]. https://www.pluralsight.com/
+[W11]. https://www.datacamp.com/
+[W12]. https://www.learnpython.org/
+[W13]. https://pt.coursera.org/courses?query=python
+[W14]. https://www.coursera.org/courses?query=python
+[W15]. https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+[W16]. https://www.khanacademy.org/computing/computer-science/algorithms
+[W17]. https://www.programiz.com/dsa
+[W18]. https://www.programming4beginners.com/tutorial-beginners-algorithms
+[W19]. https://hackr.io/tutorials/learn-data-structures-algorithms
+[W20]. https://try.codecademy.com/learn-python-3
+[W21]. https://codeforall.com/cursos-intensivos/bootcamp-programacao-full-stack
+[W22]. https://docs.python.org/3/tutorial/index.html
+
+
+***************************************************************
+
+
+
+
+09.10 Trabalho(s)/Tarefa(s)
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+
+***************************************************************
+
+
+
+
+

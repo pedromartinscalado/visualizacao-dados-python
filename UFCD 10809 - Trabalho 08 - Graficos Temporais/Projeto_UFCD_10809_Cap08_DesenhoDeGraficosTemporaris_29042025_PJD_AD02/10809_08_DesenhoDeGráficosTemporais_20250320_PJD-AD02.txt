@@ -1,0 +1,1166 @@
+*******************************************************************
+******************************************************************* 
+08. Desenho de Gráficos Temporais em Python
+*******************************************************************
+*******************************************************************
+
+
+
+08.00 Ponto de Partida
+
+08.01 Arranque do Jupyter Notebook
+      Criação da Pasta do Capítulo
+
+08.02 Introdução ao Módulo "Datetime" 
+
+08.03 Conversão de Formatos de Datas
+
+08.04 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - Introdução
+
+08.05 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - Dados animados
+
+08.06 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - Calendar Heatmap
+
+08.07 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - 
+
+08.08 Resumo do capítulo
+
+08.09 Bibliografia/Sitografia-Webgrafia
+
+08.10 Trabalho(s)/Tarefa(s)
+
+
+
+
+
+08.00 Ponto de Partida
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+   Para que servem os
+             Temporais em Python?
+
+   Representar a evolução de uma grandeza ao longo do tempo.
+  
+   Geração de datas:
+
+   all_days = pd.date_range('1/01/2023', periods=731, freq='D') 
+
+
+Definir o cubo OLAP de grandezas e utilizar o gráfico.
+
+****************************************************************
+
+
+
+08.01 Arranque do Jupyter Notebook
+      Criação da Pasta do Capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ a.1) Jupyter Notebook Instalado - Executar
+
+   - Sem utilizar o Anaconda (mais rápido):
+
+    Na lupa do SO digitar:
+       - Jupyter
+    Clicar na aplicação 
+    Abre a consola com indicação dos "logs" do servidor.
+ 
+
+   - Formas de arrancar com o Jupyter:
+  
+     1. Com o Anaconda Navigator instalado, 
+        esperar que o "builder" conclua criação da plataforma.
+        - Na lista de ferramentas disponiveis, escolher
+         "Jupyter Notebook".  
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+     2. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Jupyter Notebook
+
+        Clicar no icone da aplicação
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+     3. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Anaconda powershell prompt
+
+        Clicar no icone da aplicação 
+
+        Digitar       
+      
+           Jupyter Notebook
+
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+ 
+
+
+ a.2) Criar pasta para o capítulo
+
+   Na página de entrada do Jupyter Notebook,
+   na árvore de diretorias, TDR
+   - New Folder
+   - Projeto UFCD10809_Cap08_GraficosTempo
+
+  Para entrar nessa pasta:
+   - Duplo clique.
+
+
+
+**************************************************************
+
+
+
+
+08.02 Introdução ao Módulo "Datetime" 
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0802_DesenhoGráficoTempo_Datetime.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Introdução ao Módulo "Datetime" </h1>
+
+
+<h1 style="background-color:brown;color:orange;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Introdução ao Módulo "Datetime" </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+!pip install datetime
+
+--------------------------------
+Resultado do comando:
+--------------------------------
+
+Collecting datetime
+  Downloading DateTime-5.5-py3-none-any.whl.metadata (33 kB)
+Requirement already satisfied: zope.interface in c:\users\pc\anaconda3\lib\site-packages (from datetime) (5.4.0)
+Requirement already satisfied: pytz in c:\users\pc\anaconda3\lib\site-packages (from datetime) (2023.3.post1)
+Requirement already satisfied: setuptools in c:\users\pc\anaconda3\lib\site-packages (from zope.interface->datetime) (68.2.2)
+Downloading DateTime-5.5-py3-none-any.whl (52 kB)
+   ---------------------------------------- 0.0/52.6 kB ? eta -:--:--
+   ---------------------------------------- 52.6/52.6 kB 2.7 MB/s eta 0:00:00
+Installing collected packages: datetime
+Successfully installed datetime-5.5
+
+
+################################
+# Cell 04:
+################################
+
+<h2> Data Atual </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Data Atual  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 05:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import datetime
+
+# get the current date and time
+now = datetime.datetime.now()
+
+# print the current date and time
+print("Current date and time:", now)
+
+
+
+
+################################
+# Cell 06:
+################################
+
+<h2> Data Atual Formatada </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Data Atual Formatada  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 07:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import datetime
+
+# get the current date and time
+now = datetime.datetime.now()
+
+# format the date and time output
+formatted_date_time = now.strftime("%d/%m/%Y %H:%M:%S")
+#formatted_date_time = now.strftime("%d-%m-%Y %H:%M")
+formatted_date = now.strftime("%d/%m/%Y")
+formatted_time = now.strftime("%H:%M:%S")
+
+# print the formatted date and time
+print("Data e Hora formatadas:", formatted_date_time)
+print("Data formatada:", formatted_date)
+print("Hora formatada:", formatted_time)
+
+
+################################
+# Cell 08:
+################################
+
+<h2> Diferença de Datas </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Diferença de Datas  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 09:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import datetime
+
+# create two dates
+#                     ano  mês dia
+date1 = datetime.date(2025, 4, 1)
+date2 = datetime.date(2025, 3, 1)
+
+# subtract the two dates to get the difference
+difference = date1 - date2
+
+# print the difference in days
+print("Número de dias: "+str(difference)+".")
+print("Número de dias: "+str(difference.days)+".")  # output: 31
+
+
+#########################################
+# Cell 10: Idade em Anos
+#########################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import datetime
+
+# create two dates
+#                     ano  mês dia
+date1 = datetime.date(2025, 3, 20)
+date2 = datetime.date(2000, 3, 20)
+
+# subtract the two dates to get the difference
+difference = date1 - date2
+
+# print the difference in days
+print("Número de dias: "+str(difference.days)+".")
+print("Diferença em anos: "+str(difference.days/365.25)+".")
+
+***************************************************************
+
+
+
+
+08.03 Conversão de Formatos de Datas
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0803_DesenhoGráficoTempo_FormatosData.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Conversão de Datas </h1>
+
+<h1 style="background-color:brown;color:orange;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Conversão de Datas </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+
+</div>
+
+################################
+# Cell 03:
+################################
+
+<h2> Exemplo 01 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 01  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import pandas as pd
+
+# Create a pandas DataFrame with a column of date strings
+# Criação de um "dateframe" - folha de cálculo do Excel
+# - Uma lista de dicionários em Python:
+#   - Conjunto de linhas
+# - Um dicionário com listas (uma lista por cada coluna).
+df = pd.DataFrame({'Date': ['2022/03-26', '2022/03-27', '2022/03-28']})
+df
+# # Convert the 'date' column to datetime objects using to_datetime()
+df['Date'] = pd.to_datetime(df['Date'])
+df
+# Print the resulting DataFrame
+
+
+################################
+# Cell 05:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import pandas as pd
+
+# Create a pandas DataFrame with a column of date strings
+# Criação de um "dateframe" - folha de cálculo do Excel
+# - Uma lista de dicionários em Python:
+#   - Conjunto de linhas
+# - Um dicionário com listas (uma lista por cada coluna).
+df = pd.DataFrame({'Date': ['2022/03-26', '2022/03-27', '2022/03-28'],'Vendas':[1000,500, 750]})
+df
+# # Convert the 'date' column to datetime objects using to_datetime()
+df['Date'] = pd.to_datetime(df['Date'])
+df
+# Print the resulting DataFrame
+
+
+################################
+# Cell 06:
+################################
+
+<h2> Exemplo 02 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 02  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 07:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import pandas as pd
+
+# Create a pandas DataFrame with a column of date strings
+df = pd.DataFrame({'Date': ['26032022', '27032022', '28032022']})
+
+# Convert the 'date' column to datetime objects using to_datetime() with format parameter
+df['Date'] = pd.to_datetime(df['Date'], format='%d%m%Y')
+
+# Print the resulting DataFrame
+df
+
+-----------------
+
+https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html
+
+If a DataFrame is passed, then format has no effect
+
+--------------------------------
+
+
+################################
+# Cell 08:
+################################
+
+<h2> Exemplo 03 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 03  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 09:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import pandas as pd
+import numpy as np
+
+# Create a pandas DataFrame with a column of date strings, including a missing value
+df = pd.DataFrame({'date': ['2022-03-26', '2022-03-27', None, '2022-03-29']})
+
+
+# Convert the 'date' column to datetime objects using to_datetime() with errors parameter
+df['date'] = pd.to_datetime(df['date'], errors='coerce')
+#df['date'] = pd.to_datetime(df['date'])
+df
+
+
+# Fill in missing values with a default date
+df['date'] = df['date'].fillna(pd.to_datetime('2022-01-01'))
+
+# # Print the resulting DataFrame
+df
+
+--------------------------
+
+-----------------
+
+https://pandas.pydata.org/docs/reference/api/pandas.to_datetime.html
+
+errors{‘ignore’, ‘raise’, ‘coerce’}, default ‘raise’
+If 'raise', then invalid parsing will raise an exception.
+If 'coerce', then invalid parsing will be set as NaT.
+If 'ignore', then invalid parsing will return the input.
+
+***************************************************************
+
+
+
+
+
+
+08.04 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - Introdução
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0804_DesenhoGráficoTempo_Intro.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos Temporais - "Time Series Visualization" </h1>
+
+<h1 style="background-color:brown;color:orange;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Gráficos Temporais - "Time Series Visualization" </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+
+</div>
+
+
+
+################################
+# Cell 03:
+################################
+
+<h2>  Exemplo 01 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 01  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+
+# Example data points
+x_values = [1, 2, 3, 4, 5]
+y_values = [4, 1, 6, 3, 10]
+
+# Plot the data points
+plt.plot(x_values, y_values, 'o-', label='Data')
+
+# Add labels and title to the plot
+plt.xlabel('X-axis label')
+plt.ylabel('Y-axis label')
+plt.title('Title of the plot')
+
+# Add a legend to the plot
+plt.legend()
+
+# Display the plot
+plt.show()
+
+################################
+# Cell 05:
+################################
+
+<h2> Exemplo 02 - Formatos de datas diferente </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 02 - Formatos de datas diferente  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 06:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+from datetime import datetime
+
+# Example date string in the original format
+date_string = '2022-03-26'
+
+# Convert the date string to a datetime object
+date_object = datetime.strptime(date_string, '%Y-%m-%d')
+
+# Convert the datetime object to a string in a new format
+new_date_string = date_object.strftime('%d-%m-%Y')
+
+# Print the new date string
+print(new_date_string)
+
+
+********************************************************************
+
+
+
+08.05 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - Dados animados
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+Plotting Live Data 
+Using FuncAnimation in Matplotlib
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0805_DesenhoGráficoTempo_Animation.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de dados ao vivo </h1>
+
+<h1 style="background-color:brown;color:orange;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;">Desenho de dados ao vivo </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+!pip install ffmpeg
+!pip install iPython
+
+# Esperar que apareça a informação da
+# instalação
+
+# Depois de qq instalação é
+# necessário reiniciar o Kernel
+
+Menu Kernel -> Restart Kernel
+
+
+################################
+# Cell 04:
+################################
+
+<h2> Exemplo 01 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 01  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 05:
+################################
+
+
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
+import numpy as np
+from IPython.display import HTML
+
+fig, ax = plt.subplots()
+
+x_data = []
+y_data = []
+
+
+# Criação de frames
+def animate(i):
+    x_data.append(i)
+    y_data.append(np.random.randn())
+    ax.clear()
+    ax.plot(x_data, y_data)
+
+ani = animation.FuncAnimation(fig, func=animate, frames=40, interval=30)
+#plt.show()
+plt.close()
+HTML(ani.to_jshtml())
+
+
+
+################################
+# Cell 06:
+################################
+
+<h2> Exemplo 02 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 02  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 07:
+################################
+# https://matplotlib.org/stable/users/explain/animations/animations.html
+# Funciona no Jupyter Notebook: com o ficheiro que contem os dados das frames
+# Funciona no PyCharms
+
+from matplotlib import pyplot as plt
+import matplotlib
+import numpy as np
+from matplotlib.animation import FuncAnimation
+from IPython.display import HTML
+
+
+fig, ax = plt.subplots()
+t = np.linspace(0, 3, 40)
+g = -9.81
+v0 = 12
+z = g * t**2 / 2 + v0 * t
+
+v02 = 5
+z2 = g * t**2 / 2 + v02 * t
+
+scat = ax.scatter(t[0], z[0], c="b", s=5, label=f'v0 = {v0} m/s')
+line2 = ax.plot(t[0], z2[0], label=f'v0 = {v02} m/s')[0]
+ax.set(xlim=[0, 3], ylim=[-4, 10], xlabel='Time [s]', ylabel='Z [m]')
+ax.legend()
+
+# Criação de frames
+def update(frame):
+    # for each frame, update the data stored on each artist.
+    x = t[:frame]
+    y = z[:frame]
+    # update the scatter plot:
+    data = np.stack([x, y]).T
+    scat.set_offsets(data)
+    # update the line plot:
+    line2.set_xdata(t[:frame])
+    line2.set_ydata(z2[:frame])
+    return (scat, line2)
+
+# Interval0 30 ms -> 100 ms chama função "update"
+ani = matplotlib.animation.FuncAnimation(fig=fig, func=update, frames=40, interval=30)
+#plt.show()
+plt.close()
+HTML(ani.to_jshtml())
+
+
+
+################################
+# Cell 08:
+################################
+
+<h2> Exemplo 03 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 03  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 09:
+################################
+# https://matplotlib.org/stable/users/explain/animations/animations.html
+# Funciona no Jupyter Notebook: com o ficheiro que contem os dados das frames
+# Funciona no PyCharms
+
+from matplotlib import pyplot as plt
+import numpy as np
+from matplotlib import animation
+from IPython.display import HTML
+
+
+fig, ax = plt.subplots()
+rng = np.random.default_rng(19680801)
+data = np.array([20, 20, 20, 20])
+x = np.array([1, 2, 3, 4])
+
+artists = []
+# Cores dos Gráficos
+colors = ['tab:blue', 'tab:red', 'tab:green', 'tab:purple']
+# Animação com 20 frames
+for i in range(20):
+    # Dados - atualização dos dados
+    data += rng.integers(low=0, high=10, size=data.shape)
+    # Contentor com os 4 graficos - Uma frame
+    container = ax.barh(x, data, color=colors)
+    # "artists" - lista de "frames"
+    artists.append(container)
+
+
+ani = animation.ArtistAnimation(fig=fig, artists=artists, 
+           interval=400)
+# interval - 400 ms 
+#plt.show()
+plt.close()
+HTML(ani.to_jshtml())
+
+
+
+
+*************************************************************
+
+
+08.06 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - Calendar Heatmap
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0806_DesenhoGráficoTempo_CalendarHeatmap.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Calendar Heatmap </h1>
+
+<h1 style="background-color:brown;color:orange;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Calendar Heatmap </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+!pip install calmap
+
+
+# Depois de qq instalação é
+# necessário reiniciar o Kernel
+
+Menu Kernel -> Restart Kernel
+
+
+################################
+# Cell 04:
+################################
+
+<h2> Exemplo 01 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 01  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 05:
+################################
+
+import calmap
+import pandas as pd
+import numpy as np
+
+all_days = pd.date_range('1/01/2023', periods=731, freq='D')   
+# Range of 730 dates, starting from 1st Jan 2023
+
+# E.g. We need volume of orders on a eCommerce platform on all days of the year. 
+# We would like to find any seasonal (weekly/monthly) pattern visually. 
+
+events = pd.Series(np.random.rand(len(all_days))*20, index=all_days)  
+
+ SHIFT + ENTER
+
+################################
+# Cell 06:
+################################
+
+print(all_days)
+
+ SHIFT + ENTER
+
+
+################################
+# Cell 07:
+################################
+
+print(events)
+
+ SHIFT + ENTER
+
+
+################################
+# Cell 08:
+################################
+
+# Plot values for 2019 through a heatmap 
+
+calmap.yearplot(events, year=2023)
+
+
+
+ SHIFT + ENTER
+
+
+
+
+################################
+# Cell 09:
+################################
+
+<h2> Exemplo 02 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 02  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 10:
+################################
+
+# With calendarplot, calmap helps to plot values for multiple years
+
+calmap.calendarplot(events, daylabels='MTWTFSS', cmap='YlGn',
+                    fillcolor='grey', linewidth=0,
+                    fig_kws=dict(figsize=(8, 4)))
+
+
+# Dimensão fig_kws=dict(figsize=(10, 6)))
+# Outros "color maps":
+# magma, viridis, 
+
+Colormaps:
+https://matplotlib.org/stable/gallery/color/colormap_reference.html
+
+
+cmaps = [('Perceptually Uniform Sequential', [
+            'viridis', 'plasma', 'inferno', 'magma', 'cividis']),
+         ('Sequential', [
+            'Greys', 'Purples', 'Blues', 'Greens', 'Oranges', 'Reds',
+            'YlOrBr', 'YlOrRd', 'OrRd', 'PuRd', 'RdPu', 'BuPu',
+            'GnBu', 'PuBu', 'YlGnBu', 'PuBuGn', 'BuGn', 'YlGn']),
+         ('Sequential (2)', [
+            'binary', 'gist_yarg', 'gist_gray', 'gray', 'bone', 'pink',
+            'spring', 'summer', 'autumn', 'winter', 'cool', 'Wistia',
+            'hot', 'afmhot', 'gist_heat', 'copper']),
+         ('Diverging', [
+            'PiYG', 'PRGn', 'BrBG', 'PuOr', 'RdGy', 'RdBu',
+            'RdYlBu', 'RdYlGn', 'Spectral', 'coolwarm', 'bwr', 'seismic',
+            'berlin', 'managua', 'vanimo']),
+         ('Cyclic', ['twilight', 'twilight_shifted', 'hsv']),
+         ('Qualitative', [
+            'Pastel1', 'Pastel2', 'Paired', 'Accent',
+            'Dark2', 'Set1', 'Set2', 'Set3',
+            'tab10', 'tab20', 'tab20b', 'tab20c']),
+         ('Miscellaneous', [
+            'flag', 'prism', 'ocean', 'gist_earth', 'terrain', 'gist_stern',
+            'gnuplot', 'gnuplot2', 'CMRmap', 'cubehelix', 'brg',
+            'gist_rainbow', 'rainbow', 'jet', 'turbo', 'nipy_spectral',
+            'gist_ncar'])]
+
+**************************************************************
+
+
+
+08.07 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - 
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+**************************************************************
+
+
+
+08.08 Resumo do capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+08.02 Introdução ao Módulo "Datetime" 
+
+08.03 Conversão de Formatos de Datas
+
+08.04 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - Introdução
+
+08.05 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - Dados online
+
+08.05 Desenho de Gráficos Temporais ("Time Series Visualization"):
+      - 
+
+
+********************************************************************
+
+
+
+08.09 Bibliografia/Sitografia-Webgrafia
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+08.09.01 Bibliografia
+08.09.02 Sitografia-Webgrafia
+
+
+
+08.09.01 Bibliografia
+-----------------------------------------------------------
+
+Bibliografia:
+
+[B01]	ESTRUTURAS DE DADOS E ALGORITMOS EM C - 3ª EDIÇÃO REVISTA E AUMENTADA, 
+        António Adrego da Rocha, FCA.
+
+[B02]	ANÁLISE DA COMPLEXIDADE DE ALGORITMOS, António Adrego da Rocha, FCA.
+
+[B03]	ESTRUTURAS DE DADOS E ALGORITMOS EM JAVA, António Adegro da Rocha, FCA.
+
+[B04]	ANÁLISE INTELIGENTE DE DADOS - ALGORITMOS E IMPLEMENTAÇÃO EM JAVA,
+        Miguel Rocha | Paulo Cortez | José Maia Neves, FCA.
+
+[B05]	PROGRAMAÇÃO EM C++ - ALGORITMOS E ESTRUTURAS DE DADOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B06]	PROGRAMAÇÃO EM C++ - CONCEITOS BÁSICOS E ALGORITMOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B07]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+[B08]	EXERCÍCIOS DE JAVA - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, 
+        Adelaide Carvalho, FCA.
+
+[B09]	PRÁTICAS DE C# - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, Adelaide Carvalho, FCA.
+
+[B10]	INTRODUÇÃO À ALGORITMIA E PROGRAMAÇÃO COM PYTHON
+        Filipe Portela | Tiago C. Pereira, FCA.
+
+[B11]	PRÁTICAS DE PYTHON - ALGORITMIA E PROGRAMAÇÃO
+        Adelaide Carvalho, FCA.
+
+[B12]	CIÊNCIA DOS DADOS NAS ORGANIZAÇÕES - APLICAÇÕES EM PYTHON
+        José Braga de Vasconcelos | Alexandre Barão, FCA.
+
+[B13]	PROGRAMAÇÃO EM PYTHON - FUNDAMENTOS E RESOLUÇÃO DE PROBLEMAS,
+        Ernesto Costa, FCA.
+
+[B14]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB
+        José Braga de Vasconcelos, FCA.
+
+[B15]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+***********************************************************************
+
+
+08.09.02 Sitografia-Webgrafia
+-----------------------------------------------------------
+
+[W01]. https://www.python.org/
+[W02]. https://pt.wikipedia.org/wiki/Python
+[W03]. https://en.wikipedia.org/wiki/Python_(programming_language)
+[W04]. https://www.tutorialspoint.com/python/index.htm
+[W05]. https://www.w3schools.com/python/
+[W06]. https://www.codecademy.com/catalog/language/python
+[W07]. https://www.devmedia.com.br/guia/python/37024
+[W08]. https://realpython.com/
+[W09]. https://www.academiadecodigo.org
+[W10]. https://www.pluralsight.com/
+[W11]. https://www.datacamp.com/
+[W12]. https://www.learnpython.org/
+[W13]. https://pt.coursera.org/courses?query=python
+[W14]. https://www.coursera.org/courses?query=python
+[W15]. https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+[W16]. https://www.khanacademy.org/computing/computer-science/algorithms
+[W17]. https://www.programiz.com/dsa
+[W18]. https://www.programming4beginners.com/tutorial-beginners-algorithms
+[W19]. https://hackr.io/tutorials/learn-data-structures-algorithms
+[W20]. https://try.codecademy.com/learn-python-3
+[W21]. https://codeforall.com/cursos-intensivos/bootcamp-programacao-full-stack
+[W22]. https://docs.python.org/3/tutorial/index.html
+
+
+***************************************************************
+
+
+
+
+08.10 Trabalho(s)/Tarefa(s)
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+
+***************************************************************
+
+
+
+
+

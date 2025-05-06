@@ -1,0 +1,34 @@
+Projeto Final
+Avaliação
+PDF
+
+12 - Branco , Azul
+pt
+px
+
+
+
+
+Teste
+amanhã - 14h00-15h00
+Escolha múltipla - 20 perguntas 
+
+
+Teste Teórico - 06/05/2025 - 14h-15h
+
+
+- Escolha Múltipla
+- Verdadeiro/Falso
+
+
+
+Ficheiro com as respostas (bloco de notas,notepad)
+O ficheiro deve ser renomeado com o seu nome.
+
+
+Google Classroom
+
+- Identificação de Gráficos
+- Bibliotecas ( Matplotlib , Seaborn , Numpy , Pandas , CuffLink, etc)
+- Funções de desenho
+plt.scatter()

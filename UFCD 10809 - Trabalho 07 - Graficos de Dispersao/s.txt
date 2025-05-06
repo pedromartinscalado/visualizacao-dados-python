@@ -1,0 +1,6 @@
+Sessão do dia 15 de Abril de 2025
+
+Blocos de Notas:
+- Lab. 05 - Gráficos de Caule ("Stem Plot")
+- Lab. 06 - Gráfico de Áreas Empilhadas ("Stack Plot")
+- Lab. 07 - Gráficos de Dispersão ("Scatter Graphs"")

@@ -1,0 +1,1002 @@
+*******************************************************************
+******************************************************************* 
+03. Desenho de Gráficos Circulares ("Pie Charts")
+*******************************************************************
+*******************************************************************
+
+
+
+03.00 Ponto de Partida
+
+03.01 Arranque do Jupyter Notebook
+      Criação da Pasta do Capítulo
+
+03.02 Desenho de Gráfico Circular ("Pie Charts"):
+      - Introdução
+
+03.03 Desenho de Gráfico Circular ("Pie Charts"):
+      - Rótulos e Titulos
+
+03.04 Desenho de Gráfico Circular ("Pie Charts"):
+      - Legendas
+
+03.05 Desenho de Gráfico Circular ("Pie Charts"):
+      - Explosão e Rotação
+
+03.06 Desenho de Gráfico Circular ("Pie Charts"):
+      - Formatação dos limites: cor, sombra
+
+03.06 Desenho de Gráfico Circular ("Pie Charts"):
+      - 
+
+03.07 Desenho de Gráfico Circular ("Pie Charts"):
+      - 
+
+03.08 Resumo do capítulo
+
+03.09 Bibliografia/Sitografia-Webgrafia
+
+03.10 Trabalho(s)/Tarefa(s)
+
+
+
+
+
+
+03.00 Ponto de Partida
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+   Para que servem os
+             Gráficos Circulares?
+  
+   - Essencialmente servem para:
+      peso de vários elementos de um conjunto ou série.
+
+   - Varias cores para uma série de valores.   
+
+
+
+Definir o cubo OLAP de grandezas e utilizar o gráfico.
+
+
+****************************************************************
+
+03.01 Arranque do Jupyter Notebook
+      Criação da Pasta do Capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ a.1) Jupyter Notebook Instalado - Executar
+
+   - Sem utilizar o Anaconda (mais rápido):
+
+    Na lupa do SO digitar:
+       - Jupyter
+    Clicar na aplicação 
+    Abre a consola com indicação dos "logs" do servidor.
+ 
+
+   - Formas de arrancar com o Jupyter:
+  
+     1. Com o Anaconda Navigator instalado, 
+        esperar que o "builder" conclua criação da plataforma.
+        - Na lista de ferramentas disponiveis, escolher
+         "Jupyter Notebook".  
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+     2. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Jupyter Notebook
+
+        Clicar no icone da aplicação
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+     3. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Anaconda powershell prompt
+
+        Clicar no icone da aplicação 
+
+        Digitar       
+      
+           Jupyter Notebook
+
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+ a.2) Criar pasta para o capítulo
+
+   Na página de entrada do Jupyter Notebook,
+   na árvore de diretorias, TDR
+   - New Folder
+   - Projeto UFCD10809_Cap03_GraficosCirculares
+
+  Para entrar nessa pasta:
+   - Duplo clique.
+
+
+
+**************************************************************
+
+
+03.02 Desenho de Gráfico de Linha ("Line Plots"):
+      - Introdução
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0302_DesenhoGráficoCircular.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico Circular - "Pie Charts" </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico Circular - "Pie Charts" </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Criação de "Pie Charts" </h2>
+
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Criação de "Pie Charts" </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+# 03 Definição do tipo de gráfico
+plt.pie(y)
+
+# 04. Apresentação do gráfico
+plt.show()
+
+
+********************************************************************
+
+
+
+
+
+
+03.03 Desenho de Gráfico Circular ("Pie Charts"):
+      - Rótulos e Titulos
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0303_DesenhoGráficoCircular_Rotulos.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico Circular - "Pie Charts" </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico Circular - "Pie Charts" </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Rótulos e Títulos </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Rótulos e Títulos </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Adição de Rótulos </h2>
+
+<h3 style="background-color:green;color:white;padding:10px;text-align:center;font-weight:bold;"> Adição de Rótulos  </h3>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+# 03. Adição de Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+
+# 04. Definição do tipo de gráfico
+plt.pie(y, labels = mylabels)
+
+# 05. Apresentação do gráfico
+plt.show()
+
+
+********************************************************************
+
+
+
+
+03.04 Desenho de Gráfico Circular ("Pie Charts"):
+      - Legendas
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0304_DesenhoGráficoCircular_Legendas.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Pie Charts </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico Circular - "Pie Charts" </h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 02:
+################################
+
+<h2> "Pie Charts" - Legenda - Adição </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> "Pie Charts" - Legenda - Adição </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+
+# 03. Definição dos Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+# 04. Definição e configuração do gráfico
+plt.pie(y, labels = mylabels)
+
+# 05. Definição e configuração da legenda
+plt.legend()
+
+# 06. Apresentação do gráfico
+plt.show() 
+
+
+
+
+################################
+# Cell 04:
+################################
+
+<h2> "Pie Charts" - Titulo e Legenda </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> "Pie Charts" - Titulo e Legenda </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 05:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+# 03. Definição dos Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+# 04. Definição e configuração do gráfico
+plt.pie(y, labels = mylabels)
+
+# 05. Definição do título e/ou legenda
+plt.title("Fruits Data")
+plt.legend(title = "Fruits Name:", loc="lower left")
+
+# 06. Apresentação do gráfico
+plt.show() 
+
+
+################################
+# Cell 06:
+################################
+
+<h2> "Pie Charts" - Percentagem </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> "Pie Charts" - Percentagem </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 07:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([45, 25, 25, 15])
+
+
+# 03. Definição dos Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+# 04. Definição e configuração do gráfico
+#     "%1.1f%%" -> 1.1 -> 
+#                 .1 -> número de casas decimais
+plt.pie(y, labels = mylabels , autopct = "%1.2f%%")
+
+# 05. Apresentação do gráfico
+plt.show() 
+
+
+################################
+# Cell 08:
+################################
+
+<h2> "Pie Charts" - Posicionamento da Legenda </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> "Pie Charts" - Posicionamento da Legenda </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 09:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+
+# 03. Definição dos Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+# 04. Definição e configuração do gráfico
+plt.pie(y, labels = mylabels , autopct = '%1.1f%%')
+
+# 05. Definição do título e/ou legenda
+#     POSICIONAMENTO DA LEGENDA
+plt.title("Fuits Data")
+plt.legend(title= 'Fruits Name:' , loc = 'lower right')
+
+
+# 06. Apresentação do gráfico
+plt.show() 
+
+***************************************************************
+    upper  left       upper center      upper right
+    center left        center          center right
+    lower  left       lower center     lower  right
+
+
+**************************************************************
+
+
+
+
+03.05 Desenho de Gráfico Circular ("Pie Charts"):
+      - Explosão e Rotação
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+03.05.01 Explosão - Separação das Fatias
+03.05.02 Rotação do Gráfico Circular
+
+
+
+03.05.01 Explosão - Separação das Fatias
+-----------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0305_DesenhoGráficoCircular_01Explosao.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico Circular - "Pie Charts" </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico Circular - "Pie Charts" </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Separação das fatias </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Separação das fatias </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+
+# 03. Adição de Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+
+# 04. Separação das fatias
+myexplode = [0.1, 0.1, 0.1, 0.1]
+#myexplode = [0.01, 0.01, 0.01, 0.01]
+#myexplode = [0.01, 0.01, 0.01, 0.1]
+
+# 05. Definição do gráfico
+plt.pie(y, labels = mylabels, explode = myexplode)
+
+# 06. Apresentação do gráfico
+plt.show()
+
+
+**************************************
+
+
+
+
+03.05.02 Rotação do Gráfico Circular
+-----------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0305_DesenhoGráficoCircular_02Rotação.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico Circular - "Pie Charts" </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico Circular - "Pie Charts" </h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Rotação do Gráfico </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Rotação do Gráfico </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+
+# 03. Definição dos Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+# 04. Apresentação do gráfico original
+plt.pie(y, labels = mylabels)
+plt.show() 
+
+
+# 05. Definição e configuração do gráfico
+#     Rotação de 90.º 
+#     no sentido contrário dos ponteiros
+#     dos relógios.
+plt.pie(y, labels = mylabels , startangle=90)
+plt.show() 
+
+# 06. Definição e configuração do gráfico
+#     Rotação de -90.º 
+#     no sentido dos ponteiros
+#     dos relógios.
+plt.pie(y, labels = mylabels , startangle=-90)
+plt.show() 
+
+******************************************************************
+
+
+
+
+
+
+
+
+
+
+
+03.06 Desenho de Gráfico Circular ("Pie Charts"):
+      - Formatação dos limites: cor, sombra
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0306_DesenhoGráficoCircular_Limites.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico Circular - "Pie Charts" </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico Circular - "Pie Charts" </h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Formatação dos Limites </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Formatação dos Limites </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+
+# 03. Definição dos Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+
+# 04. Definição e configuração do gráfico
+#plt.pie(y, labels = mylabels  , wedgeprops = { 'linewidth' : 1, 'edgecolor' : 'white' })
+
+plt.pie(y, labels = mylabels  , wedgeprops = { 'linewidth' : 10, 'edgecolor' : 'yellow' })
+
+# 05. Apresentação do gráfico
+plt.show() 
+
+
+
+
+################################
+# Cell 04:
+################################
+
+<h2> Espessura dos Limites </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Espessura dos Limites </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+## Create a set of colors
+#colors = ['#4F6272', '#B7C3F3', '#DD7596', '#8EB897']
+
+
+
+################################
+# Cell 05:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+
+# 03. Definição dos Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+
+# 04. Definição das Cores
+mycolors = ['#CCCCCC', '#B7C3F3', '#DD7596', '#8EB897']
+
+
+# 05. Definição e configuração do gráfico
+plt.pie(y, labels = mylabels  , colors = mycolors, wedgeprops = { 'linewidth' : 3, 'edgecolor' : 'black' } )
+
+
+# 06. Apresentação do gráfico
+plt.show() 
+
+
+
+################################
+# Cell 06:
+################################
+
+<h2> Sombra dos Limites </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Sombra dos Limites </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 07:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+
+
+# 03. Definição dos Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+# 04. Definição das Cores
+mycolors = ['#4F6272', '#B7C3F3', '#DD7596', '#8EB897']
+
+myexplode = [0.01, 0.01, 0.01, 0.1]
+
+
+# 05. Definição e configuração do gráfico
+plt.pie(y, labels = mylabels  , wedgeprops = { 'linewidth' : 1, 'edgecolor' : 'white' }  , colors = mycolors , explode = myexplode, shadow = 'true')
+
+
+# 06. Apresentação do gráfico
+plt.show() 
+
+
+
+################################
+# Cell 08:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Valore(s) do(s) gráfico(s)
+y = np.array([35, 25, 25, 15])
+
+
+
+# 03. Definição dos Rótulos
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+
+# 04. Definição das Cores
+mycolors = ['#4F6272', '#B7C3F3', '#DD7596', '#8EB897']
+
+myexplode = [0.01, 0.01, 0.01, 0.1]
+myshadow  = {'ox':-.02, 'oy':.02,'shade':.4}
+
+
+# 05. Definição e configuração do gráfico
+plt.pie(y, labels = mylabels  , wedgeprops = { 'linewidth' : 1, 'edgecolor' : 'white' }  , 
+        colors = mycolors , 
+        explode = myexplode, 
+        shadow = myshadow)
+
+
+# 06. Apresentação do gráfico
+plt.show() 
+
+
+
+https://matplotlib.org/stable/api/_as_gen/matplotlib.patches.Shadow.html#matplotlib.patches.Shadow
+
+****************************************************************
+
+
+
+
+ 
+03.08 Resumo do capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+03.02 Desenho de Gráfico Circular ("Pie Charts"):
+      - Introdução
+
+03.03 Desenho de Gráfico Circular ("Pie Charts"):
+      - Rótulos e Titulos
+
+03.04 Desenho de Gráfico Circular ("Pie Charts"):
+      - Legendas
+
+03.05 Desenho de Gráfico Circular ("Pie Charts"):
+      - Explosão e Rotação
+
+03.06 Desenho de Gráfico Circular ("Pie Charts"):
+      - Formatação dos limites: cor, sombra
+
+
+********************************************************************
+
+
+
+03.09 Bibliografia/Sitografia-Webgrafia
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+03.09.01 Bibliografia
+03.09.02 Sitografia-Webgrafia
+
+
+
+03.09.01 Bibliografia
+-----------------------------------------------------------
+
+Bibliografia:
+
+[B01]	ESTRUTURAS DE DADOS E ALGORITMOS EM C - 3ª EDIÇÃO REVISTA E AUMENTADA, 
+        António Adrego da Rocha, FCA.
+
+[B02]	ANÁLISE DA COMPLEXIDADE DE ALGORITMOS, António Adrego da Rocha, FCA.
+
+[B03]	ESTRUTURAS DE DADOS E ALGORITMOS EM JAVA, António Adegro da Rocha, FCA.
+
+[B04]	ANÁLISE INTELIGENTE DE DADOS - ALGORITMOS E IMPLEMENTAÇÃO EM JAVA,
+        Miguel Rocha | Paulo Cortez | José Maia Neves, FCA.
+
+[B05]	PROGRAMAÇÃO EM C++ - ALGORITMOS E ESTRUTURAS DE DADOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B06]	PROGRAMAÇÃO EM C++ - CONCEITOS BÁSICOS E ALGORITMOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B07]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+[B08]	EXERCÍCIOS DE JAVA - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, 
+        Adelaide Carvalho, FCA.
+
+[B09]	PRÁTICAS DE C# - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, Adelaide Carvalho, FCA.
+
+[B10]	INTRODUÇÃO À ALGORITMIA E PROGRAMAÇÃO COM PYTHON
+        Filipe Portela | Tiago C. Pereira, FCA.
+
+[B11]	PRÁTICAS DE PYTHON - ALGORITMIA E PROGRAMAÇÃO
+        Adelaide Carvalho, FCA.
+
+[B12]	CIÊNCIA DOS DADOS NAS ORGANIZAÇÕES - APLICAÇÕES EM PYTHON
+        José Braga de Vasconcelos | Alexandre Barão, FCA.
+
+[B13]	PROGRAMAÇÃO EM PYTHON - FUNDAMENTOS E RESOLUÇÃO DE PROBLEMAS,
+        Ernesto Costa, FCA.
+
+[B14]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB
+        José Braga de Vasconcelos, FCA.
+
+[B15]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+***********************************************************************
+
+
+03.09.02 Sitografia-Webgrafia
+-----------------------------------------------------------
+
+[W01]. https://www.python.org/
+[W02]. https://pt.wikipedia.org/wiki/Python
+[W03]. https://en.wikipedia.org/wiki/Python_(programming_language)
+[W04]. https://www.tutorialspoint.com/python/index.htm
+[W05]. https://www.w3schools.com/python/
+[W06]. https://www.codecademy.com/catalog/language/python
+[W07]. https://www.devmedia.com.br/guia/python/37024
+[W08]. https://realpython.com/
+[W09]. https://www.academiadecodigo.org
+[W10]. https://www.pluralsight.com/
+[W11]. https://www.datacamp.com/
+[W12]. https://www.learnpython.org/
+[W13]. https://pt.coursera.org/courses?query=python
+[W14]. https://www.coursera.org/courses?query=python
+[W15]. https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+[W16]. https://www.khanacademy.org/computing/computer-science/algorithms
+[W17]. https://www.programiz.com/dsa
+[W18]. https://www.programming4beginners.com/tutorial-beginners-algorithms
+[W19]. https://hackr.io/tutorials/learn-data-structures-algorithms
+[W20]. https://try.codecademy.com/learn-python-3
+[W21]. https://codeforall.com/cursos-intensivos/bootcamp-programacao-full-stack
+[W22]. https://docs.python.org/3/tutorial/index.html
+
+
+***************************************************************
+
+
+
+
+03.10 Trabalho(s)/Tarefa(s)
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+
+***************************************************************
+
+
+
+
+

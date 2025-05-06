@@ -1,0 +1,2245 @@
+*******************************************************************
+******************************************************************* 
+10. Criação e configuração de Outros Gráficos
+*******************************************************************
+*******************************************************************
+
+
+
+10.01 Ponto de Partida
+
+10.02 Desenho de Mapas de Calor "HeatMaps":
+      - Introdução
+
+10.03 Desenho de Mapas de Calor "HeatMaps":
+      - Anotações
+
+10.04 Desenho de Mapas de Calor "HeatMaps":
+      - Vários Gráficos
+
+10.05 Desenho de Gráficos de Contorno 
+      ("Contour Graphs")
+
+10.06 Desenho Gráficos 3D ("3D Plots") 
+
+10.07 Desenho de Gráficos Polares ("Polar Chart")
+
+10.08 Desenho de Nuvem de Palavras ("Word Cloud")
+
+10.09 Desenho de Gráficos de Velas Japonesas ("CandleSticks")
+
+
+
+10.11 Geopandas
+
+10.12 Resumo do capítulo
+
+10.13 Bibliografia/Sitografia-Webgrafia
+
+10.14 Trabalho(s)/Tarefa(s)
+
+
+
+
+
+
+10.01 Ponto de Partida
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ a.1) Jupyter Notebook Instalado - Executar
+
+   - Sem utilizar o Anaconda (mais rápido):
+
+    Na lupa do SO digitar:
+       - Jupyter
+    Clicar na aplicação 
+    Abre a consola com indicação dos "logs" do servidor.
+ 
+
+   - Formas de arrancar com o Jupyter:
+  
+     1. Com o Anaconda Navigator instalado, 
+        esperar que o "builder" conclua criação da plataforma.
+        - Na lista de ferramentas disponiveis, escolher
+         "Jupyter Notebook".  
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+     2. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Jupyter Notebook
+
+        Clicar no icone da aplicação
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+     3. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Anaconda powershell prompt
+
+        Clicar no icone da aplicação 
+
+        Digitar       
+      
+           Jupyter Notebook
+
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+ a.2) Criar pasta para o capítulo
+
+   Na página de entrada do Jupyter Notebook,
+   na árvore de diretorias, TDR
+   - New Folder
+   - Projeto UFCD10809_Cap10_OutrosGraficos
+
+  Para entrar nessa pasta:
+   - Duplo clique.
+
+
+Fontes:
+
+"Heat Maps":
+
+[W23]. https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
+[W24]. https://www.geeksforgeeks.org/how-to-draw-2d-heatmap-using-matplotlib-in-python/
+[W25]. https://stackoverflow.com/questions/33282368/plotting-a-2d-heatmap
+
+
+
+**************************************************************
+
+
+
+10.02 Desenho de Mapas de Calor "HeatMaps":
+      - Introdução
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1002_MapasDeCalor_Intro.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Mapas de Calor - Introdução  </h1>
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1.5cm;padding-bottom:30px;"> Desenho de Mapas de Calor - Introdução</h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:0px;">
+<img style="float:left;margin:0px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+</div>
+
+################################
+# Cell 03:
+################################
+
+<h2> Fontes de dados locais </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Fontes de dados locais   </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# Instalação das bibliotecas
+!pip install matplotlib
+!pip install numpy
+!pip install pandas
+
+
+################################
+# Cell 05:
+################################
+
+# 01. Importação dos módulos
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib
+import matplotlib as mpl
+
+
+# 02. Definição dos dados 
+vegetais = ["pepino", "tomate", "alface", "espargo",
+            "batata", "trigo", "cevada"]
+
+agricultores = ["Fazendeiro João", "Quinta da Marinha", "Jardinagem Sousa",
+                "Agrifundos", "Organicultura", "BioGoods, Lda.", 
+                "Cearis, Lda."]
+
+colheitas = np.array([[0.8, 2.4, 2.5, 3.9, 0.0, 4.0, 0.0],
+                    [2.4, 0.0, 4.0, 1.0, 2.7, 0.0, 0.0],
+                    [1.1, 2.4, 0.8, 4.3, 1.9, 4.4, 0.0],
+                    [0.6, 0.0, 0.3, 0.0, 3.1, 0.0, 0.0],
+                    [0.7, 1.7, 0.6, 2.6, 2.2, 6.2, 0.0],
+                    [1.3, 1.2, 0.0, 0.0, 0.0, 3.2, 5.1],
+                    [0.1, 2.0, 0.0, 1.4, 0.0, 1.9, 6.3]])
+
+
+
+# 03. Criação e Configuração do "plot"
+#     Associação dos valores
+fig, ax = plt.subplots()
+im = ax.imshow(colheitas)
+
+
+#     Definição das marcas ao longo dos eixos do xx e dos yy
+ax.set_xticks(np.arange(len(agricultores )), labels=agricultores)
+ax.set_yticks(np.arange(len(vegetais)), labels=vegetais)
+
+#     Rotação de 45º dos rótulos do eixo do xx
+#     Alinhamento dos rótulos do eixo do xx
+plt.setp(ax.get_xticklabels(), rotation=45, ha="right",
+         rotation_mode="anchor")
+
+#     Criação de anotações de texto.
+for i in range(len(vegetais)):
+    for j in range(len(agricultores)):
+        text = ax.text(j, i, colheitas[i, j],
+                       ha="center", va="center", color="w")
+
+# Definição do título
+ax.set_title("Colheitas Agricultores Locais (em toneladas/ano)")
+
+# Formação do "layout"
+fig.tight_layout()
+
+# 05. Adição de barra de cor com escala
+fig.colorbar(im)
+
+# Apresentação do gráfico
+plt.show()
+
+
+
+
+################################
+# Cell 06: ColorMAP
+################################
+
+# 01. Importação dos módulos
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib
+import matplotlib as mpl
+
+
+# 02. Definição dos dados 
+vegetais = ["pepino", "tomate", "alface", "espargo",
+            "batata", "trigo", "cevada"]
+
+agricultores = ["Fazendeiro João", "Quinta da Marinha", "Jardinagem Sousa",
+                "Agrifundos", "Organicultura", "BioGoods, Lda.", 
+                "Cearis, Lda."]
+
+colheitas = np.array([[0.8, 2.4, 2.5, 3.9, 0.0, 4.0, 0.0],
+                    [2.4, 0.0, 4.0, 1.0, 2.7, 0.0, 0.0],
+                    [1.1, 2.4, 0.8, 4.3, 1.9, 4.4, 0.0],
+                    [0.6, 0.0, 0.3, 0.0, 3.1, 0.0, 0.0],
+                    [0.7, 1.7, 0.6, 2.6, 2.2, 6.2, 0.0],
+                    [1.3, 1.2, 0.0, 0.0, 0.0, 3.2, 5.1],
+                    [0.1, 2.0, 0.0, 1.4, 0.0, 1.9, 6.3]])
+
+
+
+# 03. Criação e Configuração do "plot"
+#     Associação dos valores
+fig, ax = plt.subplots()
+im = ax.imshow(colheitas, cmap='YlOrRd')
+
+
+#     Definição das marcas ao longo dos eixos do xx e dos yy
+ax.set_xticks(np.arange(len(agricultores )), labels=agricultores)
+ax.set_yticks(np.arange(len(vegetais)), labels=vegetais)
+
+#     Rotação de 45º dos rótulos do eixo do xx
+#     Alinhamento dos rótulos do eixo do xx
+plt.setp(ax.get_xticklabels(), rotation=45, ha="right",
+         rotation_mode="anchor")
+
+#     Criação de anotações de texto.
+for i in range(len(vegetais)):
+    for j in range(len(agricultores)):
+        text = ax.text(j, i, colheitas[i, j],
+                       ha="center", va="center", color="black")
+
+# Definição do título
+ax.set_title("Colheitas Agricultores Locais (em toneladas/ano)")
+
+# Formação do "layout"
+fig.tight_layout()
+
+# 05. Adição de barra de cor com escala
+fig.colorbar(im)
+
+# Apresentação do gráfico
+plt.show()
+
+
+-----------------
+
+--------------------------------------------
+
+Colormaps:
+https://matplotlib.org/stable/gallery/color/colormap_reference.html
+
+
+cmaps = [('Perceptually Uniform Sequential', [
+            'viridis', 'plasma', 'inferno', 'magma', 'cividis']),
+         ('Sequential', [
+            'Greys', 'Purples', 'Blues', 'Greens', 'Oranges', 'Reds',
+            'YlOrBr', 'YlOrRd', 'OrRd', 'PuRd', 'RdPu', 'BuPu',
+            'GnBu', 'PuBu', 'YlGnBu', 'PuBuGn', 'BuGn', 'YlGn']),
+         ('Sequential (2)', [
+            'binary', 'gist_yarg', 'gist_gray', 'gray', 'bone', 'pink',
+            'spring', 'summer', 'autumn', 'winter', 'cool', 'Wistia',
+            'hot', 'afmhot', 'gist_heat', 'copper']),
+         ('Diverging', [
+            'PiYG', 'PRGn', 'BrBG', 'PuOr', 'RdGy', 'RdBu',
+            'RdYlBu', 'RdYlGn', 'Spectral', 'coolwarm', 'bwr', 'seismic',
+            'berlin', 'managua', 'vanimo']),
+         ('Cyclic', ['twilight', 'twilight_shifted', 'hsv']),
+         ('Qualitative', [
+            'Pastel1', 'Pastel2', 'Paired', 'Accent',
+            'Dark2', 'Set1', 'Set2', 'Set3',
+            'tab10', 'tab20', 'tab20b', 'tab20c']),
+         ('Miscellaneous', [
+            'flag', 'prism', 'ocean', 'gist_earth', 'terrain', 'gist_stern',
+            'gnuplot', 'gnuplot2', 'CMRmap', 'cubehelix', 'brg',
+            'gist_rainbow', 'rainbow', 'jet', 'turbo', 'nipy_spectral',
+            'gist_ncar'])]
+
+**************************************************************
+
+
+
+
+10.03 Desenho de Mapas de Calor "HeatMaps":
+      - Anotações
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1003_MapasDeCalor_Anotacoes.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Mapas de Calor  </h1>
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1.5cm;padding-bottom:30px;"> Desenho de Mapas de Calor </h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:0px;">
+<img style="float:left;margin:0px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Mapas de Calor com Anotações </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  Mapas de Calor com Anotações  </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# Instalação das bibliotecas
+!pip install matplotlib
+!pip install numpy
+!pip install pandas
+
+################################
+# Cell 05:
+################################
+
+
+####################################################################
+# Função "headmap()"
+####################################################################
+def heatmap(data, row_labels, col_labels, ax=None,
+            cbar_kw=None, cbarlabel="", **kwargs):
+ 
+    '''
+    Create a heatmap from a numpy array and two lists of labels.
+
+    Parâmetros
+    ----------
+    data
+        Um array de forma 2D numpy (M, N).
+    row_labels
+        Uma lista ou matriz de comprimento M com os rótulos para as linhas.
+    col_labels
+        Uma lista ou matriz de comprimento N com os rótulos para as colunas.
+    ax - eixos
+       Uma instância `matplotlib.axes.Axes` para qual o mapa de calor é plotado. 
+       Se não for dado, use os eixos correntes ou criar um novo eixo (Opcional).
+    cbar_kw
+       Um dicionário com argumentos para `matplotlib.Figure.colorbar` (Opcional).
+    cbarlabel
+       O rótulo para o "colorbar" (Opcional).
+    **kwargs
+       Todos os outros argumentos são encaminhados para `imshow`.
+    '''
+
+
+    if ax is None:
+        ax = plt.gca()
+
+    if cbar_kw is None:
+        cbar_kw = {}
+
+
+    # Desenho do mapa com associação dos dados.
+    im = ax.imshow(data, **kwargs)
+
+    # Criação da barra de cores (à direita).
+    cbar = ax.figure.colorbar(im, ax=ax, **cbar_kw)
+    cbar.ax.set_ylabel(cbarlabel, rotation=-90, va="bottom")
+
+    # Definição das escalas nos dois eixos com os respetivos
+    # rótulos
+    ax.set_xticks(np.arange(data.shape[1]), labels=col_labels)
+    ax.set_yticks(np.arange(data.shape[0]), labels=row_labels)
+
+
+    # Posicionamento dos rótulos doeixo horizontal no topo do gráfico.
+    ax.tick_params(top=True, bottom=False,
+                   labeltop=True, labelbottom=False)
+
+
+    # Rotação dos rótulos do eixo do xx em 30º.
+    # Alinhamento à direita.
+    plt.setp(ax.get_xticklabels(), rotation=-30, ha="right",
+             rotation_mode="anchor")
+
+    # Desliga as lombnas do gráfico e cria uma grelha de traço brancos. 
+    # Turn spines off and create white grid.
+    ax.spines[:].set_visible(False)
+
+    # Definição 
+    ax.set_xticks(np.arange(data.shape[1]+1)-.5, minor=True)
+    ax.set_yticks(np.arange(data.shape[0]+1)-.5, minor=True)
+    ax.grid(which="minor", color="w", linestyle='-', linewidth=3)
+    ax.tick_params(which="minor", bottom=False, left=False)
+
+    return im, cbar
+
+
+
+####################################################################
+# Função "annotate_heatmap()"
+####################################################################
+def annotate_heatmap(im, data=None, valfmt="{x:.2f}",
+                     textcolors=("black", "white"),
+                     threshold=None, **textkw):
+    '''
+    Uma função para anotar um mapa de calor.
+
+    Parâmetros
+    ----------  
+    im
+      O AxesImage a ser rotulado.
+    data
+Dados usados ??para anotar. Se Nenhum, os dados da imagem são usados. Opcional.
+valfmt
+O formato das anotações dentro do mapa de calor. Isso deve
+usar o método de formato de string, por exemplo, "$ {x:.2f}", ou ser um
+`matplotlib.ticker.Formatter`. Opcional.
+textcolors
+Um par de cores. O primeiro é usado para valores abaixo de um limite,
+o segundo para aqueles acima. Opcional.
+threshold
+Valor em unidades de dados de acordo com o qual as cores de textcolors são
+aplicadas. Se Nenhum (o padrão) usa o meio do mapa de cores como
+separação. Opcional.
+**kwargs
+Todos os outros argumentos são encaminhados para cada chamada para `text` usada para criar
+os rótulos de texto.
+'''
+
+    if not isinstance(data, (list, np.ndarray)):
+        data = im.get_array()
+
+    # Normalize the threshold to the images color range.
+    if threshold is not None:
+        threshold = im.norm(threshold)
+    else:
+        threshold = im.norm(data.max())/2.
+
+    # Set default alignment to center, but allow it to be
+    # overwritten by textkw.
+    kw = dict(horizontalalignment="center",
+              verticalalignment="center")
+    kw.update(textkw)
+
+    # Get the formatter in case a string is supplied
+    if isinstance(valfmt, str):
+        valfmt = matplotlib.ticker.StrMethodFormatter(valfmt)
+
+    # Loop over the data and create a `Text` for each "pixel".
+    # Change the text's color depending on the data.
+    texts = []
+    for i in range(data.shape[0]):
+        for j in range(data.shape[1]):
+            kw.update(color=textcolors[int(im.norm(data[i, j]) > threshold)])
+            text = im.axes.text(j, i, valfmt(data[i, j], None), **kw)
+            texts.append(text)
+
+    return texts
+
+
+
+
+####################################################################
+# Função Principal
+####################################################################
+
+# 01. Importação dos módulos
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib
+import matplotlib as mpl
+
+# 02. Definição dos dados 
+vegetais = ["pepino", "tomate", "alface", "espargo",
+            "batata", "trigo", "cevada"]
+
+agricultores = ["Fazendeiro João", "Quinta da Marinha", "Jardinagem Sousa",
+                "Agrifundos", "Organicultura", "BioGoods, Lda.", 
+                "Cearis, Lda."]
+
+colheitas = np.array([[0.8, 2.4, 2.5, 3.9, 0.0, 4.0, 0.0],
+                    [2.4, 0.0, 4.0, 1.0, 2.7, 0.0, 0.0],
+                    [1.1, 2.4, 0.8, 4.3, 1.9, 4.4, 0.0],
+                    [0.6, 0.0, 0.3, 0.0, 3.1, 0.0, 0.0],
+                    [0.7, 1.7, 0.6, 2.6, 2.2, 6.2, 0.0],
+                    [1.3, 1.2, 0.0, 0.0, 0.0, 3.2, 5.1],
+                    [0.1, 2.0, 0.0, 1.4, 0.0, 1.9, 6.3]])
+
+
+
+# 03. Criação e Configuração do "plot" 
+#     como "subplot" de um conjunto de um único elemento.
+#     Associação dos valores e eixos.
+#     Associação de anotações.
+fig, ax = plt.subplots()
+im, cbar = heatmap(colheitas, vegetais, agricultores, ax=ax,
+                   cmap="YlGn", cbarlabel="Colheitas [ton/ano]")
+# Acrescenta as anotações ao gráfico.
+texts = annotate_heatmap(im, valfmt="{x:.1f} t")
+
+
+# 04. Formação do layout 
+fig.tight_layout()
+
+# 05. Apresentação do gráfico 
+plt.show()
+
+***********************************************************
+
+
+
+
+10.04 Desenho de Mapas de Calor "HeatMaps":
+      - Vários Gráficos
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1004_MapasDeCalor_VariosGraficos.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Mapas de Calor  </h1>
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1.5cm;padding-bottom:30px;"> Desenho de Mapas de Calor </h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:0px;">
+<img style="float:left;margin:0px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+</div>
+
+################################
+# Cell 03:
+################################
+
+<h2> Vários Gráficos em Várias Figuras </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  Vários Gráficos em Várias Figuras </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+# Instalação das bibliotecas
+!pip install matplotlib
+!pip install numpy
+!pip install pandas
+
+################################
+# Cell 04:
+################################
+
+
+####################################################################
+# Função "headmap()"
+####################################################################
+def heatmap(data, row_labels, col_labels, ax=None,
+            cbar_kw=None, cbarlabel="", **kwargs):
+ 
+    '''
+    Create a heatmap from a numpy array and two lists of labels.
+
+    Parâmetros
+    ----------
+    data
+        Um array de forma 2D numpy (M, N).
+    row_labels
+        Uma lista ou matriz de comprimento M com os rótulos para as linhas.
+    col_labels
+        Uma lista ou matriz de comprimento N com os rótulos para as colunas.
+    ax - eixos
+       Uma instância `matplotlib.axes.Axes` para qual o mapa de calor é plotado. 
+       Se não for dado, use os eixos correntes ou criar um novo eixo (Opcional).
+    cbar_kw
+       Um dicionário com argumentos para `matplotlib.Figure.colorbar` (Opcional).
+    cbarlabel
+       O rótulo para o "colorbar" (Opcional).
+    **kwargs
+       Todos os outros argumentos são encaminhados para `imshow`.
+    '''
+
+
+    if ax is None:
+        ax = plt.gca()
+
+    if cbar_kw is None:
+        cbar_kw = {}
+
+
+    # Desenho do mapa com associação dos dados.
+    im = ax.imshow(data, **kwargs)
+
+    # Criação da barra de cores (à direita).
+    cbar = ax.figure.colorbar(im, ax=ax, **cbar_kw)
+    cbar.ax.set_ylabel(cbarlabel, rotation=-90, va="bottom")
+
+    # Definição das escalas nos dois eixos com os respetivos
+    # rótulos
+    ax.set_xticks(np.arange(data.shape[1]), labels=col_labels)
+    ax.set_yticks(np.arange(data.shape[0]), labels=row_labels)
+
+
+    # Posicionamento dos rótulos doeixo horizontal no topo do gráfico.
+    ax.tick_params(top=True, bottom=False,
+                   labeltop=True, labelbottom=False)
+
+
+    # Rotação dos rótulos do eixo do xx em 30º.
+    # Alinhamento à direita.
+    plt.setp(ax.get_xticklabels(), rotation=-30, ha="right",
+             rotation_mode="anchor")
+
+    # Desliga as lombnas do gráfico e cria uma grelha de traço brancos. 
+    # Turn spines off and create white grid.
+    ax.spines[:].set_visible(False)
+
+    # Definição 
+    ax.set_xticks(np.arange(data.shape[1]+1)-.5, minor=True)
+    ax.set_yticks(np.arange(data.shape[0]+1)-.5, minor=True)
+    ax.grid(which="minor", color="w", linestyle='-', linewidth=3)
+    ax.tick_params(which="minor", bottom=False, left=False)
+
+    return im, cbar
+
+
+
+####################################################################
+# Função "annotate_heatmap()"
+####################################################################
+def annotate_heatmap(im, data=None, valfmt="{x:.2f}",
+                     textcolors=("black", "white"),
+                     threshold=None, **textkw):
+    '''
+    Uma função para anotar um mapa de calor.
+
+    Parâmetros
+    ----------  
+    im
+      O AxesImage a ser rotulado.
+    data
+Dados usados ??para anotar. Se Nenhum, os dados da imagem são usados. Opcional.
+valfmt
+O formato das anotações dentro do mapa de calor. Isso deve
+usar o método de formato de string, por exemplo, "$ {x:.2f}", ou ser um
+`matplotlib.ticker.Formatter`. Opcional.
+textcolors
+Um par de cores. O primeiro é usado para valores abaixo de um limite,
+o segundo para aqueles acima. Opcional.
+threshold
+Valor em unidades de dados de acordo com o qual as cores de textcolors são
+aplicadas. Se Nenhum (o padrão) usa o meio do mapa de cores como
+separação. Opcional.
+**kwargs
+Todos os outros argumentos são encaminhados para cada chamada para `text` usada para criar
+os rótulos de texto.
+'''
+
+    if not isinstance(data, (list, np.ndarray)):
+        data = im.get_array()
+
+    # Normalize the threshold to the images color range.
+    if threshold is not None:
+        threshold = im.norm(threshold)
+    else:
+        threshold = im.norm(data.max())/2.
+
+    # Set default alignment to center, but allow it to be
+    # overwritten by textkw.
+    kw = dict(horizontalalignment="center",
+              verticalalignment="center")
+    kw.update(textkw)
+
+    # Get the formatter in case a string is supplied
+    if isinstance(valfmt, str):
+        valfmt = matplotlib.ticker.StrMethodFormatter(valfmt)
+
+    # Loop over the data and create a `Text` for each "pixel".
+    # Change the text's color depending on the data.
+    texts = []
+    for i in range(data.shape[0]):
+        for j in range(data.shape[1]):
+            kw.update(color=textcolors[int(im.norm(data[i, j]) > threshold)])
+            text = im.axes.text(j, i, valfmt(data[i, j], None), **kw)
+            texts.append(text)
+
+    return texts
+
+
+
+
+####################################################################
+# Função Principal
+####################################################################
+# 01. Importação dos módulos
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib
+import matplotlib as mpl
+
+
+# 02. Definição dos dados 
+vegetais = ["pepino", "tomate", "alface", "espargo",
+            "batata", "trigo", "cevada"]
+
+agricultores = ["Fazendeiro João", "Quinta da Marinha", "Jardinagem Sousa",
+                "Agrifundos", "Organicultura", "BioGoods, Lda.", 
+                "Cearis, Lda."]
+
+colheitas = np.array([[0.8, 2.4, 2.5, 3.9, 0.0, 4.0, 0.0],
+                    [2.4, 0.0, 4.0, 1.0, 2.7, 0.0, 0.0],
+                    [1.1, 2.4, 0.8, 4.3, 1.9, 4.4, 0.0],
+                    [0.6, 0.0, 0.3, 0.0, 3.1, 0.0, 0.0],
+                    [0.7, 1.7, 0.6, 2.6, 2.2, 6.2, 0.0],
+                    [1.3, 1.2, 0.0, 0.0, 0.0, 3.2, 5.1],
+                    [0.1, 2.0, 0.0, 1.4, 0.0, 1.9, 6.3]])
+
+
+# 03. Geração de semente para conjunto de números aleatórios
+np.random.seed(19680801)
+
+
+fig, ((ax, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(8, 6))
+
+###################################
+# Primeiro Heatmap
+###################################
+# Replicate the above example with a different font size and colormap.
+
+im, _ = heatmap(colheitas, vegetais, agricultores, ax=ax,
+                cmap="Wistia", cbarlabel="colheitas [t/year]")
+annotate_heatmap(im, valfmt="{x:.1f}", size=7)
+
+
+###################################
+# Segundo Heatmap
+###################################
+# Create some new data, give further arguments to imshow (vmin),
+# use an integer format on the annotations and provide some colors.
+
+data = np.random.randint(2, 100, size=(7, 7))
+y = [f"Book {i}" for i in range(1, 8)]
+x = [f"Store {i}" for i in list("ABCDEFG")]
+im, _ = heatmap(data, y, x, ax=ax2, vmin=0,
+                cmap="magma_r", cbarlabel="weekly sold copies")
+annotate_heatmap(im, valfmt="{x:d}", size=7, threshold=20,
+                 textcolors=("red", "white"))
+
+# Sometimes even the data itself is categorical. Here we use a
+# `matplotlib.colors.BoundaryNorm` to get the data into classes
+# and use this to colorize the plot, but also to obtain the class
+# labels from an array of classes.
+
+###################################
+# Terceiro Heatmap
+###################################
+data = np.random.randn(6, 6)
+y = [f"Prod. {i}" for i in range(10, 70, 10)]
+x = [f"Cycle {i}" for i in range(1, 7)]
+
+qrates = list("ABCDEFG")
+norm = matplotlib.colors.BoundaryNorm(np.linspace(-3.5, 3.5, 8), 7)
+fmt = matplotlib.ticker.FuncFormatter(lambda x, pos: qrates[::-1][norm(x)])
+
+im, _ = heatmap(data, y, x, ax=ax3,
+                cmap=mpl.colormaps["PiYG"].resampled(7), norm=norm,
+                cbar_kw=dict(ticks=np.arange(-3, 4), format=fmt),
+                cbarlabel="Quality Rating")
+
+annotate_heatmap(im, valfmt=fmt, size=9, fontweight="bold", threshold=-1,
+                 textcolors=("red", "black"))
+
+
+###################################
+# Quarto Heatmap
+###################################
+# We can nicely plot a correlation matrix. Since this is bound by -1 and 1,
+# we use those as vmin and vmax. We may also remove leading zeros and hide
+# the diagonal elements (which are all 1) by using a
+# `matplotlib.ticker.FuncFormatter`.
+
+corr_matrix = np.corrcoef(colheitas)
+im, _ = heatmap(corr_matrix, vegetais, vegetais, ax=ax4,
+                cmap="PuOr", vmin=-1, vmax=1,
+                cbarlabel="correlation coeff.")
+
+
+def func(x, pos):
+    return f"{x:.2f}".replace("0.", ".").replace("1.00", "")
+
+annotate_heatmap(im, valfmt=matplotlib.ticker.FuncFormatter(func), size=7)
+
+
+plt.tight_layout()
+plt.show()
+
+***************************************************************
+
+
+
+
+
+10.05 Desenho de Gráficos de Contorno 
+      ("Contour Graphs")
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+"Contour Graphs" - Mostra dados 3D num plano 2D usando contorno
+     linhas ou contornos preenchidos. 
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1005_GraficosDeContorno_Exemplo.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Gráficos de Contorno  </h1>
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1.5cm;padding-bottom:30px;"> Desenho de Gráficos de Contorno</h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:0px;">
+<img style="float:left;margin:0px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Exemplo 1 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">   Exemplo 1  </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# Instalação das bibliotecas
+!pip install matplotlib
+!pip install numpy
+!pip install pandas
+
+################################
+# Cell 05:
+################################
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Espaço linear de valores:
+# Inicio: -5;: Fim: 5
+# Número de valores entre -.5 e 5: 100 valores
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+plt.contourf(X, Y, Z, 20, cmap='RdGy') # Filled contours with 20 levels
+plt.colorbar() # Add a colorbar
+plt.title("Contour Plot Example")
+plt.show()
+
+
+################################
+# Cell 06:
+################################
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+X, Y = np.meshgrid(x, y)
+Z = np.cos(np.sqrt(X**2 + Y**2))
+
+plt.contourf(X, Y, Z, 20, cmap='RdGy') # Filled contours with 20 levels
+plt.colorbar() # Add a colorbar
+plt.title("Contour Plot Example")
+plt.show()
+
+
+################################
+# Cell 07:
+################################
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+X, Y = np.meshgrid(x, y)
+Z = np.tan(np.sqrt(X**2 + Y**2))
+
+plt.contourf(X, Y, Z, 20, cmap='viridis') # Filled contours with 20 levels
+plt.colorbar() # Add a colorbar
+plt.title("Contour Plot Example")
+plt.show()
+
+################################
+# Cell 08:
+################################
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+X, Y = np.meshgrid(x, y)
+Z = np.cos(np.sqrt(X**2 + Y**2)*5)
+
+plt.contourf(X, Y, Z, 20, cmap='RdGy') # Filled contours with 20 levels
+plt.colorbar() # Add a colorbar
+plt.title("Contour Plot Example")
+plt.show()
+
+################################
+# Cell 09:
+################################
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-5, 5, 100)
+y = np.linspace(-5, 5, 100)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(np.sqrt(X**2 + Y**2)*5)
+
+plt.contourf(X, Y, Z, 20, cmap='Wistia') # Filled contours with 20 levels
+plt.colorbar() # Add a colorbar
+plt.title("Contour Plot Example")
+plt.show()
+
+
+################################
+# Cell 10:
+################################
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(-20, 20, 400)
+y = np.linspace(-20, 20, 400)
+X, Y = np.meshgrid(x, y)
+Z = np.sin(np.sqrt(X**2 + Y**2))
+
+plt.contourf(X, Y, Z, 20, cmap='Wistia') # Filled contours with 20 levels
+plt.colorbar() # Add a colorbar
+plt.title("Contour Plot Example")
+plt.show()
+
+***************************************************************
+
+
+
+
+10.06 Desenho Gráficos 3D ("3D Plots") 
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+3D Plots: Matplotlib can create various 3D plots, 
+          including scatter plots, line plots, 
+          surface plots, and wireframe plots.
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1006_Graficos3D_Exemplo.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Gráficos 3D  </h1>
+
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1.5cm;padding-bottom:30px;">  Desenho de Gráficos 3D </h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:0px;">
+<img style="float:left;margin:0px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Exemplo 1 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">   Exemplo 1  </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# Instalação das bibliotecas
+!pip install matplotlib
+!pip install numpy
+!pip install pandas
+
+################################
+# Cell 05:
+################################
+
+
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+# TR~es séries de 100 números aletórios
+x = np.random.rand(100)
+y = np.random.rand(100)
+z = np.random.rand(100)
+
+ax.scatter(x, y, z)
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+plt.title("3D Scatter Plot")
+plt.show()
+
+################################
+# Cell 06:
+################################
+
+''' Melhorar -> Barras3D
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+
+x = np.array([2010, 2011, 2012])
+y = np.array([1, 2, 3])
+z = np.array([1, 2, 3])
+sizes = 100* np.random.rand(27)
+#y = np.array(['Maças', 'Laranjas', 'Cerejas'])
+#z = np.array(['Lisboa','Porto','Coimbra'])
+
+
+ax.scatter(x, y, z, s=sizes, alpha=0.5)
+ax.set_xlabel('X')
+ax.set_ylabel('Y')
+ax.set_zlabel('Z')
+plt.title("3D Scatter Plot")
+plt.show()
+'''
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Fixing random state for reproducibility
+np.random.seed(19680801)
+
+
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+x, y = np.random.rand(2, 100) * 4
+hist, xedges, yedges = np.histogram2d(x, y, bins=4, range=[[0, 4], [0, 4]])
+
+# Construct arrays for the anchor positions of the 16 bars.
+xpos, ypos = np.meshgrid(xedges[:-1] + 0.25, yedges[:-1] + 0.25, indexing="ij")
+xpos = xpos.ravel()
+ypos = ypos.ravel()
+zpos = 0
+
+# Construct arrays with the dimensions for the 16 bars.
+dx = dy = 0.5 * np.ones_like(zpos)
+dz = hist.ravel()
+
+ax.bar3d(xpos, ypos, zpos, dx, dy, dz, zsort='average')
+
+plt.show()
+******************************************************************
+
+
+
+
+10.07 Desenho de Gráficos Polares ("Polar Chart")
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Polar Chart: Plots data in polar coordinates 
+             (angle and radius).
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1007_GraficosPolares_Exemplo.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Gráficos Polares  </h1>
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1.5cm;padding-bottom:30px;"> Desenho de Gráficos Polares </h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:0px;">
+<img style="float:left;margin:0px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Exemplo 1 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">   Exemplo 1  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# Instalação das bibliotecas
+!pip install matplotlib
+!pip install numpy
+!pip install pandas
+
+################################
+# Cell 05:
+################################
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Espaço linear: 
+theta = np.linspace(0, 2*np.pi, 100)
+r = np.sin(3*theta)
+# r = np.sin(5*theta)
+
+ax = plt.subplot(111, projection='polar')
+ax.plot(theta, r)
+plt.title("Polar Chart Example")
+plt.show()
+
+
+
+***************************************************************
+
+
+10.08 Desenho de Nuvem de Palavras ("Word Cloud")
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+Word Cloud: Visualizes text data by displaying words with 
+            sizes proportional to their frequency. 
+            (Requires the wordcloud library)
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1008_NuvemDePalavras_Exemplo.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Nuvem de Palavras </h1>
+
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1.5cm;padding-bottom:30px;">  Nuvem de Palavras</h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:0px;">
+<img style="float:left;margin:0px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Exemplo 1 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">   Exemplo 1  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# Instalação das bibliotecas
+!pip install matplotlib
+!pip install pandas
+!pip install numpy
+!pip install wordcloud
+
+################################
+# Cell 05:
+################################
+
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+text = "This is a sample text for the word cloud. This text contains some repeated words."
+wordcloud = WordCloud().generate(text)
+
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.title("Word Cloud Example")
+plt.show()
+
+################################
+# Cell 06:
+################################
+
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+text = "O filme foi absolutamente incrível, realmente incrível! A história foi fascinante, com uma narrativa emocionante que me prendeu do início ao fim. As atuações foram excepcionais, especialmente o ator principal, que teve uma performance magnífica. A direção foi excelente, muito bem feita, com cenas visualmente deslumbrantes. Embora o ritmo tenha sido um pouco lento em algumas partes, a produção foi impecável. A trilha sonora, por sua vez, foi memorável, muito boa, ajudando a criar uma atmosfera única. No geral, o filme foi uma experiência maravilhosa, com uma história cativante, um elenco talentoso e uma direção impressionante.."
+wordcloud = WordCloud(background_color='white',max_font_size = 50).generate(text)
+
+plt.imshow(wordcloud, interpolation='bilinear', cmap='YlOrRd')
+plt.axis("off")
+plt.title("Word Cloud Example")
+plt.show()
+
+
+
+################################
+# Cell 07:
+################################
+
+# Python3 program to implement 
+# the above approach
+# Import the following modules
+ 
+# pip install matplotlib
+import matplotlib.pyplot as plt  
+ 
+# pip install wordcloud
+from wordcloud import WordCloud, STOPWORDS  
+import numpy as np
+from PIL import Image
+ 
+# Give the whole path of the text file, 
+# open it, read it, and encode it.
+text = "O filme foi absolutamente incrível, realmente incrível! A história foi fascinante, com uma narrativa emocionante que me prendeu do início ao fim. As atuações foram excepcionais, especialmente o ator principal, que teve uma performance magnífica. A direção foi excelente, muito bem feita, com cenas visualmente deslumbrantes. Embora o ritmo tenha sido um pouco lento em algumas partes, a produção foi impecável. A trilha sonora, por sua vez, foi memorável, muito boa, ajudando a criar uma atmosfera única. No geral, o filme foi uma experiência maravilhosa, com uma história cativante, um elenco talentoso e uma direção impressionante.."
+#text = open(r'Text.txt',
+#            mode = 'r', encoding = 'utf-8').read() 
+ 
+# The Image shape in which you wanna convert it to.
+mask = np.array(Image.open(r'./imagens/design.png'))
+ 
+# Now inside the WordCloud, provide some functions:
+# stopwords - For stopping the unuseful words 
+# like [,?/\"]
+# font_path - provide the font path to which you 
+# wanna convert it to.
+# max_words - Maximum number of words in the
+# output image. Also provide height and width 
+# of the mask
+wc = WordCloud(stopwords = STOPWORDS,
+               mask = mask, 
+               background_color = "white",
+               max_words = 2000,
+               max_font_size = 500,
+               random_state = 42, 
+               width = mask.shape[1],
+               height = mask.shape[0])
+ 
+# Finally generate the wordcloud of the given text
+wc.generate(text)  
+plt.imshow(wc, interpolation='bilinear', cmap='YlOrRd')
+# Off the x and y axis
+plt.axis('off')
+ 
+# Now show the output cloud
+plt.show()
+
+
+
+################################
+# Cell 08:
+################################
+
+
+# Python3 program to implement
+# the above approach
+# Import the following modules
+ 
+# pip install matplotlib
+import matplotlib.pyplot as plt  
+ 
+# pip install wordcloud
+from wordcloud import WordCloud, STOPWORDS  
+import numpy as np
+from PIL import Image
+ 
+# Give the whole path of the text file, 
+# open it, read it, and encode it.
+text = open(r'Text.txt',
+            mode = 'r', encoding = 'utf-8').read()  
+ 
+# For changing the fonts of wordcloud fonts
+#path = r'C:\Users\PC\UFCD10809_PJD-AD01_10OutrosGraficos\montserrat\Montserrat-Regular.ttf'
+path = r'.\montserrat\Montserrat-Regular.ttf'
+
+# The Image shape in which you wanna convert it to.
+#mask = np.array(Image.open(r'./imagens/design.png'))
+mask = np.array(Image.open(r'./imagens/oval2.png'))
+ 
+# Now inside the WordCloud, provide some functions:
+# stopwords - For stopping the unuseful words 
+# like [,?/\"]
+# font_path - provide the font path to which
+# you wanna convert it to.
+# max_words - Maximum number of words in
+# the output image.
+# Also provide height and width of the mask
+wc = WordCloud(stopwords = STOPWORDS, 
+               font_path = path,
+               mask = mask, 
+               background_color = "white",
+               max_words = 2000, 
+               max_font_size = 500,
+               random_state = 42, 
+               width = mask.shape[1],
+               height = mask.shape[0])
+ 
+# Finally generate the wordcloud of the given text
+wc.generate(text)  
+plt.imshow(wc, interpolation = "Bilinear")
+ 
+# Off the x and y axis
+plt.axis('off')  
+ 
+# Now show the output cloud
+plt.show()
+
+
+################################
+# Cell 09:
+################################
+
+
+# Python3 program to implement
+# the above approach
+# Import the following modules
+ 
+# pip install matplotlib
+import matplotlib.pyplot as plt  
+ 
+# pip install wordcloud
+from wordcloud import WordCloud, STOPWORDS  
+import numpy as np
+from PIL import Image
+ 
+# Give the whole path of the text file, 
+# open it, read it, and encode it.
+text = open(r'Text.txt',
+            mode = 'r', encoding = 'utf-8').read()  
+ 
+# For changing the fonts of wordcloud fonts
+#path = r'C:\Users\PC\UFCD10809_PJD-AD01_10OutrosGraficos\montserrat\Montserrat-Regular.ttf'
+path = r'.\montserrat\Montserrat-Bold.ttf'
+
+# The Image shape in which you wanna convert it to.
+#mask = np.array(Image.open(r'./imagens/design.png'))
+mask = np.array(Image.open(r'./imagens/oval3.png'))
+ 
+# Now inside the WordCloud, provide some functions:
+# stopwords - For stopping the unuseful words 
+# like [,?/\"]
+# font_path - provide the font path to which
+# you wanna convert it to.
+# max_words - Maximum number of words in
+# the output image.
+# Also provide height and width of the mask
+wc = WordCloud(stopwords = STOPWORDS, 
+               font_path = path,
+               mask = mask, 
+               background_color = "white",
+               max_words = 2000, 
+               max_font_size = 500,
+               random_state = 42, 
+               width = mask.shape[1],
+               height = mask.shape[0])
+ 
+# Finally generate the wordcloud of the given text
+wc.generate(text)  
+plt.imshow(wc, interpolation = "Bilinear")
+ 
+# Off the x and y axis
+plt.axis('off')  
+ 
+# Now show the output cloud
+plt.show()
+
+
+
+################################
+# Cell 10:
+################################
+
+
+# Python3 program to implement
+# the above approach
+# Import the following modules
+ 
+# pip install matplotlib
+import matplotlib.pyplot as plt  
+ 
+# pip install wordcloud
+from wordcloud import WordCloud, STOPWORDS  
+import numpy as np
+from PIL import Image
+ 
+# Give the whole path of the text file, 
+# open it, read it, and encode it.
+text = open(r'Text.txt',
+            mode = 'r', encoding = 'utf-8').read()  
+ 
+# For changing the fonts of wordcloud fonts
+#path = r'C:\Users\PC\UFCD10809_PJD-AD01_10OutrosGraficos\montserrat\Montserrat-Regular.ttf'
+path = r'.\chocolate-covered-raindrops\Chocolate Covered Raindrops BOLD.ttf'
+
+# The Image shape in which you wanna convert it to.
+#mask = np.array(Image.open(r'./imagens/design.png'))
+mask = np.array(Image.open(r'./imagens/oval3.png'))
+ 
+# Now inside the WordCloud, provide some functions:
+# stopwords - For stopping the unuseful words 
+# like [,?/\"]
+# font_path - provide the font path to which
+# you wanna convert it to.
+# max_words - Maximum number of words in
+# the output image.
+# Also provide height and width of the mask
+wc = WordCloud(stopwords = STOPWORDS, 
+               font_path = path,
+               mask = mask, 
+               background_color = "white",
+               max_words = 2000, 
+               max_font_size = 500,
+               random_state = 42, 
+               width = mask.shape[1],
+               height = mask.shape[0])
+ 
+# Finally generate the wordcloud of the given text
+wc.generate(text)  
+plt.imshow(wc, interpolation = "Bilinear")
+ 
+# Off the x and y axis
+plt.axis('off')  
+ 
+# Now show the output cloud
+plt.show()
+
+
+
+################################
+# Cell 11:
+################################
+
+
+# Python3 program to implement
+# the above approach
+# Import the following modules
+ 
+# pip install matplotlib
+import matplotlib.pyplot as plt  
+ 
+# pip install wordcloud
+from wordcloud import WordCloud, STOPWORDS  
+import numpy as np
+from PIL import Image
+ 
+# Give the whole path of the text file, 
+# open it, read it, and encode it.
+text = open(r'Text.txt',
+            mode = 'r', encoding = 'utf-8').read()  
+ 
+# For changing the fonts of wordcloud fonts
+#path = r'C:\Users\PC\UFCD10809_PJD-AD01_10OutrosGraficos\montserrat\Montserrat-Regular.ttf'
+path = r'.\sweet-coffee\Sweet Coffee.ttf'
+
+# The Image shape in which you wanna convert it to.
+#mask = np.array(Image.open(r'./imagens/design.png'))
+mask = np.array(Image.open(r'./imagens/oval3.png'))
+ 
+# Now inside the WordCloud, provide some functions:
+# stopwords - For stopping the unuseful words 
+# like [,?/\"]
+# font_path - provide the font path to which
+# you wanna convert it to.
+# max_words - Maximum number of words in
+# the output image.
+# Also provide height and width of the mask
+wc = WordCloud(stopwords = STOPWORDS, 
+               font_path = path,
+               mask = mask, 
+               background_color = "white",
+               max_words = 2000, 
+               max_font_size = 500,
+               random_state = 42, 
+               width = mask.shape[1],
+               height = mask.shape[0])
+ 
+# Finally generate the wordcloud of the given text
+wc.generate(text)  
+plt.imshow(wc, interpolation = "Bilinear")
+ 
+# Off the x and y axis
+plt.axis('off')  
+ 
+# Now show the output cloud
+plt.show()
+
+
+################################
+# Cell 12:
+################################
+
+
+# Python3 program to implement
+# the above approach
+# Import the following modules
+ 
+# pip install matplotlib
+import matplotlib.pyplot as plt  
+ 
+# pip install wordcloud
+from wordcloud import WordCloud, STOPWORDS  
+import numpy as np
+from PIL import Image
+ 
+# Give the whole path of the text file, 
+# open it, read it, and encode it.
+text = open(r'Text.txt',
+            mode = 'r', encoding = 'utf-8').read()  
+ 
+# For changing the fonts of wordcloud fonts
+#path = r'C:\Users\PC\UFCD10809_PJD-AD01_10OutrosGraficos\montserrat\Montserrat-Regular.ttf'
+path = r'.\sweet-coffee\Sweet Coffee.ttf'
+
+# The Image shape in which you wanna convert it to.
+#mask = np.array(Image.open(r'./imagens/design.png'))
+mask = np.array(Image.open(r'./imagens/star.png'))
+ 
+# Now inside the WordCloud, provide some functions:
+# stopwords - For stopping the unuseful words 
+# like [,?/\"]
+# font_path - provide the font path to which
+# you wanna convert it to.
+# max_words - Maximum number of words in
+# the output image.
+# Also provide height and width of the mask
+wc = WordCloud(stopwords = STOPWORDS, 
+               font_path = path,
+               mask = mask, 
+               background_color = "white",
+               max_words = 2000, 
+               max_font_size = 500,
+               random_state = 42, 
+               width = mask.shape[1],
+               height = mask.shape[0])
+ 
+# Finally generate the wordcloud of the given text
+wc.generate(text)  
+plt.imshow(wc, interpolation = "Bilinear")
+ 
+# Off the x and y axis
+plt.axis('off')  
+ 
+# Now show the output cloud
+plt.show()
+
+
+
+***************************
+
+https://www.geeksforgeeks.org/generate-word-clouds-of-any-shape-in-python/
+
+wc = WordCloud(stopwords = STOPWORDS,
+               mask = mask, background_color = "white",
+               max_words = 2000, max_font_size = 500,
+               random_state = 42, width = mask.shape[1],
+               height = mask.shape[0])
+
+*****************************************************************************
+
+
+
+
+10.09 Desenho de Gráficos de Velas Japonesas ("CandleSticks")
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+https://plotly.com/python/candlestick-charts/
+
+Gráficos de Velas Japonesas ("CandleSticks")
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1009_GraficosVelas_Exemplo.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de Gráficos "CandleSticks"  </h1>
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1.5cm;padding-bottom:30px;"> Desenho de Gráficos "CandleSticks"</h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:0px;">
+<img style="float:left;margin:0px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Exemplo 1 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">   Exemplo 1  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+                  | high-data
+                  |            
+               +--+--+ open 
+               |     |       
+               |     |
+               +--+--+ close
+                  |
+                  |
+                    low-data
+
+import plotly.graph_objects as go
+from datetime import datetime
+
+open_data = [33.0, 33.3, 33.5, 33.0, 34.1]
+high_data = [33.1, 33.3, 33.6, 33.2, 34.8]
+low_data = [32.7, 32.7, 32.8, 32.6, 32.8]
+close_data = [33.0, 32.9, 33.3, 33.1, 33.1]
+
+dates = [datetime(year=2013, month=10, day=10),
+         datetime(year=2013, month=11, day=10),
+         datetime(year=2013, month=12, day=10),
+         datetime(year=2014, month=1, day=10),
+         datetime(year=2014, month=2, day=10)]
+
+fig = go.Figure(data=[go.Candlestick(x=dates,
+                       open=open_data, high=high_data,
+                       low=low_data, close=close_data)])
+
+fig.show()
+
+--------------------------------
+
+                  | high-data
+                  |            
+               +--+--+ open 
+               |     |       
+               |     |
+               +--+--+ close
+                  |
+                  |
+                    low-data
+
+
+*****************************************************************************
+
+10.11 Geopandas
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+https://geopandas.org/en/stable/
+
+
+https://geopandas.org/en/stable/gallery/index.html
+
+GeoPandas é uma extensão da popular biblioteca Pandas, 
+projetada para lidar com dados espaciais e realizar operações 
+geográficas. 
+Ela permite a manipulação e análise de dados geográficos 
+de forma semelhante ao trabalho com dados no Pandas, 
+mas com suporte a tipos de geometria 
+(como pontos, linhas e polígonos) e operações espaciais.
+
+
+Aqui está um exemplo de como usar o GeoPandas para ler 
+um shapefile, plotar dados geográficos e 
+realizar operações espaciais básicas.
+
+**********************************
+
+Sim! Se precisas de uma alternativa gratuita ao GeoPandas, podes utilizar combinações de outras bibliotecas para trabalhar com dados geoespaciais. Aqui estão algumas opções:
+1. shapely + pandas + fiona + pyproj
+Estas bibliotecas juntas cobrem a maioria das funcionalidades do GeoPandas.
+shapely ? Trabalha com geometrias (pontos, linhas, polígonos).
+pandas ? Manipulação de tabelas e DataFrames.
+fiona ? Leitura e escrita de ficheiros Shapefile (SHP) e outros formatos geoespaciais.
+pyproj ? Transformação de coordenadas (projeções).
+ 
+ 
+2. folium para visualização de mapas
+Se apenas precisas visualizar dados geográficos num mapa interativo, o Folium pode substituir algumas funções do GeoPandas.
+ 
+
+
+
+
+***********************************
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1011_Geopandas_Exemplo.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Desenho de um Mapa - ShapeFile  </h1>
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1.5cm;padding-bottom:30px;"> Desenho de um Mapa - ShapeFile</h1>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:0px;">
+<img style="float:left;margin:0px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+<img style="float:left;margin:1px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="33%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Exemplo 1 </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">   Exemplo 1  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+# Instalação das bibliotecas
+!pip install matplotlib
+!pip install pandas
+!pip install numpy
+!pip install geopandas
+
+################################
+# Cell 04:
+################################
+
+import geopandas as gpd
+import matplotlib.pyplot as plt
+
+# Passo 1: Carregar um Shapefile (o GeoPandas suporta muitos formatos, mas o Shapefile é comum)
+# Vamos carregar um shapefile com os países do mundo.
+mundo = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+
+# Passo 2: Explorar os dados
+print(mundo.head())  # Exibir as primeiras linhas do dataframe
+
+# Passo 3: Plotar os dados
+mundo.plot(figsize=(10, 10), color='lightblue', edgecolor='black')
+plt.title('Mapa do Mundo')
+plt.show()
+
+# Passo 4: Realizar Operações Espaciais
+# Filtrar países por continente (exemplo: selecionar países da Europa)
+europa = mundo[mundo['continent'] == 'Europe']
+
+# Plotando os dados filtrados (Europa)
+europa.plot(figsize=(10, 10), color='lightgreen', edgecolor='black')
+plt.title('Mapa da Europa')
+plt.show()
+
+# Passo 5: Buffer (Criar uma zona de buffer ao redor de uma região específica)
+# Para demonstração, vamos criar um buffer ao redor de um país, por exemplo, a França
+franca = mundo[mundo['name'] == 'France']
+buffer_franca = franca.buffer(1.0)  # Buffer de 1 grau (a unidade depende do CRS)
+
+# Plotando a região com o buffer
+ax = mundo.plot(figsize=(10, 10), color='lightblue', edgecolor='black')
+buffer_franca.plot(ax=ax, color='lightcoral', alpha=0.5)
+plt.title('Zona de Buffer ao Redor da França')
+plt.show()
+
+# Passo 6: Junção Espacial (Encontrar quais países se intersectam com uma área dada)
+# Vamos supor que queremos ver quais países se intersectam com uma zona de buffer ao redor de um ponto (exemplo: coordenadas específicas)
+from shapely.geometry import Point
+
+# Definir um ponto (exemplo: coordenadas de Paris)
+paris = Point(2.3522, 48.8566)  # Longitude, Latitude
+
+# Criar um buffer ao redor do ponto
+buffer_paris = paris.buffer(5.0)  # Buffer de 5 graus ao redor de Paris
+
+# Realizar a junção espacial para encontrar os países que se intersectam com o buffer de Paris
+paises_intersectados = mundo[mundo.geometry.intersects(buffer_paris)]
+
+# Plotando os resultados
+ax = mundo.plot(figsize=(10, 10), color='lightblue', edgecolor='black')
+paises_intersectados.plot(ax=ax, color='yellow', edgecolor='black')
+plt.title('Países que se Intersectam com o Buffer de Paris')
+plt.show()
+
+
+--------------------------------------------------------------------------
+
+Explicação do Código:
+
+    Carregar e Plotar Dados:
+        O método gpd.read_file() carrega dados geográficos a partir de um shapefile. Neste exemplo, usamos um conjunto de dados incorporado com os países do mundo (naturalearth_lowres).
+        O método plot() é usado para visualizar o shapefile em um mapa.
+
+    Filtragem de Dados:
+        Podemos filtrar os dados com base em atributos, como continent. Neste exemplo, extraímos todos os países da Europa filtrando pela coluna continent.
+
+    Buffer:
+        A operação de "buffer" cria uma zona ao redor de uma geometria. No exemplo, criamos um buffer de 1 grau ao redor do país França. Isso cria um polígono que se estende 1 grau para fora da fronteira da França.
+
+    Junção Espacial:
+        A junção espacial permite encontrar objetos geográficos que se intersectam com uma geometria dada. Neste exemplo, encontramos os países que se intersectam com um buffer ao redor de Paris (usando latitude e longitude).
+
+    Plotando os Resultados:
+        O GeoPandas integra-se facilmente com o Matplotlib, tornando fácil criar visualizações ricas. Neste exemplo, plotamos diferentes regiões (como a Europa ou a França com um buffer) sobre o mapa mundial.
+
+Saída Esperada:
+
+    Um mapa do mundo mostrando os países.
+    Um mapa da Europa mostrando apenas os países europeus.
+    Uma região com o buffer ao redor da França, visualizando como a operação de buffer funciona.
+    Um mapa mostrando os países que se intersectam com um buffer ao redor de Paris.
+
+Principais Funcionalidades do GeoPandas:
+
+    Manipulação de dados: Estende o Pandas para lidar com geometrias, suportando operações padrão como filtragem, junção e agrupamento com base em dados espaciais.
+    Análise espacial: Inclui operações espaciais como buffer, interseção, união e análise de proximidade.
+    Suporte a formatos de arquivo: Suporta vários formatos de dados espaciais, incluindo shapefiles, GeoJSON, KML, entre outros.
+    Plotagem: Integra-se com o Matplotlib para facilitar a criação de visualizações de dados geográficos.
+
+Este exemplo demonstra alguns usos comuns do GeoPandas para análise de dados espaciais, incluindo manipulação de dados, plotagem, criação de buffers e junções espaciais. O GeoPandas torna o trabalho com dados geográficos em Python fácil e intuitivo.
+
+
+********************************************************************
+
+
+
+10.12 Resumo do capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+10.02 Desenho de Mapas de Calor "HeatMaps":
+      - Introdução
+
+10.03 Desenho de Mapas de Calor "HeatMaps":
+      - Anotações
+
+10.04 Desenho de Mapas de Calor "HeatMaps":
+      - Vários Gráficos
+
+10.05 Desenho de Gráficos de Contorno 
+      ("Contour Graphs")
+
+10.06 Desenho Gráficos 3D ("3D Plots") 
+
+10.07 Desenho de Gráficos Polares ("Polar Chart")
+
+10.08 Desenho de Nuvem de Palavras ("Word Cloud")
+
+10.11 Geopandas
+
+********************************************************************
+
+
+
+10.13 Bibliografia/Sitografia-Webgrafia
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+10.13.01 Bibliografia
+10.13.02 Sitografia-Webgrafia
+
+
+
+10.13.01 Bibliografia
+-----------------------------------------------------------
+
+Bibliografia:
+
+[B01]	ESTRUTURAS DE DADOS E ALGORITMOS EM C - 3ª EDIÇÃO REVISTA E AUMENTADA, 
+        António Adrego da Rocha, FCA.
+
+[B02]	ANÁLISE DA COMPLEXIDADE DE ALGORITMOS, António Adrego da Rocha, FCA.
+
+[B03]	ESTRUTURAS DE DADOS E ALGORITMOS EM JAVA, António Adegro da Rocha, FCA.
+
+[B04]	ANÁLISE INTELIGENTE DE DADOS - ALGORITMOS E IMPLEMENTAÇÃO EM JAVA,
+        Miguel Rocha | Paulo Cortez | José Maia Neves, FCA.
+
+[B05]	PROGRAMAÇÃO EM C++ - ALGORITMOS E ESTRUTURAS DE DADOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B06]	PROGRAMAÇÃO EM C++ - CONCEITOS BÁSICOS E ALGORITMOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B07]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+[B08]	EXERCÍCIOS DE JAVA - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, 
+        Adelaide Carvalho, FCA.
+
+[B09]	PRÁTICAS DE C# - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, Adelaide Carvalho, FCA.
+
+[B10]	INTRODUÇÃO À ALGORITMIA E PROGRAMAÇÃO COM PYTHON
+        Filipe Portela | Tiago C. Pereira, FCA.
+
+[B11]	PRÁTICAS DE PYTHON - ALGORITMIA E PROGRAMAÇÃO
+        Adelaide Carvalho, FCA.
+
+[B12]	CIÊNCIA DOS DADOS NAS ORGANIZAÇÕES - APLICAÇÕES EM PYTHON
+        José Braga de Vasconcelos | Alexandre Barão, FCA.
+
+[B13]	PROGRAMAÇÃO EM PYTHON - FUNDAMENTOS E RESOLUÇÃO DE PROBLEMAS,
+        Ernesto Costa, FCA.
+
+[B14]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB
+        José Braga de Vasconcelos, FCA.
+
+[B15]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+***********************************************************************
+
+
+10.13.02 Sitografia-Webgrafia
+-----------------------------------------------------------
+
+[W01]. https://www.python.org/
+[W02]. https://pt.wikipedia.org/wiki/Python
+[W03]. https://en.wikipedia.org/wiki/Python_(programming_language)
+[W04]. https://www.tutorialspoint.com/python/index.htm
+[W05]. https://www.w3schools.com/python/
+[W06]. https://www.codecademy.com/catalog/language/python
+[W07]. https://www.devmedia.com.br/guia/python/37024
+[W08]. https://realpython.com/
+[W09]. https://www.academiadecodigo.org
+[W10]. https://www.pluralsight.com/
+[W11]. https://www.datacamp.com/
+[W12]. https://www.learnpython.org/
+[W13]. https://pt.coursera.org/courses?query=python
+[W14]. https://www.coursera.org/courses?query=python
+[W15]. https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+[W16]. https://www.khanacademy.org/computing/computer-science/algorithms
+[W17]. https://www.programiz.com/dsa
+[W18]. https://www.programming4beginners.com/tutorial-beginners-algorithms
+[W19]. https://hackr.io/tutorials/learn-data-structures-algorithms
+[W20]. https://try.codecademy.com/learn-python-3
+[W21]. https://codeforall.com/cursos-intensivos/bootcamp-programacao-full-stack
+[W22]. https://docs.python.org/3/tutorial/index.html
+[W23]. https://matplotlib.org/stable/gallery/images_contours_and_fields/image_annotated_heatmap.html
+[W24]. https://www.geeksforgeeks.org/how-to-draw-2d-heatmap-using-matplotlib-in-python/
+[W25]. https://stackoverflow.com/questions/33282368/plotting-a-2d-heatmap
+
+***************************************************************
+
+
+
+
+10.14 Trabalho(s)/Tarefa(s)
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+
+***************************************************************
+
+
+
+
+

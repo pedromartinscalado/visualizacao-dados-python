@@ -1,0 +1,5 @@
+Sessão do dia 29 de Abril de 2025
+
+Blocos de Notas:
+- Lab.08 - Gráficos Temporais em Python
+- Lab.09 - Múltiplos Gráficos

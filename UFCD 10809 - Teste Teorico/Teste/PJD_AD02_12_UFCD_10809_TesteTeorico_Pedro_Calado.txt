@@ -1,0 +1,68 @@
+01. Selecione as bibliotecas que podem ser utilizadas para o desenho de gráficos em Python. 
+b) Matplotlib.X
+e) Seaborn. X
+
+
+02. Identifique a função "matplotlib, pyplot" representada por "plt" para desenhar um gráfico de linha.
+a) plt.plot(). X
+
+
+03. Identifique a função "matplotlib, pyplot" representada por "plt" para desenhar um gráfico de barras.
+c) plt.bar(). X
+
+
+04. Identifique a função "matplotlib, pyplot" representada por "plt" para desenhar um histograma. 
+d) plt.hist(). X
+
+
+05. Identifique a função "matplotlib, pyplot" representada por "plt" para desenhar um gráfico de dispersão. 
+e) plt.scatter(). X
+
+
+06. Identifique a função "matplotlib, pyplot" representada por "plt" para desenhar um gráfico de pilha.
+g) plt.stackplot(). X
+
+
+07. Identifique a função "matplotlib, pyplot" representada por "plt" para desenhar um gráfico circular.
+b) plt.pie(). X
+
+
+08. Identifique a função "matplotlib, pyplot" representada por "plt" para desenhar um gráfico de caule.
+f) plt.stem(). X
+
+
+09. Identifique a operação com função "matplotlib, pyplot" representada por "plt": plt.title("Valores das Vendas").
+c) Define o título do gráfico. X
+
+10. Identifique a operação com função "matplotlib, pyplot" representada por "plt": plt.labelx("Meses").
+d) Nenhuma das opções anteriores. X
+
+11. Identifique a operação com função "matplotlib, pyplot" representada por "plt": plt.labely("Meses").
+d) Nenhuma das opções anteriores. X
+
+12. Identifique o gráfico da figura.
+f) Gráfico de caule. X
+
+13. Identifique o gráfico da figura.
+c) Gráfico circular. X
+
+14. Identifique o gráfico da figura.
+a) Gráfico de linha. X
+
+15. Identifique o gráfico da figura.
+e) Histograma. X
+
+16. Identifique o gráfico da figura.
+g) Gráfico de pilha. X
+
+17. Identifique o gráfico da figura.
+d) Gráfico de dispersão. X
+
+18. Identifique o gráfico da figura.
+g) Gráfico de pilha. X
+
+19. Identifique o gráfico da figura.
+h) Gráfico de violinos. X
+
+20. Identifique o gráfico da figura.
+c) Gráfico de Caixa. X

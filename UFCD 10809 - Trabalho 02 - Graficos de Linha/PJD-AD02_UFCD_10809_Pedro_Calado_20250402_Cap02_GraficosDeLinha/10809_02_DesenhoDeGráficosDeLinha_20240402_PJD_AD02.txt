@@ -1,0 +1,1666 @@
+*******************************************************************
+******************************************************************* 
+02. Desenho de Gráficos de Linha ("Line Plots")
+*********************************************************
+*********************************************************
+
+
+
+02.00 Ponto de Partida
+
+02.01 Arranque do Jupyter Notebook
+      Criação da Pasta do Capítulo
+
+02.02 Desenho de Gráfico de Linha ("Line Plots"):
+      - Introdução
+
+02.03 Desenho de Gráfico de Linha ("Line Plots"):
+      - Eixos: rótulos e escala
+
+02.04 Desenho de Gráfico de Linha ("Line Plots"):
+      - Legendas
+
+02.05 Desenho de Gráfico de Linha ("Line Plots"):
+      - Formatação das linhas: cor, espessura, estilo
+
+02.06 Desenho de Gráfico de Linha ("Line Plots"):
+      - Adição de grelha
+
+02.07 Desenho de Gráfico de Linha ("Line Plots"):
+      - Definição e Preenchimento de Área
+
+02.08 Desenho de Gráfico de Linha ("Line Plots"):
+      - Definição e Preenchimento de Área II
+      - Preenchimento de Áreas Entre Linhas
+
+02.09 Desenho de Gráfico de Linha ("Line Plots"):
+      - Definição e Preenchimento de Área III
+      - Cores das Áreas
+
+02.10 Resumo do capítulo
+
+02.11 Bibliografia/Sitografia-Webgrafia
+
+02.12 Trabalho(s)/Tarefa(s)
+
+
+
+
+
+
+
+02.00 Ponto de Partida
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+   Para que servem os
+             Gráficos de Linha?
+  
+   - Essencialmente servem para:
+       evolução de grandeza ao longo de um eixo
+       (dois eixos)
+
+   - Varias cores para várias séries de valores.   
+
+
+
+Definir o cubo OLAP de grandezas e utilizar o gráfico.
+
+
+****************************************************************
+
+02.01 Arranque do Jupyter Notebook
+      Criação da Pasta do Capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+ 
+ a.1) Jupyter Notebook Instalado - Executar
+
+   - Sem utilizar o Anaconda (mais rápido):
+
+    Na lupa do SO digitar:
+       - Jupyter
+    Clicar na aplicação 
+    Abre a consola com indicação dos "logs" do servidor.
+ 
+
+   - Formas de arrancar com o Jupyter:
+  
+     1. Com o Anaconda Navigator instalado, 
+        esperar que o "builder" conclua criação da plataforma.
+        - Na lista de ferramentas disponiveis, escolher
+         "Jupyter Notebook".  
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+     2. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Jupyter Notebook
+
+        Clicar no icone da aplicação
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+     3. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Anaconda powershell prompt
+
+        Clicar no icone da aplicação 
+
+        Digitar       
+      
+           Jupyter Notebook
+
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+ a.2) Criar pasta para o capítulo
+
+   Na página de entrada do Jupyter Notebook,
+   na árvore de diretorias, TDR
+   - New Folder
+   - Projeto UFCD10809_Cap02_GraficosDeLinha
+
+  Para entrar nessa pasta:
+   - Duplo clique.
+
+
+
+**************************************************************
+
+
+02.02 Desenho de Gráfico de Linha ("Line Plots"):
+      - Introdução
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0202_DesenhoGráficodeLinha.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Linha - Introdução </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;"> Gráfico de Linha - Introdução </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 02:
+################################
+# Instalação dos módulos
+
+!pip install numpy
+!pip install pandas
+!pip install matplotlib
+
+
+################################
+# Cell 03:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valores do gráfico
+#     Eixo dos xx' - Lista de valores.
+overs    = [1,2,3,4,5,6,7,8,9,10]
+#     Exixo dos yy' - Lista de valores
+run_rate = [6,5,5,7,6.5,8,8.5,9,8,8.5]
+
+# 03. Construção do gráfico
+plt.plot(overs,run_rate)
+
+# 04. Apresentação do gráfico
+plt.show()
+
+SHIFT + ENTER
+
+
+**************************************************************
+
+
+
+
+02.03 Desenho de Gráfico de Linha ("Line Plots"):
+      - Eixos: rótulos e escala
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0203_DesenhoGráficodeLinha_Eixos.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Linha - Eixos </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;"> Gráfico de Linha - Eixos </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Mudar as escalas dos eixos </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;"> Mudar as escalas dos eixos </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valores do gráfico
+overs    = [1,2,3,4,5,6,7,8,9,10]
+run_rate = [6,5,5,7,6.5,8,8.5,9,8,8.5]
+
+# 03. Construção do gráfico
+plt.plot(overs,run_rate)
+
+# 04. Valores dos eixos
+#     Eixo dos xx: de 1 a 10 variando de 1 em 1
+#     Eixo dos yy: de 4 a 10 variando 0,5
+plt.xticks([x for x in np.arange(1,11,1)])
+plt.yticks([x for x in np.arange(4,10.5,0.5)])
+
+# 05. Apresentação do gráfico
+plt.show()
+
+
+SHIFT + ENTER
+
+
+- Adicionar o titulo e 
+  rótulos dos eixos
+
+################################
+# Cell 04:
+################################
+
+<h2> Adicionar o titulo e 
+     rótulos dos eixos </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;"> Adicionar o titulo e 
+     rótulos dos eixos </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 05:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valores do gráfico
+overs    = [1,2,3,4,5,6,7,8,9,10]
+run_rate = [6,5,5,7,6.5,8,8.5,9,8,8.5]
+
+# 03. Construção do gráfico
+plt.plot(overs,run_rate)
+
+# 04. Valores dos eixos
+#     Eixo dos xx: de 1 a 10 variando de 1 em 1
+#     Eixo dos yy: de 4 a 10 variando 0,5
+plt.xticks([x for x in np.arange(1,11,1)])
+plt.yticks([x for x in np.arange(4,10.5,0.5)])
+
+# 05. Definição do título do gráfico
+plt.title("Sports Data")
+
+# 06. Definição de rótulos
+plt.xlabel("Overs")
+plt.ylabel("Run Rate")
+
+# 07. Apresentação do gráfico
+plt.show()
+
+SHIFT + ENTER
+
+
+
+################################
+# Cell 06:
+################################
+
+<h2> - Formatação de Rótulos </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;"> Formatação de Rótulos </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 07:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valores do gráfico
+overs    = [1,2,3,4,5,6,7,8,9,10]
+run_rate = [6,5,5,7,6.5,8,8.5,9,8,8.5]
+
+# 03. Definição de fontes
+font1 = {'family':'serif','color':'blue','size':20}
+font2 = {'family':'serif','color':'darkred','size':15}
+
+# 04. Definição e formatação do título
+plt.title("Sports Data" , fontdict = font1 , loc = 'center')
+
+# 05. Definição e formatação 
+#     dos rótulos dos eixos
+plt.xlabel("Overs"  ,fontdict = font2)
+plt.ylabel("Run Rate" , fontdict = font2)
+
+# 06. Construção do gráfico
+plt.plot(overs, run_rate)
+
+# 07. Valores dos eixos
+#     Eixo dos xx: de 1 a 10 variando de 1 em 1
+#     Eixo dos yy: de 4 a 10 variando 0,5
+plt.xticks([x for x in np.arange(1,11,1)])
+plt.yticks([x for x in np.arange(4,10.5,0.5)])
+
+# 08. Apresentação do gráfico
+plt.show()
+
+
+**************************************************************
+
+
+
+
+02.04 Desenho de Gráfico de Linha ("Line Plots"):
+      - Legendas
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0204_DesenhoGráficodeLinha_Legendas.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Linha - Legendas </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;"> Gráfico de Linha - Legendas </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Exemplo 01 </h2>
+<h2> Adição de Legenda I </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;"> Exemplo 01 - Adição de Legenda I  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valores do gráfico
+overs    = [1,2,3,4,5,6,7,8,9,10]
+run_rate = [6,5,5,7,6.5,8,8.5,9,8,8.5]
+
+# 03. Definição de fontes
+font1 = {'family':'serif','color':'blue','size':20}
+font2 = {'family':'serif','color':'darkred','size':15}
+
+# 04. Definição e formatação do título
+plt.title("Sports Data" , fontdict = font1 , loc = 'center')
+
+# 05. Definição e formatação 
+#     dos rótulos dos eixos
+plt.xlabel("Overs"  ,fontdict = font2)
+plt.ylabel("Run Rate" , fontdict = font2)
+
+# 06. Construção do gráfico
+plt.plot(overs, run_rate)
+
+# 07. Valores dos eixos
+#     Eixo dos xx: de 1 a 10 variando de 1 em 1
+#     Eixo dos yy: de 4 a 10 variando 0,5
+plt.xticks([x for x in np.arange(1,11,1)])
+plt.yticks([x for x in np.arange(4,10.5,0.5)])
+
+# 08. Adição de legenda
+plt.legend(['Run Rate'])
+
+# 09. Apresentação do gráfico
+plt.show()
+
+
+
+
+- Adição de Legendas II
+
+################################
+# Cell 04:
+################################
+
+<h2> Exemplo 02 </h2>
+<h2> Adição de Legendas II </h2>
+
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;"> Exemplo 02 - Adição de Legenda II  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 05:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 02. Valores dos gráficos
+#     Eixo dos yy 1
+y1 = [2, 3, 4.5]
+#     Eixo dos yy 2
+y2 = [1, 1.5, 5]
+  
+# 03. Construção dos gráficos 
+plt.plot(y1)
+plt.plot(y2)
+  
+# 04. Adição de legendas
+#     lower, center upper
+#     left center right
+plt.legend(["Entregas", "Devoluções"], loc ="upper left")
+
+  
+# 05. Apresentação dos gráficos
+plt.show()
+
+
+####################################################
+Posicionamento da Legenda:
+
+                         Vertical Horizontal
+                         upper     right
+                         center    center 
+                         lower     left
+
+
+ValueError: 'center center' is not a valid value for loc; supported values are 'best', 
+'upper right', 'upper left', 'lower left', 'lower right', 'right', 'center left', 'center right', 'lower center', 'upper center', 'center'
+
+
+
+################################
+# Cell 06:
+################################
+
+<h2> Exemplo 03 </h2>
+<h2> Multiple data Plotting 
+     + multiple legends </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;"> Exemplo 03 - Múltiplos Gráficos  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 07:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# 02. Valores dos gráficos
+overs   = [1,2,3,4,5,6,7,8,9,10]
+run_rate1 = [6,5,5,7,6.5,8,8.5,9,8,8.5]
+
+run_rate2 = [5,4,5,6,6.5,7,8.5,9,7.5,9]
+
+run_rate3 = [4,5,4,5,6.5,7,8.5,7,8.5,8]
+
+
+# 03. Definição de fontes
+font1 = {'family':'serif','color':'blue','size':20}
+font2 = {'family':'serif','color':'darkred','size':15}
+
+
+# 04. Definição e formatação do título
+plt.title("Sports Data" , fontdict = font1 , loc = 'center')
+
+# 05. Definição e formatação 
+#     dos rótulos dos eixos
+plt.xlabel("Overs"  ,fontdict = font2)
+plt.ylabel("Run Rate" , fontdict = font2)
+
+# 06. Construção dos gráficos 
+plt.plot(overs, run_rate)
+plt.plot(overs,run_rate2)
+plt.plot(overs,run_rate3)
+
+# 07. Valores dos eixos
+#     Eixo dos xx: de 1 a 10 variando de 1 em 1
+#     Eixo dos yy: de 4 a 10 variando 0,5
+plt.xticks([x for x in np.arange(1,11,1)])
+plt.yticks([x for x in np.arange(4,10.5,0.5)])
+
+# 08. Adição de legenda
+plt.legend(['PAK','NEWZ','ENG'] , loc = 'lower right')
+
+# 09. Apresentação dos gráficos
+plt.show()
+
+
+
+- Title In legend
+
+
+################################
+# Cell 08:
+################################
+
+<h2> Exemplo 04 - Titulo na Legenda </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;"> Exemplo 04 - Titulo na Legenda </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 09:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+#marker ,color='', linewidth=, linestyle='')
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Definição dos valores do(s) 
+#     gráfico(s).
+Wickets   = [1,2,3,4,5,6,7,8,9,10]
+scores = np.linspace(0,100,10)
+
+scorcard1 =  scores ** 1.22
+scorcard2 = scores ** 1.15
+scorcard3 = scores * 2.5
+
+
+# 03. Definição de fontes
+font1 = {'family':'serif','color':'blue','size':20}
+font2 = {'family':'serif','color':'darkred','size':15}
+
+
+
+# 04. Definição e formatação do título
+plt.title("Sports Data" , fontdict = font1 , loc = 'center')
+
+
+# 05. Definição e formatação 
+#     dos rótulos dos eixos
+plt.xlabel("Overs"  ,fontdict = font2)
+plt.ylabel("Run Rate" , fontdict = font2)
+
+
+# 06. Construção do(s) gráfico(s) 
+plt.plot(Wickets, scorcard1 , '-o')
+plt.plot(Wickets,scorcard2 ,color = 'b', linestyle = '-.' , marker = 'o' )
+plt.plot(Wickets,scorcard3 ,color = 'c', linestyle = '--' , marker = 'o' )
+
+# 07. Valores dos eixos
+#     Eixo dos xx: de 1 a 10 variando de 1 em 1
+#     Eixo dos yy: de 0 a 320 variando 20
+plt.xticks([x for x in np.arange(1,11,1)])
+plt.yticks([x for x in np.arange(0,320,20)])
+
+
+# 08. Adição de legenda.
+plt.legend(['PAK','NEWZ','ENG'] , loc = 'upper left' ,title='Tems Runrate')
+
+# 09. Apresentação do(s) gráfico(s)
+plt.show()
+
+**************************************************************
+
+Colors:
+https://matplotlib.org/stable/gallery/color/named_colors.html
+https://matplotlib.org/2.0.1/api/colors_api.html
+b: blue
+g: green
+r: red
+c: cyan
+m: magenta
+y: yellow
+k: black
+w: white
+
+
+Linestyles
+https://matplotlib.org/2.1.2/api/_as_gen/matplotlib.pyplot.plot.html
+
+ValueError: '*' is not a valid value for ls; supported values are '-', '--', '-.', ':', 'None', ' ', '', 'solid', 'dashed', 'dashdot', 'dotted'
+
+*****************************************************************+
+
+
+
+
+
+02.05 Desenho de Gráfico de Linha ("Line Plots"):
+      - Formatação das linhas: cor, espessura, estilo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+02.05.01 Formatação das linhas I
+02.05.02 Formatação das linhas II
+
+
+02.05.01 Formatação das linhas I
+-------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0205_DesenhoGráficodeLinha_01Linhas.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Linha - Linhas </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;"> Gráfico de Linha - Linhas </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+
+<h2> Cores, Estilos de linhas,
+     Espessuras de linhas e marcadores </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;"> Cores, Estilos de linhas,
+     Espessuras de linhas e marcadores </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 03:
+################################
+
+<h2> Exemplo 01 </h2>
+
+<h3 style="background-color:green;color:white;padding:10px;text-align:center;font-weight:bold;">  Exemplo 01 </h3>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+
+# 02. Valores dos gráficos
+#      Valores do exixo dos xx'
+Wickets   = [1,2,3,4,5,6,7,8,9,10]
+
+#     Valores do eixo dos YY
+scores = np.linspace(0,100,10)
+scorcard1 =  scores ** 1.22
+scorcard2 = scores ** 1.15
+scorcard3 = scores * 2.5
+
+# 03. Definição de fontes
+font1 = {'family':'serif','color':'blue','size':20}
+font2 = {'family':'serif','color':'darkred','size':15}
+
+
+# 04. Definição e formatação do título
+plt.title("Sports Data" , fontdict = font1 , loc = 'center')
+
+# 05. Definição e formatação 
+#     dos rótulos dos eixos
+plt.xlabel("Overs"  ,fontdict = font2)
+plt.ylabel("Run Rate" , fontdict = font2)
+
+# 06. Construção dos gráficos 
+plt.plot(Wickets, scorcard1 , '-o')
+plt.plot(Wickets,scorcard2 ,color = 'b', linestyle = '-.'  , marker = 'o' )
+plt.plot(Wickets,scorcard3  , color = 'c' , linestyle = '--' , marker = 'o'  )
+
+
+# 07. Valores dos eixos
+#     Eixo dos xx: de 1 a 10 variando de 1 em 1
+#     Eixo dos yy: de 0 a 320 variando 20
+plt.xticks([x for x in np.arange(1,11,1)])
+plt.yticks([x for x in np.arange(0,320,20)])
+
+# 08. Adição de legenda
+plt.legend(['PAK','NEWZ','ENG'] , loc = 'upper left',title='Tems Runrate')
+
+# 09. Apresentação dos gráficos
+plt.show()
+
+**************************************************************
+
+
+
+
+02.05.02 Formatação das linhas II
+         - Definição de um Estilo de Desenho
+-------------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0205_DesenhoGráficodeLinha_02Estilo.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Linha - Estilos de Desenho </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;"> Gráfico de Linha - Estilos de Desenho </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Quais são os estilos disponiveis? </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;"> Quais são os estilos disponiveis?  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+
+# 02. Valores dos gráficos
+Wickets   = [1,2,3,4,5,6,7,8,9,10]
+#     Valores do eixo dos YY
+scores = np.linspace(0,100,10)
+scorcard1 =  scores ** 1.22
+scorcard2 = scores ** 1.15
+scorcard3 = scores * 2.5
+
+# 03. Definição de fontes
+font1 = {'family':'serif','color':'blue','size':20}
+font2 = {'family':'serif','color':'darkred','size':15}
+
+
+# 04. Definição e formatação do título
+plt.title("Sports Data" , fontdict = font1 , loc = 'center')
+
+# 05. Definição e formatação 
+#     dos rótulos dos eixos
+plt.xlabel("Overs"  ,fontdict = font2)
+plt.ylabel("Run Rate" , fontdict = font2)
+
+# 06. Construção dos gráficos 
+plt.plot(Wickets, scorcard1 , '-o')
+plt.plot(Wickets,scorcard2 ,color = 'b', linestyle = '-.'  , marker = 'o' )
+plt.plot(Wickets,scorcard3  , color = 'c' , linestyle = '--' , marker = 'o'  )
+
+
+# 07. Valores dos eixos
+#     Eixo dos xx: de 1 a 10 variando de 1 em 1
+#     Eixo dos yy: de 0 a 320 variando 20
+plt.xticks([x for x in np.arange(1,11,1)])
+plt.yticks([x for x in np.arange(0,320,20)])
+
+# 08. Adição de legenda
+plt.legend(['PAK','NEWZ','ENG'] , loc = 'upper left')
+
+# 09. Apresentação dos gráficos
+plt.show()
+
+print(plt.style.available)
+
+
+
+ SHIFT + ENTER
+
+['Solarize_Light2', '_classic_test_patch', '_mpl-gallery', '_mpl-gallery-nogrid', 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight', 'ggplot', 'grayscale', 'seaborn-v0_8', 'seaborn-v0_8-bright', 'seaborn-v0_8-colorblind', 'seaborn-v0_8-dark', 'seaborn-v0_8-dark-palette', 'seaborn-v0_8-darkgrid', 'seaborn-v0_8-deep', 'seaborn-v0_8-muted', 'seaborn-v0_8-notebook', 'seaborn-v0_8-paper', 'seaborn-v0_8-pastel', 'seaborn-v0_8-poster', 'seaborn-v0_8-talk', 'seaborn-v0_8-ticks', 'seaborn-v0_8-white', 'seaborn-v0_8-whitegrid', 'tableau-colorblind10']
+
+################################
+# Cell 04:
+################################
+
+<h2> Exemplo 01 </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;"> Exemplo 01  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 05:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import random
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Valores dos gráficos
+Wickets   = [1,2,3,4,5,6,7,8,9,10]
+#     Valores do eixo dos YY
+scores = np.linspace(0,100,10)
+scorcard1 =  scores ** 1.22
+scorcard2 = scores ** 1.15
+scorcard3 = scores * 2.5
+
+# 03. Definição do estilo
+plt.style.use('_mpl-gallery-nogrid')
+#plt.style.use('dark_background')
+
+
+# 04. Definição de fontes
+font1 = {'family':'serif','color':'blue','size':20}
+font2 = {'family':'serif','color':'darkred','size':15}
+
+# 05. Definição e formatação do título
+plt.title("Sports Data" , fontdict = font1 , loc = 'center')
+
+# 06. Definição e formatação 
+#     dos rótulos dos eixos
+plt.xlabel("Overs"  ,fontdict = font2)
+plt.ylabel("Run Rate" , fontdict = font2)
+
+# 07. Construção dos gráficos 
+plt.plot(Wickets, scorcard1 , 'g-o' ,)
+plt.plot(Wickets,scorcard2 ,'b-o')
+plt.plot(Wickets,scorcard3 ,'c-o')
+
+
+# 08. Valores dos eixos
+#     Eixo dos xx: de 1 a 10 variando de 1 em 1
+#     Eixo dos yy: de 0 a 320 variando 20
+plt.xticks([x for x in np.arange(1,11,1)])
+plt.yticks([x for x in np.arange(0,320,20)])
+
+# 09. Adição de legenda
+plt.legend(['PAK','NEWZ','ENG'] , loc = 'upper left')
+
+# 10. Apresentação dos gráficos
+plt.show()
+
+**************************************************************
+
+
+
+02.06 Desenho de Gráfico de Linha ("Line Plots"):
+      - Adição de grelha
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+ValueError: '*' is not a valid value for ls; supported values are '-', '--', '-.', ':', 'None', ' ', '', 'solid', 'dashed', 'dashdot', 'dotted'
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0206_DesenhoGráficodeLinha_Grelha.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Linha - Grelha </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico de Linha - Grelha </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Adição de Grelha </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Adição de Grelha  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import random
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Valores dos gráficos
+Wickets   = [1,2,3,4,5,6,7,8,9,10]
+#     Valores do eixo dos YY
+scores = np.linspace(0,100,10)
+scorcard1 =  scores ** 1.22
+scorcard2 = scores ** 1.15
+scorcard3 = scores * 2.5
+
+
+# 03. Definição de fontes
+font1 = {'family':'serif','color':'blue','size':20}
+font2 = {'family':'serif','color':'darkred','size':15}
+
+# 04. Definição e formatação do título
+plt.title("Sports Data" , fontdict = font1 , loc = 'center')
+
+# 05. Definição e formatação 
+#     dos rótulos dos eixos
+plt.xlabel("Overs"  ,fontdict = font2)
+plt.ylabel("Run Rate" , fontdict = font2)
+
+
+# 06. Construção dos gráficos 
+plt.plot(Wickets, scorcard1 , 'g-o')
+plt.plot(Wickets,scorcard2 ,'b-o')
+plt.plot(Wickets,scorcard3 ,'c-o')
+
+
+# 07. Valores dos eixos
+#     Eixo dos xx: de 1 a 10 variando de 1 em 1
+#     Eixo dos yy: de 0 a 320 variando 20
+plt.xticks([x for x in np.arange(1,11,1)])
+plt.yticks([x for x in np.arange(0,320,20)])
+
+
+# 08. Adição de grelha
+plt.grid(color = 'gray' , linestyle= ':')
+
+# 09. Adição de legenda
+plt.legend(['PAK','NEWZ','ENG'] , loc = 'upper left')
+
+
+# 10. Apresentação dos gráficos
+plt.show()
+
+************************************************************
+
+
+
+
+
+
+02.07 Desenho de Gráfico de Linha ("Line Plots"):
+      - Definição e Preenchimento de Área I
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0207_DesenhoGráficodeLinha_01Areas.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Linha - Áreas I </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico de Linha - Áreas I </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Preenchimento de Áreas do Gráfico </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Preenchimento de Áreas do Gráfico  </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Exemplo 01 </h2>
+
+<h3 style="background-color:green;color:white;padding:10px;text-align:center;font-weight:bold;">  Exemplo 01 </h3>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Definição do estilo de desenho
+plt.style.use('seaborn-v0_8-poster')
+
+# 03. Definição dos valores do(s) gráfico(s)
+#define x and y values
+x = np.arange(0,10,0.1)
+y = x**4
+
+# 04. Construção do(s) gráfico(s) 
+#create plot of values
+plt.plot(x,y)
+
+# 05. Preenchimento de área do gráfico
+#     com cor azul.
+#     alpha=0.3 - nível de opacidade
+plt.fill_between(x, y , np.max(y) ,color='blue', alpha=0.3)
+#plt.fill_between(x, y , np.min(y) ,color='blue', alpha=0.3)
+
+# 06. Apresentação do(s) gráfico(s)
+plt.show()
+
+
+
+
+################################
+# Cell 05:
+################################
+
+<h2> Exemplo 02 </h2>
+
+<h3 style="background-color:green;color:white;padding:10px;text-align:center;font-weight:bold;">  Exemplo 02 </h3>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 06:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 02. Definição dos valores do(s) 
+#     gráfico(s).
+#     define x and y values
+x = np.arange(0,10,0.1)
+y = np.arange(10,20,0.1)
+
+# 03. Construção do(s) gráfico(s) 
+#     create plot of values
+plt.plot(x,y)
+
+# 05. Preenchimento de área do gráfico
+#     com cor azul.
+plt.fill_betweenx([12,18], 2, 8, color='blue', alpha=.3)
+
+# 06. Apresentação do(s) gráfico(s)
+plt.show()
+
+
+
+
+################################
+# Cell 07:
+################################
+
+<h2> Exemplo 03 </h2>
+
+<h3 style="background-color:green;color:white;padding:10px;text-align:center;font-weight:bold;">  Exemplo 03 </h3>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 08:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+
+# 02. Definição dos valores do(s) 
+#     gráfico(s).
+ages = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+
+total_population = [27877307, 24280683, 25258169, 25899454, 24592293, 21217467, 27958147, 20859088, 28882735, 19978972]
+
+
+# 03. Construção do(s) gráfico(s) 
+plt.plot(ages, total_population,color='darkred')
+
+
+# 06. Definição e formatação 
+#     dos rótulos dos eixos
+plt.xlabel("Age")
+plt.ylabel("Total_population")
+
+
+plt.title("Age-wise population of UK") 
+
+plt.fill_between(ages, total_population , color = 'red' , alpha = 0.3)
+#plt.fill_between(ages, total_population, np.min(total_population), color = 'red' , alpha = 0.6)
+
+
+# 06. Apresentação do(s) gráfico(s)
+plt.show()
+
+**************************************
+
+
+
+
+02.08 Desenho de Gráfico de Linha ("Line Plots"):
+      - Definição e Preenchimento de Área II
+      - Preenchimento de Áreas Entre Linhas
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0208_DesenhoGráficodeLinha_02Areas.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Linha - Áreas II </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico de Linha - Áreas II </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Preenchimento de Áreas Entre Linhas </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Preenchimento de Áreas Entre Linhas </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Exemplo 01 </h2>
+
+
+<h3 style="background-color:green;color:white;padding:10px;text-align:center;font-weight:bold;">  Exemplo 01 </h3>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+ 
+# 02. Definição dos valores do(s) 
+#     gráfico(s).
+x = np.arange(0,10,0.1)
+# plotting the lines
+a1 = 4 - 2*x
+a2 = 3 - 0.5*x
+a3 = 1 -x
+ 
+# The upper edge of
+# polygon
+ 
+# Setting the y-limit
+plt.ylim(0, 5)
+
+
+# 03. Construção do(s) gráfico(s) 
+# Plot the lines
+plt.plot(x, a1,
+        x, a2,
+        x, a3)
+
+
+# 04. Adição de legenda.
+plt.legend(['a1','a2','a3'])
+
+
+# 05. Preenchimento de área do gráfico
+#     com cor azul.
+plt.fill_between(x, a2, a3, color='gray',alpha=0.5)
+
+
+# 06. Apresentação do(s) gráfico(s)
+plt.show()
+
+################################
+# Cell 05:
+################################
+
+<h2> Exemplo 02 </h2>
+
+<h3 style="background-color:green;color:white;padding:10px;text-align:center;font-weight:bold;">  Exemplo 02 </h3>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 06:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+ 
+# 02. Definição dos valores do(s) 
+#     gráfico(s).
+x = np.arange(0,10,0.1)
+# plotting the lines
+a1 = 4 - 2*x
+a2 = 3 - 0.5*x
+a3 = 1 -x
+ 
+# The upper edge of
+# polygon
+ 
+# Setting the y-limit
+plt.ylim(0, 5)
+
+
+# 03. Construção do(s) gráfico(s) 
+# Plot the lines
+plt.plot(x, a1,
+        x, a2,
+        x, a3)
+
+
+# 04. Adição de legenda.
+plt.legend(['a1','a2','a3'])
+
+
+# 05. Preenchimento de área do gráfico
+#     com cor azul.
+plt.fill_between(x, a1, a2, color='gray',alpha=0.5)
+
+
+# 06. Apresentação do(s) gráfico(s)
+plt.show()
+
+
+**************************************
+
+
+
+
+
+02.09 Desenho de Gráfico de Linha ("Line Plots"):
+      - Definição e Preenchimento de Área III
+      - Cores das Áreas
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ Changing Fill Color of Different Areas 
+  (Negative Versus Positive, For Example)
+
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "0209_DesenhoGráficodeLinha_02Areas.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráfico de Linha - Áreas III </h1>
+
+<h1 style="background-color:black;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Gráfico de Linha - Áreas III </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<h2> Preenchimento de Áreas - Cores </h2>
+
+<h2 style="background-color:red;color:white;padding:10px;text-align:center;font-weight:bold;font-style:italic;"> Preenchimento de Áreas - Cores </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+
+################################
+# Cell 03:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+# 02. Definição dos valores do(s) 
+#     gráfico(s).
+#define x and y values
+x = [-1,-4,-3,0,4,6,7]
+y = [-4, -5,2,-1,6,4,-2]
+
+
+
+# 03. Construção do(s) gráfico(s) 
+#create plot of values
+x=np.array(x)
+y=np.array(y) 
+plt.plot(x,y)
+
+
+# 04. Valores dos eixos
+#     Eixo dos xx: de -8 a 7 variando de 1 em 1
+#     Eixo dos yy: de -8 a 7 variando 20
+plt.xticks([x for x in np.arange(-8,8,1)])
+plt.yticks([x for x in np.arange(-8,8,1)])
+
+
+
+# 05. Preenchimento de área do gráfico
+#     com cor azul.
+#   x > 5 - só apresenta a partir de 6 -> não tem valor 5
+plt.fill_between(x,y, where = (x >= 4), color='blue', alpha=.5)
+
+
+# 06. Apresentação do(s) gráfico(s)
+plt.show()
+
+
+
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.fill_between.html
+**********************************************
+
+
+ 
+02.10 Resumo do capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+02.02 Desenho de Gráfico de Linha ("Line Plots"):
+      - Introdução
+
+02.03 Desenho de Gráfico de Linha ("Line Plots"):
+      - Eixos: rótulos e escala
+
+02.04 Desenho de Gráfico de Linha ("Line Plots"):
+      - Legendas
+
+02.05 Desenho de Gráfico de Linha ("Line Plots"):
+      - Formatação das linhas: cor, espessura, estilo
+
+02.06 Desenho de Gráfico de Linha ("Line Plots"):
+      - Adição de grelha
+
+02.07 Desenho de Gráfico de Linha ("Line Plots"):
+      - Definição e Preenchimento de Área
+
+02.08 Desenho de Gráfico de Linha ("Line Plots"):
+      - Definição e Preenchimento de Área II
+      - Preenchimento de Áreas Entre Linhas
+
+02.09 Desenho de Gráfico de Linha ("Line Plots"):
+      - Definição e Preenchimento de Área III
+      - Cores das Áreas
+
+***************************************************************
+
+
+
+02.11 Bibliografia/Sitografia-Webgrafia
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+02.11.01 Bibliografia
+02.11.02 Sitografia-Webgrafia
+
+
+
+02.11.01 Bibliografia
+-----------------------------------------------------------
+
+Bibliografia:
+
+[B01]	ESTRUTURAS DE DADOS E ALGORITMOS EM C - 3ª EDIÇÃO REVISTA E AUMENTADA, 
+        António Adrego da Rocha, FCA.
+
+[B02]	ANÁLISE DA COMPLEXIDADE DE ALGORITMOS, António Adrego da Rocha, FCA.
+
+[B03]	ESTRUTURAS DE DADOS E ALGORITMOS EM JAVA, António Adegro da Rocha, FCA.
+
+[B04]	ANÁLISE INTELIGENTE DE DADOS - ALGORITMOS E IMPLEMENTAÇÃO EM JAVA,
+        Miguel Rocha | Paulo Cortez | José Maia Neves, FCA.
+
+[B05]	PROGRAMAÇÃO EM C++ - ALGORITMOS E ESTRUTURAS DE DADOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B06]	PROGRAMAÇÃO EM C++ - CONCEITOS BÁSICOS E ALGORITMOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B07]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+[B08]	EXERCÍCIOS DE JAVA - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, 
+        Adelaide Carvalho, FCA.
+
+[B09]	PRÁTICAS DE C# - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, Adelaide Carvalho, FCA.
+
+[B10]	INTRODUÇÃO À ALGORITMIA E PROGRAMAÇÃO COM PYTHON
+        Filipe Portela | Tiago C. Pereira, FCA.
+
+[B11]	PRÁTICAS DE PYTHON - ALGORITMIA E PROGRAMAÇÃO
+        Adelaide Carvalho, FCA.
+
+[B12]	CIÊNCIA DOS DADOS NAS ORGANIZAÇÕES - APLICAÇÕES EM PYTHON
+        José Braga de Vasconcelos | Alexandre Barão, FCA.
+
+[B13]	PROGRAMAÇÃO EM PYTHON - FUNDAMENTOS E RESOLUÇÃO DE PROBLEMAS,
+        Ernesto Costa, FCA.
+
+[B14]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB
+        José Braga de Vasconcelos, FCA.
+
+[B15]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+***********************************************************************
+
+
+02.11.02 Sitografia-Webgrafia
+-----------------------------------------------------------
+
+[W01]. https://www.python.org/
+[W02]. https://pt.wikipedia.org/wiki/Python
+[W03]. https://en.wikipedia.org/wiki/Python_(programming_language)
+[W04]. https://www.tutorialspoint.com/python/index.htm
+[W05]. https://www.w3schools.com/python/
+[W06]. https://www.codecademy.com/catalog/language/python
+[W07]. https://www.devmedia.com.br/guia/python/37024
+[W08]. https://realpython.com/
+[W09]. https://www.academiadecodigo.org
+[W10]. https://www.pluralsight.com/
+[W11]. https://www.datacamp.com/
+[W12]. https://www.learnpython.org/
+[W13]. https://pt.coursera.org/courses?query=python
+[W14]. https://www.coursera.org/courses?query=python
+[W15]. https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+[W16]. https://www.khanacademy.org/computing/computer-science/algorithms
+[W17]. https://www.programiz.com/dsa
+[W18]. https://www.programming4beginners.com/tutorial-beginners-algorithms
+[W19]. https://hackr.io/tutorials/learn-data-structures-algorithms
+[W20]. https://try.codecademy.com/learn-python-3
+[W21]. https://codeforall.com/cursos-intensivos/bootcamp-programacao-full-stack
+[W22]. https://docs.python.org/3/tutorial/index.html
+
+
+***************************************************************
+
+
+
+
+02.12 Trabalho(s)/Tarefa(s)
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+
+***************************************************************
+
+
+
+
+

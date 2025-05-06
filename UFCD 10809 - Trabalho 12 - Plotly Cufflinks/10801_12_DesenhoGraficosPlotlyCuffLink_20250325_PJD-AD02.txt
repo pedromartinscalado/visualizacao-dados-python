@@ -1,0 +1,938 @@
+*******************************************************************
+******************************************************************* 
+12. Desenho de Gráficos com o 
+    Módulo "Plotly" ("Matplotlib") 
+    e a biblioteca "Cufflinks"
+*******************************************************************
+*******************************************************************
+
+
+
+12.01 Ponto de Partida
+
+12.02 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - Instalação
+
+12.03 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - Gráficos de Linha, Dispersão, Barras e de Área
+
+12.04 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - Gráficos 3D, Bolha, Pilha  e Histogramas
+
+12.05 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - 
+
+12.06 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - 
+
+12.07 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - 
+
+12.08 Resumo do capítulo
+
+12.09 Bibliografia/Sitografia-Webgrafia
+
+12.10 Trabalho(s)/Tarefa(s)
+
+
+
+
+
+
+12.01 Ponto de Partida
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ a.1) Jupyter Notebook Instalado - Executar
+
+   - Sem utilizar o Anaconda (mais rápido):
+
+    Na lupa do SO digitar:
+       - Jupyter
+    Clicar na aplicação 
+    Abre a consola com indicação dos "logs" do servidor.
+ 
+
+   - Formas de arrancar com o Jupyter:
+  
+     1. Com o Anaconda Navigator instalado, 
+        esperar que o "builder" conclua criação da plataforma.
+        - Na lista de ferramentas disponiveis, escolher
+         "Jupyter Notebook".  
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+
+     2. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Jupyter Notebook
+
+        Clicar no icone da aplicação
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+     3. Com o Anaconda Navigator instalado, na lupa do SO digitar:
+
+        Anaconda powershell prompt
+
+        Clicar no icone da aplicação 
+
+        Digitar       
+      
+           Jupyter Notebook
+
+
+        Arranca a consola:
+
+         Se com a consola ativada não arrancar o browser:
+
+            Copiar link com o token
+
+ a.2) Criar pasta para o capítulo
+
+   Na página de entrada do Jupyter Notebook,
+   na árvore de diretorias, TDR
+   - New Folder
+   - Projeto 10801_Cap11_GraficosCuffLink
+
+  Para entrar nessa pasta:
+   - Duplo clique.
+
+
+
+**************************************************************
+
+
+12.02 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - Instalação
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+https://plotly.com/python/
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1202_DesenhoGraficosCuffLink_Intro.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos - Biblioteca "Cufflinks" </h1>
+
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Gráficos - Biblioteca "Cufflinks"  </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+<h2> Instalação </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Instalação dos Módulo   </h2>
+
+
+
+ Markdown
+ SHIFT + ENTER
+
+################################
+# Cell 04:
+################################
+
+#Installation
+!pip install seaborn
+!pip install plotly
+!pip install cufflinks
+!pip install pandas
+
+
+# Depois de qq instalação é
+# necessário reiniciar o Kernel
+
+Menu Kernel -> Restart Kernel
+
+
+################################
+# Cell 05:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: plotly
+
+import plotly.express as px
+fig = px.bar(x=["a", "b", "c"], y=[1, 3, 2])
+fig.show()
+
+
+***************************************************************
+
+
+
+12.03 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - Gráficos de Linha, Dispersão, Barras e de Área
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1203_DesenhoGraficosCuffLink_Varios.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos - Biblioteca "Cufflinks" </h1>
+
+
+
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Gráficos - Biblioteca "Cufflinks"  </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+# This will enable the use of Cufflinks with Plotly in offline mode.
+import cufflinks as cf
+cf.go_offline()
+
+################################
+# Cell 04:
+################################
+
+<h2>  Exemplo 01 - Line Plot </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 01 - Line Plot   </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 05:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import cufflinks as cf
+import pandas as pd
+import plotly.express as px
+
+# Load sample data
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+fig = px.line(df, x='Date', y='AAPL.High', title='AAPL High Prices')
+fig.show()
+
+
+################################
+# Cell 06:
+################################
+
+<h2>  Exemplo 02 - Scatter Plot </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 02 - Scatter Plot   </h2>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 07:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import cufflinks as cf
+import pandas as pd
+import plotly.express as px
+
+# Load sample data
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+
+# Create line plot with Cufflinks and Plotly
+fig = px.scatter(df, x='Date', y='AAPL.High', title='AAPL High Prices')
+fig.show()
+
+
+################################
+# Cell 08:
+################################
+
+<h2>  Exemplo 03 - Bar Plot </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 03 - Bar Plot  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 09:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import cufflinks as cf
+import pandas as pd
+import plotly.express as px
+
+# Load sample data
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+
+# Create line plot with Cufflinks and Plotly
+fig = px.bar(df, x='Date', y='AAPL.High', title='AAPL High Prices' ,template='seaborn')
+fig.show()
+
+
+**************************
+
+https://plotly.com/python/templates/
+import plotly.io as pio
+pio.templates
+Templates configuration
+-----------------------
+    Default template: 'plotly'
+    Available templates:
+        ['ggplot2', 'seaborn', 'simple_white', 'plotly',
+         'plotly_white', 'plotly_dark', 'presentation', 'xgridoff',
+         'ygridoff', 'gridon', 'none']
+
+
+
+################################
+# Cell 10:
+################################
+
+<h2>  Exemplo 04 - Candlestick </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 04 - Candlestick   </h2>
+
+
+################################
+# Cell 11:
+################################
+
+#https://plotly.com/python/candlestick-charts/
+
+import plotly.graph_objects as go
+
+import pandas as pd
+from datetime import datetime
+
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+
+fig = go.Figure(data=[go.Candlestick(x=df['Date'],
+                open=df['AAPL.Open'],
+                high=df['AAPL.High'],
+                low=df['AAPL.Low'],
+                close=df['AAPL.Close'])])
+
+fig.show()
+
+
+
+################################
+# Cell 12:
+################################
+
+<h2>  Exemplo 05 - Box Plot and Area Plot </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 05 - Box Plot and Area Plot </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 13:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import cufflinks as cf
+import plotly.offline as pyo
+import plotly.graph_objs as go
+import pandas as pd
+import plotly.express as px
+
+# Load sample data
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+
+# Create line plot with Cufflinks and Plotly
+fig = px.box(df, x='Date', y='AAPL.High', title='AAPL High Prices' , template='plotly_dark')
+fig.show()
+
+#############################################
+# Templates
+#############################################
+https://plotly.com/python/templates/
+https://plotly.com/python/styling-plotly-express/
+Templates configuration
+-----------------------
+    Default template: 'plotly'
+    Available templates:
+        ['ggplot2', 'seaborn', 'simple_white', 'plotly',
+         'plotly_white', 'plotly_dark', 'presentation', 'xgridoff',
+         'ygridoff', 'gridon', 'none']
+
+
+################################
+# Cell 14:
+################################
+
+<h2>  Exemplo 06 - Box Plot and Area Plot  </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 05 - Box Plot and Area Plot    </h2>
+
+
+################################
+# Cell 15:
+################################
+
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import cufflinks as cf
+import plotly.offline as pyo
+import plotly.graph_objs as go
+import pandas as pd
+import plotly.express as px
+
+# Load sample data
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+
+# Create line plot with Cufflinks and Plotly
+fig = px.box(df, x='Date', y='AAPL.High', title='AAPL High Prices' , color_discrete_sequence = ['cyan', 'yellow', 'white', 'orange'], template='plotly_dark')
+fig.show()
+
+
+################################
+# Cell 16:
+################################
+
+<h2>  Exemplo 07 - Box Plot and Area Plot II </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 07 - Box Plot and Area Plot II  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 17:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import cufflinks as cf
+import pandas as pd
+import plotly.express as px
+
+# Load sample data
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv')
+
+# Create line plot with Cufflinks and Plotly
+fig = px.area(df, x='Date', y='AAPL.High', title='AAPL High Prices' , template='plotly_dark')
+fig.show()
+
+
+################################
+# Cell 18:
+################################
+
+<h2>  Exemplo 08 - Box Plot and Area Plot III </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 08 - Box Plot and Area Plot III  </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 19:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import plotly.express as px
+import pandas as pd
+
+# Create sample data
+data = pd.DataFrame({
+    'x': [1, 2, 3, 4, 5],
+    'y1': [2, 4, 1, 5, 3],
+    'y2': [1, 3, 2, 4, 2]
+})
+
+# Create area plot
+fig = px.area(data, x='x', y=['y1', 'y2'], title='Area Plot' ,template='plotly_dark')
+
+# Show plot
+fig.show()
+
+################################
+# Cell 20:
+################################
+
+<h2>  Exemplo 09 - Templates Themes </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;">  Exemplo 09 - Templates Themes   </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 21:
+################################
+
+import plotly.graph_objects as go
+import pandas as pd
+
+z_data = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/api_docs/mt_bruno_elevation.csv")
+
+fig = go.Figure(
+    data=go.Surface(z=z_data.values),
+    layout=go.Layout(
+        title="Mt Bruno Elevation",
+        width=500,
+        height=500,
+    ))
+
+for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]:
+    fig.update_layout(template=template, title="Mt Bruno Elevation: '%s' theme" % template)
+    fig.show()
+
+
+***********************************************************
+
+
+
+
+12.04 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - Gráficos 3D, Bolha, Pilha  e Histogramas
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+ -> Na pasta do capítulo,
+    criar um novo ficheiro Jupyter Notebook
+    com o nome:
+
+    "1204_DesenhoGraficosCuffLink_VariosII.ipynb"
+    
+    Menu "File" -> New -> Notebook
+
+
+################################
+# Cell 01:
+################################
+
+<h1> Gráficos - Biblioteca "Cufflinks" </h1>
+
+ 
+<h1 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:2cm;padding-bottom:30px;"> Gráficos - Biblioteca "Cufflinks"  </h1>
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 02:
+################################
+
+<div style="margin-left:2%;">
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+<img style="float:left;margin:2px;height:150px;" src="https://www.analyticssteps.com/backend/media/thumbnail/6350483/7807104_1578230927_time_analysis_tittle-banner%20(1).jpg" width="32%"/>
+</div>
+
+
+################################
+# Cell 03:
+################################
+
+
+<h2> Exemplo 01 - 3D Plots </h2>
+
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 01 - 3D Plots   </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 04:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import numpy as np
+import pandas as pd
+import cufflinks as cf
+import plotly.express as px
+
+# Create a random dataset
+#np.random.seed(123)
+df = pd.DataFrame({'x': np.random.randn(100),
+                   'y': np.random.randn(100),
+                   'z': np.random.randn(100)})
+
+# Create a 3D scatter plot using Plotly and Cufflinks
+fig = px.scatter_3d(df, x='x', y='y', z='z')
+fig.show()
+
+
+################################
+# Cell 05:
+################################
+
+<h2> Exemplo 02 - 3D Plots II </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 02 - 3D Plots II    </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 06:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import cufflinks as cf
+import plotly.express as px
+
+# Load the iris dataset from Plotly
+data = px.data.iris()
+# Create a 3D scatter plot using Plotly and Cufflinks
+fig = px.scatter_3d(data, x='sepal_width', y='sepal_length', z='petal_length', color='species')
+fig.show()
+
+
+################################
+# Cell 07:
+################################
+
+<h2> Exemplo 03 - Spread Plot and Hist Plot </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 03 - Spread Plot and Hist Plot   </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 08:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import plotly.express as px
+df = px.data.tips()
+
+# Spread Plot
+fig = px.scatter(df, x="total_bill", y="tip", color="sex")
+fig.show()
+
+# Histogram Plot
+fig = px.histogram(df, x="total_bill", nbins=30 , color="sex")
+fig.show()
+
+
+################################
+# Cell 09:
+################################
+
+<h2> Exemplo 04 - Bubble Plot and Heatmap </h2>
+
+<h2 style="background-color:orange;color:white;padding-top:10px;text-align:center;font-weight:bold;font-style:italic;font-size:1cm;padding-bottom:20px;"> Exemplo 04 - Bubble Plot and Heatmap   </h2>
+
+
+ Markdown
+ SHIFT + ENTER
+
+
+################################
+# Cell 10:
+################################
+
+# 01. Importar:
+#     Bibliotecas: matplotlib, numpy
+#     Módulos: pyplot
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import cufflinks as cf
+cf.go_offline()
+
+# Create a sample dataframe
+df = pd.DataFrame({
+    'x': np.random.rand(50),
+    'y': np.random.rand(50),
+    'size': np.random.rand(50),
+    'color': np.random.randint(1, 4, size=50)
+})
+
+# Bubble plot
+fig = px.scatter(df, x='x', y='y', size='size', color='color')
+fig.show()
+
+# Heatmap
+heatmap_data = df.pivot_table(values='size', index='x', columns='y')
+fig = px.imshow(heatmap_data, color_continuous_scale='twilight')
+fig.show()
+
+
+***************************************************************
+
+
+
+
+12.05 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - 
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+***************************************************************
+
+
+12.06 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - 
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+***************************************************************
+
+
+
+
+
+12.07 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - 
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+***************************************************************
+
+
+12.08 Resumo do capítulo
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+12.02 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - Instalação
+
+12.03 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - Gráficos de Linha, Dispersão, Barras e de Área
+
+12.04 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - Gráficos 3D, Bolha, Pilha  e Histogramas
+
+12.05 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - 
+
+12.06 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - 
+
+12.07 Desenho de Gráficos - Biblioteca "Cufflinks":
+      - 
+
+
+
+********************************************************************
+
+
+
+12.09 Bibliografia/Sitografia-Webgrafia
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+12.09.01 Bibliografia
+12.09.02 Sitografia-Webgrafia
+
+
+
+12.09.01 Bibliografia
+-----------------------------------------------------------
+
+Bibliografia:
+
+[B01]	ESTRUTURAS DE DADOS E ALGORITMOS EM C - 3ª EDIÇÃO REVISTA E AUMENTADA, 
+        António Adrego da Rocha, FCA.
+
+[B02]	ANÁLISE DA COMPLEXIDADE DE ALGORITMOS, António Adrego da Rocha, FCA.
+
+[B03]	ESTRUTURAS DE DADOS E ALGORITMOS EM JAVA, António Adegro da Rocha, FCA.
+
+[B04]	ANÁLISE INTELIGENTE DE DADOS - ALGORITMOS E IMPLEMENTAÇÃO EM JAVA,
+        Miguel Rocha | Paulo Cortez | José Maia Neves, FCA.
+
+[B05]	PROGRAMAÇÃO EM C++ - ALGORITMOS E ESTRUTURAS DE DADOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B06]	PROGRAMAÇÃO EM C++ - CONCEITOS BÁSICOS E ALGORITMOS, 
+        Pimenta Rodrigues | Pedro Pereira | Manuela Sousa, FCA.
+
+[B07]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+[B08]	EXERCÍCIOS DE JAVA - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, 
+        Adelaide Carvalho, FCA.
+
+[B09]	PRÁTICAS DE C# - ALGORITMIA E PROGRAMAÇÃO ESTRUTURADA, Adelaide Carvalho, FCA.
+
+[B10]	INTRODUÇÃO À ALGORITMIA E PROGRAMAÇÃO COM PYTHON
+        Filipe Portela | Tiago C. Pereira, FCA.
+
+[B11]	PRÁTICAS DE PYTHON - ALGORITMIA E PROGRAMAÇÃO
+        Adelaide Carvalho, FCA.
+
+[B12]	CIÊNCIA DOS DADOS NAS ORGANIZAÇÕES - APLICAÇÕES EM PYTHON
+        José Braga de Vasconcelos | Alexandre Barão, FCA.
+
+[B13]	PROGRAMAÇÃO EM PYTHON - FUNDAMENTOS E RESOLUÇÃO DE PROBLEMAS,
+        Ernesto Costa, FCA.
+
+[B14]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB
+        José Braga de Vasconcelos, FCA.
+
+[B15]	PYTHON - ALGORITMIA E PROGRAMAÇÃO WEB, 
+        José Braga de Vasconcelos, FCA.
+
+***********************************************************************
+
+
+12.09.02 Sitografia-Webgrafia
+-----------------------------------------------------------
+
+[W01]. https://www.python.org/
+[W02]. https://pt.wikipedia.org/wiki/Python
+[W03]. https://en.wikipedia.org/wiki/Python_(programming_language)
+[W04]. https://www.tutorialspoint.com/python/index.htm
+[W05]. https://www.w3schools.com/python/
+[W06]. https://www.codecademy.com/catalog/language/python
+[W07]. https://www.devmedia.com.br/guia/python/37024
+[W08]. https://realpython.com/
+[W09]. https://www.academiadecodigo.org
+[W10]. https://www.pluralsight.com/
+[W11]. https://www.datacamp.com/
+[W12]. https://www.learnpython.org/
+[W13]. https://pt.coursera.org/courses?query=python
+[W14]. https://www.coursera.org/courses?query=python
+[W15]. https://www.tutorialspoint.com/data_structures_algorithms/index.htm
+[W16]. https://www.khanacademy.org/computing/computer-science/algorithms
+[W17]. https://www.programiz.com/dsa
+[W18]. https://www.programming4beginners.com/tutorial-beginners-algorithms
+[W19]. https://hackr.io/tutorials/learn-data-structures-algorithms
+[W20]. https://try.codecademy.com/learn-python-3
+[W21]. https://codeforall.com/cursos-intensivos/bootcamp-programacao-full-stack
+[W22]. https://docs.python.org/3/tutorial/index.html
+
+
+***************************************************************
+
+
+
+
+12.10 Trabalho(s)/Tarefa(s)
+--------------------------------------------------------------
+--------------------------------------------------------------
+
+
+
+
+
+
+***************************************************************
+
+
+
+
+
