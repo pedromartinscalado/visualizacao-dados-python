@@ -1,6 +1,7 @@
 01. Selecione as bibliotecas que podem ser utilizadas para o desenho de gráficos em Python. 
 b) Matplotlib.X
 e) Seaborn. X
+c) Cufflinks. X
 
 
 02. Identifique a função "matplotlib, pyplot" representada por "plt" para desenhar um gráfico de linha.
@@ -53,7 +54,7 @@ a) Gráfico de linha. X
 e) Histograma. X
 
 16. Identifique o gráfico da figura.
-g) Gráfico de pilha. X
+b) Gráfico de barras. X
 
 17. Identifique o gráfico da figura.
 d) Gráfico de dispersão. X
